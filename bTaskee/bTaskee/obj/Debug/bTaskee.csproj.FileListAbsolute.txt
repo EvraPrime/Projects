@@ -1,10 +1,15 @@
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\bin\Debug\bTaskee.exe.config
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\bin\Debug\bTaskee.exe
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\bin\Debug\bTaskee.pdb
-C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.csproj.AssemblyReference.cache
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Main.resources
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Message.resources
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Properties.Resources.resources
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.csproj.GenerateResource.cache
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.exe
 C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.pdb
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Account.resources
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Activity.resources
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Home.resources
+C:\Users\Asus\Desktop\MyProject\bTaskee\bTaskee\obj\Debug\bTaskee.Profile.resources

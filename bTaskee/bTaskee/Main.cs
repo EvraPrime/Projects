@@ -24,6 +24,7 @@ namespace bTaskee
             Reset();
             pic_Home.Image = Properties.Resources.home__1_;
             lbl_Home.ForeColor = Color.DarkOrange;
+            home1.BringToFront();
         }
 
         private void lbl_Home_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace bTaskee
             Reset();
             pic_Home.Image = Properties.Resources.home__1_;
             lbl_Home.ForeColor = Color.DarkOrange;
+            home1.BringToFront();
         }
 
         private void pic_Activity_Click(object sender, EventArgs e)
@@ -38,6 +40,7 @@ namespace bTaskee
             Reset();
             pic_Activity.Image = Properties.Resources.activity__1_;
             lbl_Activity.ForeColor = Color.DarkOrange;
+            activity1.BringToFront();
         }
 
         private void lbl_Activity_Click(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace bTaskee
             Reset();
             pic_Activity.Image = Properties.Resources.activity__1_;
             lbl_Activity.ForeColor = Color.DarkOrange;
+            activity1.BringToFront();
         }
 
         private void pic_Message_Click(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace bTaskee
             Reset();
             pic_Message.Image = Properties.Resources.bell__1_;
             lbl_Message.ForeColor = Color.DarkOrange;
+            message1.BringToFront();
         }
 
         private void lbl_Message_Click(object sender, EventArgs e)
@@ -59,6 +64,7 @@ namespace bTaskee
             Reset();
             pic_Message.Image = Properties.Resources.bell__1_;
             lbl_Message.ForeColor = Color.DarkOrange;
+            message1.BringToFront();
         }
 
         private void pic_Account_Click(object sender, EventArgs e)
@@ -66,6 +72,7 @@ namespace bTaskee
             Reset();
             pic_Account.Image = Properties.Resources.user__1_;
             lbl_Account.ForeColor = Color.DarkOrange;
+            account1.BringToFront();
         }
 
         private void lbl_Account_Click(object sender, EventArgs e)
@@ -73,6 +80,7 @@ namespace bTaskee
             Reset();
             pic_Account.Image = Properties.Resources.user__1_;
             lbl_Account.ForeColor = Color.DarkOrange;
+            account1.BringToFront();
         }
 
         void Reset()
