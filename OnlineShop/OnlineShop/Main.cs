@@ -61,11 +61,32 @@ namespace OnlineShop
         {
             panel1.BackColor = theme;
             panel2.BackColor = theme;
+            btn_Close.BackColor = theme;
+            btn_Max.BackColor = theme;
+            btn_Min.BackColor = theme;
+            home.UpdateView(theme, language);
+            settings.UpdateView(theme, language);
+            history.UpdateView(theme, language);
+
+            foreach(Selected item in cart)
+            {
+                item.UpdateView(theme, language);
+            }
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
             home.BringToFront();
+        }
+
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            history.BringToFront();
+        }
+
+        private void btn_Statis_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void AddToCart(Selected item)
@@ -114,6 +135,11 @@ namespace OnlineShop
         public List<Selected> GetCart()
         {
             return cart;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            UpdateView(Color.Red, "en");
         }
     }
 }

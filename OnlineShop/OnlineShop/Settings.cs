@@ -46,5 +46,10 @@ namespace OnlineShop
             openFileDialog.ShowDialog();
             pic_ProfilePic.Image = Image.FromFile(openFileDialog.FileName);
         }
+
+        public void UpdateView(Color theme, string language)
+        {
+            topPanel.BackColor = theme;
+        }
     }
 }

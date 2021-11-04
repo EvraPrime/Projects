@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `OnlineShop`.`Bill` (
   `Total` DECIMAL NOT NULL,
   `Address` VARCHAR(255) NOT NULL,
   `Date` DATE NOT NULL,
-  `Status` ENUM('Receiving', 'Shipping', 'Success'),
+  `Status` ENUM('Ordering', 'Shipping', 'Success'),
   PRIMARY KEY (`ID`));
   
 DROP TABLE IF EXISTS `Onlineshop`.`OrderDetail`;

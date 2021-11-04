@@ -41,14 +41,15 @@ namespace OnlineShop
             // num_Amount
             // 
             this.num_Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_Amount.Location = new System.Drawing.Point(614, 66);
+            this.num_Amount.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_Amount.Location = new System.Drawing.Point(282, 33);
             this.num_Amount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.num_Amount.Name = "num_Amount";
-            this.num_Amount.Size = new System.Drawing.Size(51, 22);
+            this.num_Amount.Size = new System.Drawing.Size(51, 29);
             this.num_Amount.TabIndex = 12;
             this.num_Amount.Value = new decimal(new int[] {
             1,
@@ -60,42 +61,44 @@ namespace OnlineShop
             // lbl_Price
             // 
             this.lbl_Price.AutoSize = true;
-            this.lbl_Price.Location = new System.Drawing.Point(218, 91);
+            this.lbl_Price.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Price.Location = new System.Drawing.Point(109, 60);
             this.lbl_Price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(40, 17);
+            this.lbl_Price.Size = new System.Drawing.Size(58, 22);
             this.lbl_Price.TabIndex = 11;
             this.lbl_Price.Text = "Price";
             // 
             // lbl_Name
             // 
             this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(213, 32);
+            this.lbl_Name.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name.Location = new System.Drawing.Point(109, 15);
             this.lbl_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(45, 17);
+            this.lbl_Name.Size = new System.Drawing.Size(62, 22);
             this.lbl_Name.TabIndex = 10;
             this.lbl_Name.Text = "Name";
             // 
             // btn_Delete
             // 
             this.btn_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.BackColor = System.Drawing.Color.DarkGray;
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Location = new System.Drawing.Point(697, 56);
+            this.btn_Delete.Image = global::OnlineShop.Properties.Resources.Exit;
+            this.btn_Delete.Location = new System.Drawing.Point(359, 27);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(50, 40);
+            this.btn_Delete.Size = new System.Drawing.Size(35, 35);
             this.btn_Delete.TabIndex = 13;
-            this.btn_Delete.Text = "button1";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // pic_Item
             // 
-            this.pic_Item.Location = new System.Drawing.Point(12, 14);
+            this.pic_Item.Location = new System.Drawing.Point(1, 1);
             this.pic_Item.Margin = new System.Windows.Forms.Padding(4);
             this.pic_Item.Name = "pic_Item";
-            this.pic_Item.Size = new System.Drawing.Size(183, 135);
+            this.pic_Item.Size = new System.Drawing.Size(100, 100);
             this.pic_Item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_Item.TabIndex = 9;
             this.pic_Item.TabStop = false;
@@ -110,7 +113,7 @@ namespace OnlineShop
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.pic_Item);
             this.Name = "Selected";
-            this.Size = new System.Drawing.Size(773, 165);
+            this.Size = new System.Drawing.Size(430, 102);
             ((System.ComponentModel.ISupportInitialize)(this.num_Amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Item)).EndInit();
             this.ResumeLayout(false);

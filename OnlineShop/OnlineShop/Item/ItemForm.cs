@@ -14,12 +14,14 @@ namespace OnlineShop
     {
         int ID;
         string Type;
+        string Language;
+
         public ItemForm()
         {
             InitializeComponent();
         }
 
-        public ItemForm(Image image, int id, string name, decimal price, string type, DateTime date)
+        public ItemForm(Image image, int id, string name, decimal price, string type, DateTime date, Color theme, string language)
         {
             InitializeComponent();
             ID = id;
@@ -28,6 +30,9 @@ namespace OnlineShop
             lbl_Name.Text = name;
             lbl_Price.Text = price.ToString();
             lbl_Date.Text = date.ToShortDateString();
+            Language = language;
+            topPanel.BackColor = theme;
+            btn_Close.BackColor = theme;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -37,7 +42,7 @@ namespace OnlineShop
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            Main.GetMain().AddToCart(new Selected(pic_Item.Image, ID, lbl_Name.Text, lbl_Price.Text, (int)num_Amount.Value));
+            Main.GetMain().AddToCart(new Selected(pic_Item.Image, ID, lbl_Name.Text, lbl_Price.Text, (int)num_Amount.Value, topPanel.BackColor, Language));
             this.Close();
         }
     }

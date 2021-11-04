@@ -13,15 +13,19 @@ namespace OnlineShop
 {
     public partial class Cart : Form
     {
+        string Language;
+
         public Cart()
         {
             InitializeComponent();
         }
 
-        public Cart(Selected[] selecteds)
+        public Cart(Selected[] selecteds, Color theme, string language)
         {
             InitializeComponent();
 
+            topPanel.BackColor = theme;
+            btn_Close.BackColor = theme;
             selectedItems.Controls.AddRange(selecteds);
         }
 
@@ -59,8 +63,8 @@ namespace OnlineShop
             {
                 var con = DAL.GetDBConnection();
                 con.Open();
-                string sqlBill = "INSERT INTO Bill (Total, Date, Status) "
-                               + "VALUES (@Total, @Date, @Status)";
+                string sqlBill = "INSERT INTO Bill (Total, Address, Date, Status) "
+                               + "VALUES (@Total, @Address, @Date, @Status)";
                 StringBuilder sqlOrder = new StringBuilder();
                 sqlOrder.Append("INSERT INTO OrderDetail (BillID, ItemID, Amount) VALUES");
 
@@ -70,8 +74,9 @@ namespace OnlineShop
                     cmd.CommandText = sqlBill;
 
                     cmd.Parameters.Add("@Total", MySqlDbType.Decimal).Value = x.GetTotal() + 10000;
+                    cmd.Parameters.Add("@Address", MySqlDbType.VarChar).Value = lbl_Address.Text;
                     cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = DateTime.Now;
-                    cmd.Parameters.Add("@Status", MySqlDbType.VarChar).Value = "Receiving";
+                    cmd.Parameters.Add("@Status", MySqlDbType.VarChar).Value = "Ordering";
 
                     cmd.ExecuteNonQuery();
                     ///////

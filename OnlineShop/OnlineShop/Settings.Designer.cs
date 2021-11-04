@@ -40,49 +40,53 @@ namespace OnlineShop
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pic_ProfilePic = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ProfilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Color
             // 
             this.lbl_Color.AutoSize = true;
-            this.lbl_Color.Location = new System.Drawing.Point(31, 253);
+            this.lbl_Color.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Color.Location = new System.Drawing.Point(50, 332);
             this.lbl_Color.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Color.Name = "lbl_Color";
-            this.lbl_Color.Size = new System.Drawing.Size(41, 17);
+            this.lbl_Color.Size = new System.Drawing.Size(74, 22);
             this.lbl_Color.TabIndex = 0;
-            this.lbl_Color.Text = "Color";
+            this.lbl_Color.Text = "Theme";
             // 
             // lbl_Language
             // 
             this.lbl_Language.AutoSize = true;
-            this.lbl_Language.Location = new System.Drawing.Point(72, 436);
+            this.lbl_Language.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Language.Location = new System.Drawing.Point(50, 415);
             this.lbl_Language.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Language.Name = "lbl_Language";
-            this.lbl_Language.Size = new System.Drawing.Size(72, 17);
+            this.lbl_Language.Size = new System.Drawing.Size(103, 22);
             this.lbl_Language.TabIndex = 7;
             this.lbl_Language.Text = "Language";
             // 
             // rdb_Viet
             // 
             this.rdb_Viet.AutoSize = true;
-            this.rdb_Viet.Location = new System.Drawing.Point(468, 509);
-            this.rdb_Viet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Viet.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.rdb_Viet.Location = new System.Drawing.Point(466, 481);
+            this.rdb_Viet.Margin = new System.Windows.Forms.Padding(4);
             this.rdb_Viet.Name = "rdb_Viet";
-            this.rdb_Viet.Size = new System.Drawing.Size(103, 21);
+            this.rdb_Viet.Size = new System.Drawing.Size(120, 23);
             this.rdb_Viet.TabIndex = 8;
             this.rdb_Viet.Text = "Vietnamese";
             this.rdb_Viet.UseVisualStyleBackColor = true;
@@ -91,10 +95,11 @@ namespace OnlineShop
             // 
             this.rdb_Eng.AutoSize = true;
             this.rdb_Eng.Checked = true;
-            this.rdb_Eng.Location = new System.Drawing.Point(136, 509);
-            this.rdb_Eng.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Eng.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.rdb_Eng.Location = new System.Drawing.Point(134, 481);
+            this.rdb_Eng.Margin = new System.Windows.Forms.Padding(4);
             this.rdb_Eng.Name = "rdb_Eng";
-            this.rdb_Eng.Size = new System.Drawing.Size(75, 21);
+            this.rdb_Eng.Size = new System.Drawing.Size(88, 23);
             this.rdb_Eng.TabIndex = 9;
             this.rdb_Eng.TabStop = true;
             this.rdb_Eng.Text = "English";
@@ -103,61 +108,67 @@ namespace OnlineShop
             // lbl_Name
             // 
             this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(405, 72);
+            this.lbl_Name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name.Location = new System.Drawing.Point(445, 126);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(17, 17);
+            this.lbl_Name.Size = new System.Drawing.Size(20, 19);
             this.lbl_Name.TabIndex = 11;
             this.lbl_Name.Text = "A";
             // 
             // lbl_Address
             // 
             this.lbl_Address.AutoSize = true;
-            this.lbl_Address.Location = new System.Drawing.Point(405, 156);
+            this.lbl_Address.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Address.Location = new System.Drawing.Point(445, 210);
             this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(17, 17);
+            this.lbl_Address.Size = new System.Drawing.Size(21, 19);
             this.lbl_Address.TabIndex = 12;
             this.lbl_Address.Text = "C";
             // 
             // lbl_SDT
             // 
             this.lbl_SDT.AutoSize = true;
-            this.lbl_SDT.Location = new System.Drawing.Point(405, 114);
+            this.lbl_SDT.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SDT.Location = new System.Drawing.Point(445, 168);
             this.lbl_SDT.Name = "lbl_SDT";
-            this.lbl_SDT.Size = new System.Drawing.Size(17, 17);
+            this.lbl_SDT.Size = new System.Drawing.Size(21, 19);
             this.lbl_SDT.TabIndex = 13;
             this.lbl_SDT.Text = "B";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 114);
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(287, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 17);
+            this.label2.Size = new System.Drawing.Size(130, 19);
             this.label2.TabIndex = 16;
             this.label2.Text = "Phone number:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 156);
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(287, 210);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(74, 19);
             this.label3.TabIndex = 15;
             this.label3.Text = "Address";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 72);
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(287, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 14;
             this.label4.Text = "Name:";
             // 
             // pic_ProfilePic
             // 
             this.pic_ProfilePic.Image = global::OnlineShop.Properties.Resources._default;
-            this.pic_ProfilePic.Location = new System.Drawing.Point(56, 35);
+            this.pic_ProfilePic.Location = new System.Drawing.Point(54, 89);
             this.pic_ProfilePic.Name = "pic_ProfilePic";
             this.pic_ProfilePic.Size = new System.Drawing.Size(180, 180);
             this.pic_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,21 +176,10 @@ namespace OnlineShop
             this.pic_ProfilePic.TabStop = false;
             this.pic_ProfilePic.Click += new System.EventHandler(this.pic_ProfilePic_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Black;
-            this.pictureBox6.Location = new System.Drawing.Point(621, 296);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pic_Click);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.BlueViolet;
-            this.pictureBox5.Location = new System.Drawing.Point(515, 296);
+            this.pictureBox5.Location = new System.Drawing.Point(612, 311);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(67, 62);
@@ -190,7 +190,7 @@ namespace OnlineShop
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox4.Location = new System.Drawing.Point(408, 296);
+            this.pictureBox4.Location = new System.Drawing.Point(505, 311);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(67, 62);
@@ -201,7 +201,7 @@ namespace OnlineShop
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SpringGreen;
-            this.pictureBox3.Location = new System.Drawing.Point(301, 296);
+            this.pictureBox3.Location = new System.Drawing.Point(398, 311);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(67, 62);
@@ -212,7 +212,7 @@ namespace OnlineShop
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gold;
-            this.pictureBox2.Location = new System.Drawing.Point(195, 296);
+            this.pictureBox2.Location = new System.Drawing.Point(292, 311);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 62);
@@ -223,7 +223,7 @@ namespace OnlineShop
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Red;
-            this.pictureBox1.Location = new System.Drawing.Point(88, 296);
+            this.pictureBox1.Location = new System.Drawing.Point(185, 311);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 62);
@@ -235,10 +235,31 @@ namespace OnlineShop
             // 
             this.openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(877, 60);
+            this.topPanel.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(30, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Settings";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.topPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -249,24 +270,24 @@ namespace OnlineShop
             this.Controls.Add(this.rdb_Eng);
             this.Controls.Add(this.rdb_Viet);
             this.Controls.Add(this.lbl_Language);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_Color);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(877, 632);
             this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_ProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +301,6 @@ namespace OnlineShop
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl_Language;
         private System.Windows.Forms.RadioButton rdb_Viet;
         private System.Windows.Forms.RadioButton rdb_Eng;
@@ -292,5 +312,7 @@ namespace OnlineShop
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Label label1;
     }
 }

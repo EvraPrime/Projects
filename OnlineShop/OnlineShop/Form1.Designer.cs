@@ -43,6 +43,7 @@ namespace OnlineShop
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.home = new OnlineShop.Home();
             this.settings = new OnlineShop.Settings();
+            this.history = new OnlineShop.History();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
@@ -51,7 +52,7 @@ namespace OnlineShop
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Controls.Add(this.btn_Min);
             this.panel1.Controls.Add(this.btn_Max);
             this.panel1.Controls.Add(this.btn_Close);
@@ -65,7 +66,7 @@ namespace OnlineShop
             // btn_Min
             // 
             this.btn_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Min.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Min.BackColor = System.Drawing.Color.Transparent;
             this.btn_Min.FlatAppearance.BorderSize = 0;
             this.btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Min.Image = global::OnlineShop.Properties.Resources.Min;
@@ -80,7 +81,7 @@ namespace OnlineShop
             // btn_Max
             // 
             this.btn_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Max.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Max.BackColor = System.Drawing.Color.Transparent;
             this.btn_Max.FlatAppearance.BorderSize = 0;
             this.btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Max.Image = global::OnlineShop.Properties.Resources.Max;
@@ -95,7 +96,7 @@ namespace OnlineShop
             // btn_Close
             // 
             this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Close.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Close.BackColor = System.Drawing.Color.Transparent;
             this.btn_Close.FlatAppearance.BorderSize = 0;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Image = global::OnlineShop.Properties.Resources.Exit;
@@ -109,7 +110,7 @@ namespace OnlineShop
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Controls.Add(this.btn_Statis);
             this.panel2.Controls.Add(this.pic_Settings);
             this.panel2.Controls.Add(this.lbl_Settings);
@@ -127,23 +128,27 @@ namespace OnlineShop
             // btn_Statis
             // 
             this.btn_Statis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Statis.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Statis.FlatAppearance.BorderSize = 0;
+            this.btn_Statis.BackColor = System.Drawing.Color.White;
             this.btn_Statis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Statis.Location = new System.Drawing.Point(0, 348);
+            this.btn_Statis.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Statis.Image = global::OnlineShop.Properties.Resources.bar_graph;
+            this.btn_Statis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Statis.Location = new System.Drawing.Point(0, 355);
             this.btn_Statis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Statis.Name = "btn_Statis";
-            this.btn_Statis.Size = new System.Drawing.Size(237, 57);
+            this.btn_Statis.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_Statis.Size = new System.Drawing.Size(237, 50);
             this.btn_Statis.TabIndex = 7;
             this.btn_Statis.Text = "Statis";
             this.btn_Statis.UseVisualStyleBackColor = false;
+            this.btn_Statis.Click += new System.EventHandler(this.btn_Statis_Click);
             // 
             // pic_Settings
             // 
             this.pic_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pic_Settings.BackColor = System.Drawing.Color.White;
+            this.pic_Settings.BackColor = System.Drawing.Color.Transparent;
             this.pic_Settings.Image = global::OnlineShop.Properties.Resources.gear;
-            this.pic_Settings.Location = new System.Drawing.Point(16, 551);
+            this.pic_Settings.Location = new System.Drawing.Point(13, 547);
             this.pic_Settings.Margin = new System.Windows.Forms.Padding(4);
             this.pic_Settings.Name = "pic_Settings";
             this.pic_Settings.Size = new System.Drawing.Size(53, 49);
@@ -156,10 +161,11 @@ namespace OnlineShop
             // 
             this.lbl_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_Settings.AutoSize = true;
-            this.lbl_Settings.Location = new System.Drawing.Point(87, 567);
+            this.lbl_Settings.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Settings.Location = new System.Drawing.Point(83, 560);
             this.lbl_Settings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Settings.Name = "lbl_Settings";
-            this.lbl_Settings.Size = new System.Drawing.Size(59, 17);
+            this.lbl_Settings.Size = new System.Drawing.Size(88, 24);
             this.lbl_Settings.TabIndex = 5;
             this.lbl_Settings.Text = "Settings";
             this.lbl_Settings.Click += new System.EventHandler(this.pic_Settings_Click);
@@ -167,27 +173,34 @@ namespace OnlineShop
             // btn_History
             // 
             this.btn_History.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_History.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_History.FlatAppearance.BorderSize = 0;
+            this.btn_History.BackColor = System.Drawing.Color.White;
             this.btn_History.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_History.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_History.Image = global::OnlineShop.Properties.Resources.to_do_list;
+            this.btn_History.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_History.Location = new System.Drawing.Point(0, 287);
             this.btn_History.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_History.Name = "btn_History";
-            this.btn_History.Size = new System.Drawing.Size(237, 57);
+            this.btn_History.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_History.Size = new System.Drawing.Size(237, 50);
             this.btn_History.TabIndex = 4;
             this.btn_History.Text = "History";
             this.btn_History.UseVisualStyleBackColor = false;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
             // 
             // btn_Home
             // 
             this.btn_Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Home.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.BackColor = System.Drawing.Color.White;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Location = new System.Drawing.Point(0, 225);
+            this.btn_Home.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Home.Image = global::OnlineShop.Properties.Resources.home;
+            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.Location = new System.Drawing.Point(0, 219);
             this.btn_Home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(237, 57);
+            this.btn_Home.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_Home.Size = new System.Drawing.Size(237, 50);
             this.btn_Home.TabIndex = 2;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = false;
@@ -196,12 +209,13 @@ namespace OnlineShop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 150);
+            this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(67, 130);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(98, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tech";
+            this.label1.Text = "FaTech";
             // 
             // pictureBox1
             // 
@@ -232,6 +246,14 @@ namespace OnlineShop
             this.settings.Size = new System.Drawing.Size(1333, 615);
             this.settings.TabIndex = 5;
             // 
+            // history
+            // 
+            this.history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.history.Location = new System.Drawing.Point(0, 0);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(1333, 615);
+            this.history.TabIndex = 7;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -241,12 +263,14 @@ namespace OnlineShop
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.settings);
+            this.Controls.Add(this.history);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -272,6 +296,7 @@ namespace OnlineShop
         private Settings settings;
         private Home home;
         private System.Windows.Forms.Button btn_Statis;
+        private History history;
     }
 }
 

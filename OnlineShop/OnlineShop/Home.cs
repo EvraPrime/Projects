@@ -14,6 +14,7 @@ namespace OnlineShop
     public partial class Home : UserControl
     {
         List<Item> items;
+        string Language;
 
         public Home()
         {
@@ -52,7 +53,7 @@ namespace OnlineShop
             Item temp;
             while (rdr.Read())
             {
-                temp = new Item(rdr.GetInt32(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetString(3), rdr.GetDateTime(4));
+                temp = new Item(rdr.GetInt32(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetString(3), rdr.GetDateTime(4), topPanel.BackColor, Language);
                 items.Add(temp);
                 searchBox.Items.Add(rdr.GetString(1));
             }
@@ -144,9 +145,27 @@ namespace OnlineShop
                 MessageBox.Show(str);
             else
             {
-                Cart form = new Cart(x);
+                Cart form = new Cart(x, topPanel.BackColor, Language);
                 form.ShowDialog();
             }
+        }
+
+        public void UpdateView(Color theme, string language)
+        {
+            topPanel.BackColor = theme;
+            btn_Android.BackColor = theme;
+            btn_Apple.BackColor = theme;
+            btn_Laptop.BackColor = theme;
+            btn_TV.BackColor = theme;
+
+            Language = language;
+
+            foreach (Item item in items)
+            {
+                item.UpdateView(theme, language);
+            }
+
+            newItems.Refresh();
         }
     }
 }

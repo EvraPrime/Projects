@@ -16,13 +16,14 @@ namespace OnlineShop
         public string Price;
         public int Amount;
         public int ID;
+        public string Language;
 
         public Selected()
         {
             InitializeComponent();
         }
 
-        public Selected(Image image, int id, string name, string price, int amount)
+        public Selected(Image image, int id, string name, string price, int amount, Color theme, string language)
         {
             InitializeComponent();
 
@@ -31,6 +32,8 @@ namespace OnlineShop
             ItemName = lbl_Name.Text = name;
             Price = lbl_Price.Text = price;
             num_Amount.Value = Amount = amount;
+            BackColor = theme;
+            Language = language;
         }
 
         public void AddAmount(int amount)
@@ -48,7 +51,7 @@ namespace OnlineShop
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             Main.GetMain().RemoveFromCart(this);
-            this.Parent.Parent.Refresh();
+            this.Parent.Parent.Parent.Refresh();
             this.Parent.Controls.Remove(this);
         }
 
@@ -56,7 +59,12 @@ namespace OnlineShop
         {
             Main.GetMain().ChangeAmount(this, (int)num_Amount.Value);
             if (this.Parent != null)
-                this.Parent.Parent.Refresh();
+                this.Parent.Parent.Parent.Refresh();
+        }
+
+        public void UpdateView(Color theme, string language)
+        {
+            BackColor = theme;
         }
     }
 }

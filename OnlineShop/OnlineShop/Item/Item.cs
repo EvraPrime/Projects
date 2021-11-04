@@ -17,13 +17,15 @@ namespace OnlineShop
         public decimal Price;
         public string Type;
         public DateTime Date;
+        public Color Theme;
+        public string Language;
 
         public Item()
         {
             InitializeComponent();
         }
 
-        public Item(int ID, string name, decimal price, string type, DateTime date)
+        public Item(int ID, string name, decimal price, string type, DateTime date, Color theme, string language)
         {
             InitializeComponent();
 
@@ -34,16 +36,20 @@ namespace OnlineShop
             this.Type = type;
             this.Date = date;
             lbl_Date.Text = date.ToShortDateString();
+            Theme = theme;
+            Language = language;
         }
 
         private void Item_Click(object sender, EventArgs e)
         {
-            ItemForm form = new ItemForm(pic_Item.Image, ID, ItemName, Price, Type, Date);
+            ItemForm form = new ItemForm(pic_Item.Image, ID, ItemName, Price, Type, Date, BackColor, Language);
             form.ShowDialog();
         }
 
         private void Item_Load(object sender, EventArgs e)
         {
+            BackColor = Theme;
+
             try
             {
                 pic_Item.Image = Image.FromFile("Images/" + ID.ToString() + ".jpg");
@@ -52,6 +58,11 @@ namespace OnlineShop
             {
                 pic_Item.Image = Image.FromFile("Images/default.jpg");
             }
+        }
+
+        public void UpdateView(Color theme, string language)
+        {
+            BackColor = theme;
         }
     }
 }
