@@ -50,16 +50,37 @@ namespace OnlineShop
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            Main.GetMain().RemoveFromCart(this);
-            this.Parent.Parent.Parent.Refresh();
-            this.Parent.Controls.Remove(this);
+            if (this.Parent != null)
+            {
+                if (this.Parent.Parent.Parent == Order.GetOrder())
+                {
+                    Order.GetOrder().RemoveFromCart(this);
+                    Order.GetOrder().Refresh();
+                }
+                else
+                {
+                    Main.GetMain().RemoveFromCart(this);
+                    this.Parent.Parent.Parent.Refresh();
+                    this.Parent.Controls.Remove(this);
+                }
+            }
         }
 
         private void num_Amount_ValueChanged(object sender, EventArgs e)
         {
-            Main.GetMain().ChangeAmount(this, (int)num_Amount.Value);
             if (this.Parent != null)
+            {
+                if (this.Parent.Parent.Parent == Order.GetOrder())
+                {
+                    Order.GetOrder().ChangeAmount(this, (int)num_Amount.Value);
+                }
+                else
+                {
+                    Main.GetMain().ChangeAmount(this, (int)num_Amount.Value);
+                }
+
                 this.Parent.Parent.Parent.Refresh();
+            }
         }
 
         public void UpdateView(Color theme, string language)

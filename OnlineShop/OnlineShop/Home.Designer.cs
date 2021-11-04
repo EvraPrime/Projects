@@ -42,19 +42,21 @@ namespace OnlineShop
             this.newItems = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pan_Discount = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pic_Cart = new System.Windows.Forms.PictureBox();
             this.btn_TV = new System.Windows.Forms.Button();
             this.btn_Android = new System.Windows.Forms.Button();
             this.pic_Back = new System.Windows.Forms.PictureBox();
             this.btn_Apple = new System.Windows.Forms.Button();
             this.pic_Search = new System.Windows.Forms.PictureBox();
             this.btn_Laptop = new System.Windows.Forms.Button();
-            this.pic_Cart = new System.Windows.Forms.PictureBox();
             this.pan_Search.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.pan_Item.SuspendLayout();
+            this.pan_Discount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Cart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Cart)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
@@ -92,10 +94,10 @@ namespace OnlineShop
             this.pan_Search.Controls.Add(this.searchItems);
             this.pan_Search.Controls.Add(this.searchBox);
             this.pan_Search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pan_Search.Location = new System.Drawing.Point(0, 60);
+            this.pan_Search.Location = new System.Drawing.Point(0, 0);
             this.pan_Search.Margin = new System.Windows.Forms.Padding(4);
             this.pan_Search.Name = "pan_Search";
-            this.pan_Search.Size = new System.Drawing.Size(1116, 553);
+            this.pan_Search.Size = new System.Drawing.Size(1116, 613);
             this.pan_Search.TabIndex = 3;
             // 
             // topPanel
@@ -173,10 +175,10 @@ namespace OnlineShop
             this.pan_Item.Controls.Add(this.newItems);
             this.pan_Item.Controls.Add(this.label1);
             this.pan_Item.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pan_Item.Location = new System.Drawing.Point(0, 0);
+            this.pan_Item.Location = new System.Drawing.Point(0, 60);
             this.pan_Item.Margin = new System.Windows.Forms.Padding(4);
             this.pan_Item.Name = "pan_Item";
-            this.pan_Item.Size = new System.Drawing.Size(1116, 613);
+            this.pan_Item.Size = new System.Drawing.Size(1116, 553);
             this.pan_Item.TabIndex = 5;
             // 
             // flowLayoutPanel3
@@ -225,12 +227,37 @@ namespace OnlineShop
             // 
             // pan_Discount
             // 
+            this.pan_Discount.AutoScroll = true;
+            this.pan_Discount.Controls.Add(this.flowLayoutPanel1);
             this.pan_Discount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_Discount.Location = new System.Drawing.Point(0, 0);
             this.pan_Discount.Margin = new System.Windows.Forms.Padding(4);
             this.pan_Discount.Name = "pan_Discount";
+            this.pan_Discount.Padding = new System.Windows.Forms.Padding(5);
             this.pan_Discount.Size = new System.Drawing.Size(1116, 613);
             this.pan_Discount.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 8);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(679, 0);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // pic_Cart
+            // 
+            this.pic_Cart.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Cart.Image = global::OnlineShop.Properties.Resources.shopping_cart;
+            this.pic_Cart.Location = new System.Drawing.Point(4, 4);
+            this.pic_Cart.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_Cart.Name = "pic_Cart";
+            this.pic_Cart.Size = new System.Drawing.Size(59, 52);
+            this.pic_Cart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Cart.TabIndex = 0;
+            this.pic_Cart.TabStop = false;
+            this.pic_Cart.Click += new System.EventHandler(this.pic_Cart_Click);
             // 
             // btn_TV
             // 
@@ -327,27 +354,14 @@ namespace OnlineShop
             this.btn_Laptop.UseVisualStyleBackColor = true;
             this.btn_Laptop.Click += new System.EventHandler(this.btn_Laptop_Click);
             // 
-            // pic_Cart
-            // 
-            this.pic_Cart.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Cart.Image = global::OnlineShop.Properties.Resources.shopping_cart;
-            this.pic_Cart.Location = new System.Drawing.Point(4, 4);
-            this.pic_Cart.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_Cart.Name = "pic_Cart";
-            this.pic_Cart.Size = new System.Drawing.Size(59, 52);
-            this.pic_Cart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Cart.TabIndex = 0;
-            this.pic_Cart.TabStop = false;
-            this.pic_Cart.Click += new System.EventHandler(this.pic_Cart_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pan_Search);
-            this.Controls.Add(this.topPanel);
-            this.Controls.Add(this.pan_Discount);
             this.Controls.Add(this.pan_Item);
+            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.pan_Search);
+            this.Controls.Add(this.pan_Discount);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
@@ -357,9 +371,10 @@ namespace OnlineShop
             this.topPanel.ResumeLayout(false);
             this.pan_Item.ResumeLayout(false);
             this.pan_Item.PerformLayout();
+            this.pan_Discount.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Cart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Back)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Cart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -386,5 +401,6 @@ namespace OnlineShop
         private System.Windows.Forms.Button btn_TV;
         private System.Windows.Forms.Button btn_Android;
         private System.Windows.Forms.Button btn_Apple;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

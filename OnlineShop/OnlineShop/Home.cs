@@ -14,12 +14,14 @@ namespace OnlineShop
     public partial class Home : UserControl
     {
         List<Item> items;
+        List<Discount> discounts;
         string Language;
 
         public Home()
         {
             InitializeComponent();
             items = new List<Item>();
+            discounts = new List<Discount>();
         }
 
         private void btn_Item_Click(object sender, EventArgs e)
@@ -58,6 +60,20 @@ namespace OnlineShop
                 searchBox.Items.Add(rdr.GetString(1));
             }
 
+            rdr.Close();
+
+            sql = "SELECT * FROM Discount";
+            cmd = new MySqlCommand(sql, con);
+            rdr = cmd.ExecuteReader();
+            Discount discount;
+            while (rdr.Read())
+            {
+                discount = new Discount(rdr.GetString(0), rdr.GetString(1), rdr.GetFloat(2), rdr.GetDateTime(3), rdr.GetDateTime(4), topPanel.BackColor, Language);
+                discounts.Add(discount);
+                pan_Discount.Controls.Add(discount);
+            }
+
+            rdr.Close();
             con.Close();
             newItems.Controls.AddRange(items.ToArray());
         }
@@ -145,7 +161,7 @@ namespace OnlineShop
                 MessageBox.Show(str);
             else
             {
-                Cart form = new Cart(x, topPanel.BackColor, Language);
+                Cart form = new Cart(x, discounts, topPanel.BackColor, Language);
                 form.ShowDialog();
             }
         }
@@ -161,6 +177,11 @@ namespace OnlineShop
             Language = language;
 
             foreach (Item item in items)
+            {
+                item.UpdateView(theme, language);
+            }
+
+            foreach (Discount item in discounts)
             {
                 item.UpdateView(theme, language);
             }

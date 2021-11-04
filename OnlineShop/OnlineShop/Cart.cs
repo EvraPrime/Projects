@@ -14,19 +14,26 @@ namespace OnlineShop
     public partial class Cart : Form
     {
         string Language;
+        List<Discount> Discounts;
 
         public Cart()
         {
             InitializeComponent();
         }
 
-        public Cart(Selected[] selecteds, Color theme, string language)
+        public Cart(Selected[] selecteds, List<Discount> discounts, Color theme, string language)
         {
             InitializeComponent();
-
+            Discounts = new List<Discount>();
+            Discounts = discounts;
             topPanel.BackColor = theme;
             btn_Close.BackColor = theme;
             selectedItems.Controls.AddRange(selecteds);
+
+            foreach (Discount discount in discounts)
+            {
+                cmb_Discount.Items.Add(discount.Code);
+            }
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -40,17 +47,51 @@ namespace OnlineShop
             lbl_Phone.Text = Main.GetMain().Phone;
             lbl_Address.Text = Main.GetMain().Address;
             lbl_Sum.Text = (Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)).ToString();
-            
         }
 
         public override void Refresh()
         {
             base.Refresh();
-            lbl_Sum.Text = (Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)).ToString();
+            if (cmb_Discount.Text == "")
+            {
+                lbl_Discount.Text = "N/a";
+                lbl_Sum.Text = (Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)).ToString();
+                return;
+            }
+
+            foreach (var x in Discounts)
+            {
+                if (cmb_Discount.Text == x.Code)
+                {
+                    lbl_Sum.Text = ((Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)) * (1 - (decimal)x.Percent)).ToString();
+                    lbl_Discount.Text = x.DiscountName;
+                    return;
+                }
+            }
+
+            lbl_Discount.Text = "N/a";
         }
 
         private void btn_Pay_Click(object sender, EventArgs e)
         {
+            if (cmb_Discount.Text != "")
+            {
+                bool inValid = true;
+                foreach (var temp in Discounts)
+                {
+                    if (cmb_Discount.Text == temp.Code)
+                    {
+                        inValid = false;
+                        break;
+                    }
+                }
+                if (inValid)
+                {
+                    MessageBox.Show("Invalid discount code!!!");
+                    return;
+                }
+            }
+
             var x = Main.GetMain();
             string str = "Cart doesn't have any item!!!";
             string s = "Oders success!!!";
@@ -63,8 +104,9 @@ namespace OnlineShop
             {
                 var con = DAL.GetDBConnection();
                 con.Open();
-                string sqlBill = "INSERT INTO Bill (Total, Address, Date, Status) "
-                               + "VALUES (@Total, @Address, @Date, @Status)";
+                string sqlBill = "INSERT INTO Bill (Total, Address, Date, Discount, Status) "
+                               + "VALUES (@Total, @Address, @Date, @Discount, @Status)";
+
                 StringBuilder sqlOrder = new StringBuilder();
                 sqlOrder.Append("INSERT INTO OrderDetail (BillID, ItemID, Amount) VALUES");
 
@@ -73,9 +115,15 @@ namespace OnlineShop
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = sqlBill;
 
-                    cmd.Parameters.Add("@Total", MySqlDbType.Decimal).Value = x.GetTotal() + 10000;
+                    cmd.Parameters.Add("@Total", MySqlDbType.Decimal).Value = decimal.Parse(lbl_Sum.Text);
                     cmd.Parameters.Add("@Address", MySqlDbType.VarChar).Value = lbl_Address.Text;
                     cmd.Parameters.Add("@Date", MySqlDbType.Date).Value = DateTime.Now;
+
+                    if (cmb_Discount.Text != "")
+                        cmd.Parameters.Add("@Discount", MySqlDbType.VarChar).Value = cmb_Discount.Text;
+                    else
+                        cmd.Parameters.Add("@Discount", MySqlDbType.VarChar).Value = null;
+
                     cmd.Parameters.Add("@Status", MySqlDbType.VarChar).Value = "Ordering";
 
                     cmd.ExecuteNonQuery();
@@ -103,6 +151,8 @@ namespace OnlineShop
 
                     MessageBox.Show(s);
                     x.GetCart().Clear();
+
+                    
                     this.Close();
                 }
                 catch (Exception er)
@@ -114,6 +164,28 @@ namespace OnlineShop
                     con.Close();
                 }
             }
+        }
+
+        private void cmb_Discount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Discount.Text == "")
+            {
+                lbl_Discount.Text = "N/a";
+                lbl_Sum.Text = (Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)).ToString();
+                return;
+            }
+
+            foreach (var x in Discounts)
+            {
+                if (cmb_Discount.Text == x.Code)
+                {
+                    lbl_Sum.Text = ((Main.GetMain().GetTotal() + decimal.Parse(lbl_Ship.Text)) * (1 - (decimal)x.Percent)).ToString();
+                    lbl_Discount.Text = x.DiscountName;
+                    return;
+                }
+            }
+
+            lbl_Discount.Text = "N/a";
         }
     }
 }

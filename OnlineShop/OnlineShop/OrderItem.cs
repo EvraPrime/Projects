@@ -15,13 +15,14 @@ namespace OnlineShop
         int ID;
         string Status;
         string Language;
+        string Discount;
 
         public OrderItem()
         {
             InitializeComponent();
         }
 
-        public OrderItem(int id, decimal total, string address, DateTime date, string status)
+        public OrderItem(int id, decimal total, string address, DateTime date, string status, string discount = null)
         {
             InitializeComponent();
             ID = id;
@@ -30,11 +31,12 @@ namespace OnlineShop
             lbl_Address.Text = address;
             lbl_Date.Text = date.ToShortDateString();
             Status = status;
+            Discount = discount;
         }
 
         private void OrderItem_Click(object sender, EventArgs e)
         {
-            Order form = new Order(ID, lbl_Total.Text, lbl_Address.Text, lbl_Date.Text, Status, BackColor, Language);
+            Order form = new Order(ID, lbl_Total.Text, lbl_Address.Text, lbl_Date.Text, Status, BackColor, Language, Discount);
             form.ShowDialog();
         }
 

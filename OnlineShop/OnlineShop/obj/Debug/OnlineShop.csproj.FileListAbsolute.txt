@@ -31,3 +31,4 @@ C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.History.resources
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Order.resources
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.OrderItem.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Discount.resources

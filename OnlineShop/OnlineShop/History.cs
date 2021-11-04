@@ -33,8 +33,11 @@ namespace OnlineShop
             OrderItem temp;
             while (rdr.Read())
             {
-               temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(4));
-               orderItems.Controls.Add(temp);
+                if (rdr.IsDBNull(4))
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5));
+                else
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5), rdr.GetString(4));
+                temp.UpdateView(topPanel.BackColor, Language); orderItems.Controls.Add(temp);
             }
 
             rdr.Close();
@@ -57,7 +60,11 @@ namespace OnlineShop
             OrderItem temp;
             while (rdr.Read())
             {
-                temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(4));
+                if (rdr.IsDBNull(4))
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5));
+                else
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5), rdr.GetString(4));
+                temp.UpdateView(topPanel.BackColor, Language);
                 orderItems.Controls.Add(temp);
             }
 
@@ -81,7 +88,11 @@ namespace OnlineShop
             OrderItem temp;
             while (rdr.Read())
             {
-                temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(4));
+                if (rdr.IsDBNull(4))
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5));
+                else
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5), rdr.GetString(4));
+                temp.UpdateView(topPanel.BackColor, Language);
                 orderItems.Controls.Add(temp);
             }
 
@@ -106,8 +117,11 @@ namespace OnlineShop
 
             while (rdr.Read())
             {
-                temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(4));
-                orderItems.Controls.Add(temp);
+                if (rdr.IsDBNull(4))
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5));
+                else
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5), rdr.GetString(4));
+                temp.UpdateView(topPanel.BackColor, Language); orderItems.Controls.Add(temp);
             }
 
             rdr.Close();
@@ -123,6 +137,34 @@ namespace OnlineShop
             {
                 item.UpdateView(theme, language);
             }
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+            orderItems.Controls.Clear();
+            var con = DAL.GetDBConnection();
+            con.Open();
+
+            string sql = "SELECT * FROM Bill WHERE Status = 'Ordering'";
+
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            OrderItem temp;
+            while (rdr.Read())
+            {
+                if (rdr.IsDBNull(4))
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5));
+                else
+                    temp = new OrderItem(rdr.GetInt32(0), rdr.GetDecimal(1), rdr.GetString(2), rdr.GetDateTime(3), rdr.GetString(5), rdr.GetString(4));
+                temp.UpdateView(topPanel.BackColor, Language); 
+                orderItems.Controls.Add(temp);
+            }
+
+            rdr.Close();
+            rdr.Dispose();
+            con.Close();
         }
     }
 }

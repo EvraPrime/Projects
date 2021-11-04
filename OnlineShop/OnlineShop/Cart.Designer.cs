@@ -45,6 +45,8 @@ namespace OnlineShop
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Pay = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Discount = new System.Windows.Forms.Label();
+            this.cmb_Discount = new System.Windows.Forms.ComboBox();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -178,7 +180,7 @@ namespace OnlineShop
             // 
             this.lbl_Sum.AutoSize = true;
             this.lbl_Sum.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sum.Location = new System.Drawing.Point(388, 408);
+            this.lbl_Sum.Location = new System.Drawing.Point(388, 403);
             this.lbl_Sum.Name = "lbl_Sum";
             this.lbl_Sum.Size = new System.Drawing.Size(65, 22);
             this.lbl_Sum.TabIndex = 13;
@@ -188,7 +190,7 @@ namespace OnlineShop
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(150, 409);
+            this.label8.Location = new System.Drawing.Point(150, 405);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 22);
             this.label8.TabIndex = 12;
@@ -211,6 +213,8 @@ namespace OnlineShop
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbl_Discount);
+            this.panel1.Controls.Add(this.cmb_Discount);
             this.panel1.Controls.Add(this.btn_Pay);
             this.panel1.Controls.Add(this.lbl_Sum);
             this.panel1.Controls.Add(this.selectedItems);
@@ -229,6 +233,28 @@ namespace OnlineShop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 587);
             this.panel1.TabIndex = 15;
+            // 
+            // lbl_Discount
+            // 
+            this.lbl_Discount.AutoSize = true;
+            this.lbl_Discount.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Discount.Location = new System.Drawing.Point(150, 449);
+            this.lbl_Discount.Name = "lbl_Discount";
+            this.lbl_Discount.Size = new System.Drawing.Size(39, 22);
+            this.lbl_Discount.TabIndex = 16;
+            this.lbl_Discount.Text = "N/a";
+            // 
+            // cmb_Discount
+            // 
+            this.cmb_Discount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_Discount.FormattingEnabled = true;
+            this.cmb_Discount.Items.AddRange(new object[] {
+            ""});
+            this.cmb_Discount.Location = new System.Drawing.Point(392, 446);
+            this.cmb_Discount.Name = "cmb_Discount";
+            this.cmb_Discount.Size = new System.Drawing.Size(121, 29);
+            this.cmb_Discount.TabIndex = 15;
+            this.cmb_Discount.SelectedIndexChanged += new System.EventHandler(this.cmb_Discount_SelectedIndexChanged);
             // 
             // Cart
             // 
@@ -270,5 +296,7 @@ namespace OnlineShop
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_Pay;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cmb_Discount;
+        private System.Windows.Forms.Label lbl_Discount;
     }
 }

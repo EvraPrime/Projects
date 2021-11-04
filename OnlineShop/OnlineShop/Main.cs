@@ -82,6 +82,7 @@ namespace OnlineShop
         private void btn_History_Click(object sender, EventArgs e)
         {
             history.BringToFront();
+            history.Refresh();
         }
 
         private void btn_Statis_Click(object sender, EventArgs e)

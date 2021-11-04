@@ -104,6 +104,7 @@ namespace OnlineShop
             // 
             // orderItems
             // 
+            this.orderItems.AutoScroll = true;
             this.orderItems.BackColor = System.Drawing.Color.White;
             this.orderItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderItems.Location = new System.Drawing.Point(0, 60);
