@@ -44,6 +44,7 @@ namespace OnlineShop
             this.home = new OnlineShop.Home();
             this.settings = new OnlineShop.Settings();
             this.history = new OnlineShop.History();
+            this.statis = new OnlineShop.Statis();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
@@ -239,6 +240,7 @@ namespace OnlineShop
             // 
             // settings
             // 
+            this.settings.BackColor = System.Drawing.Color.White;
             this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settings.Location = new System.Drawing.Point(0, 0);
             this.settings.Margin = new System.Windows.Forms.Padding(5);
@@ -254,6 +256,14 @@ namespace OnlineShop
             this.history.Size = new System.Drawing.Size(1333, 615);
             this.history.TabIndex = 7;
             // 
+            // statis
+            // 
+            this.statis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statis.Location = new System.Drawing.Point(0, 0);
+            this.statis.Name = "statis";
+            this.statis.Size = new System.Drawing.Size(1333, 615);
+            this.statis.TabIndex = 8;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -264,6 +274,7 @@ namespace OnlineShop
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.settings);
             this.Controls.Add(this.history);
+            this.Controls.Add(this.statis);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -297,6 +308,7 @@ namespace OnlineShop
         private Home home;
         private System.Windows.Forms.Button btn_Statis;
         private History history;
+        private Statis statis;
     }
 }
 

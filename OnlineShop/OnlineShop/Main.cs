@@ -25,8 +25,8 @@ namespace OnlineShop
             cart = new List<Selected>();
             instance = this;
             UserName = "Nguyen Van A";
-            Phone = "02405353";
-            Address = "132 grgrkarg";
+            Phone = "052345353";
+            Address = "132 Đường Nguyễn Trãi";
         }
 
         public static Main GetMain()
@@ -64,9 +64,26 @@ namespace OnlineShop
             btn_Close.BackColor = theme;
             btn_Max.BackColor = theme;
             btn_Min.BackColor = theme;
+
+            if (language == "eg")
+            {
+                lbl_Settings.Text = "Settings";
+                btn_Home.Text = "Home";
+                btn_History.Text = "History";
+                btn_Statis.Text = "Statis";
+            }   
+            else
+            {
+                lbl_Settings.Text = "Cài đặt";
+                btn_Home.Text = "Trang chủ";
+                btn_History.Text = "Lịch sử";
+                btn_Statis.Text = "Thống kê";
+            }    
+
             home.UpdateView(theme, language);
             settings.UpdateView(theme, language);
             history.UpdateView(theme, language);
+            statis.UpdateView(theme, language);
 
             foreach(Selected item in cart)
             {
@@ -87,7 +104,7 @@ namespace OnlineShop
 
         private void btn_Statis_Click(object sender, EventArgs e)
         {
-
+            statis.BringToFront();
         }
 
         public void AddToCart(Selected item)
@@ -140,7 +157,13 @@ namespace OnlineShop
 
         private void Main_Load(object sender, EventArgs e)
         {
-            UpdateView(Color.Red, "en");
+            UpdateView(Color.Red, "eg");
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+            history.Refresh();
         }
     }
 }

@@ -35,10 +35,10 @@ namespace OnlineShop
             this.rdb_Eng = new System.Windows.Forms.RadioButton();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
-            this.lbl_SDT = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Phone = new System.Windows.Forms.Label();
+            this.lbl_P = new System.Windows.Forms.Label();
+            this.lbl_A = new System.Windows.Forms.Label();
+            this.lbl_N = new System.Windows.Forms.Label();
             this.pic_ProfilePic = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,11 @@ namespace OnlineShop
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Title = new System.Windows.Forms.Label();
+            this.lbl_Change = new System.Windows.Forms.Label();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
+            this.txt_Address = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ProfilePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -90,6 +94,7 @@ namespace OnlineShop
             this.rdb_Viet.TabIndex = 8;
             this.rdb_Viet.Text = "Vietnamese";
             this.rdb_Viet.UseVisualStyleBackColor = true;
+            this.rdb_Viet.CheckedChanged += new System.EventHandler(this.rdb_Viet_CheckedChanged);
             // 
             // rdb_Eng
             // 
@@ -104,6 +109,7 @@ namespace OnlineShop
             this.rdb_Eng.TabStop = true;
             this.rdb_Eng.Text = "English";
             this.rdb_Eng.UseVisualStyleBackColor = true;
+            this.rdb_Eng.CheckedChanged += new System.EventHandler(this.rdb_Eng_CheckedChanged);
             // 
             // lbl_Name
             // 
@@ -125,45 +131,45 @@ namespace OnlineShop
             this.lbl_Address.TabIndex = 12;
             this.lbl_Address.Text = "C";
             // 
-            // lbl_SDT
+            // lbl_Phone
             // 
-            this.lbl_SDT.AutoSize = true;
-            this.lbl_SDT.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SDT.Location = new System.Drawing.Point(445, 168);
-            this.lbl_SDT.Name = "lbl_SDT";
-            this.lbl_SDT.Size = new System.Drawing.Size(21, 19);
-            this.lbl_SDT.TabIndex = 13;
-            this.lbl_SDT.Text = "B";
+            this.lbl_Phone.AutoSize = true;
+            this.lbl_Phone.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phone.Location = new System.Drawing.Point(445, 168);
+            this.lbl_Phone.Name = "lbl_Phone";
+            this.lbl_Phone.Size = new System.Drawing.Size(21, 19);
+            this.lbl_Phone.TabIndex = 13;
+            this.lbl_Phone.Text = "B";
             // 
-            // label2
+            // lbl_P
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(287, 168);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 19);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Phone number:";
+            this.lbl_P.AutoSize = true;
+            this.lbl_P.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_P.Location = new System.Drawing.Point(287, 168);
+            this.lbl_P.Name = "lbl_P";
+            this.lbl_P.Size = new System.Drawing.Size(130, 19);
+            this.lbl_P.TabIndex = 16;
+            this.lbl_P.Text = "Phone number:";
             // 
-            // label3
+            // lbl_A
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 210);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Address";
+            this.lbl_A.AutoSize = true;
+            this.lbl_A.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_A.Location = new System.Drawing.Point(287, 210);
+            this.lbl_A.Name = "lbl_A";
+            this.lbl_A.Size = new System.Drawing.Size(74, 19);
+            this.lbl_A.TabIndex = 15;
+            this.lbl_A.Text = "Address";
             // 
-            // label4
+            // lbl_N
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(287, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 19);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Name:";
+            this.lbl_N.AutoSize = true;
+            this.lbl_N.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_N.Location = new System.Drawing.Point(287, 126);
+            this.lbl_N.Name = "lbl_N";
+            this.lbl_N.Size = new System.Drawing.Size(59, 19);
+            this.lbl_N.TabIndex = 14;
+            this.lbl_N.Text = "Name:";
             // 
             // pic_ProfilePic
             // 
@@ -237,33 +243,73 @@ namespace OnlineShop
             // 
             // topPanel
             // 
-            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Controls.Add(this.lbl_Title);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(877, 60);
             this.topPanel.TabIndex = 17;
             // 
-            // label1
+            // lbl_Title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(30, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Settings";
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Title.Location = new System.Drawing.Point(30, 20);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(88, 24);
+            this.lbl_Title.TabIndex = 0;
+            this.lbl_Title.Text = "Settings";
+            // 
+            // lbl_Change
+            // 
+            this.lbl_Change.AutoSize = true;
+            this.lbl_Change.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Change.ForeColor = System.Drawing.Color.Green;
+            this.lbl_Change.Location = new System.Drawing.Point(406, 250);
+            this.lbl_Change.Name = "lbl_Change";
+            this.lbl_Change.Size = new System.Drawing.Size(103, 19);
+            this.lbl_Change.TabIndex = 18;
+            this.lbl_Change.Text = "Change Info";
+            this.lbl_Change.Click += new System.EventHandler(this.lbl_Change_Click);
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Location = new System.Drawing.Point(449, 123);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(230, 27);
+            this.txt_Name.TabIndex = 19;
+            this.txt_Name.Visible = false;
+            // 
+            // txt_Phone
+            // 
+            this.txt_Phone.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Phone.Location = new System.Drawing.Point(449, 165);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(230, 27);
+            this.txt_Phone.TabIndex = 20;
+            this.txt_Phone.Visible = false;
+            // 
+            // txt_Address
+            // 
+            this.txt_Address.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Address.Location = new System.Drawing.Point(449, 207);
+            this.txt_Address.Name = "txt_Address";
+            this.txt_Address.Size = new System.Drawing.Size(230, 27);
+            this.txt_Address.TabIndex = 21;
+            this.txt_Address.Visible = false;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lbl_Change);
             this.Controls.Add(this.topPanel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbl_SDT);
+            this.Controls.Add(this.lbl_P);
+            this.Controls.Add(this.lbl_A);
+            this.Controls.Add(this.lbl_N);
+            this.Controls.Add(this.lbl_Phone);
             this.Controls.Add(this.lbl_Address);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.pic_ProfilePic);
@@ -276,6 +322,9 @@ namespace OnlineShop
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_Color);
+            this.Controls.Add(this.txt_Name);
+            this.Controls.Add(this.txt_Phone);
+            this.Controls.Add(this.txt_Address);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(877, 632);
@@ -307,12 +356,16 @@ namespace OnlineShop
         private System.Windows.Forms.PictureBox pic_ProfilePic;
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Label lbl_Address;
-        private System.Windows.Forms.Label lbl_SDT;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_Phone;
+        private System.Windows.Forms.Label lbl_P;
+        private System.Windows.Forms.Label lbl_A;
+        private System.Windows.Forms.Label lbl_N;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Title;
+        private System.Windows.Forms.Label lbl_Change;
+        private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.TextBox txt_Address;
     }
 }

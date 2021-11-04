@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,6 @@ namespace OnlineShop
         {
             InitializeComponent();
             ID = id;
-            lbl_ID.Text = id.ToString();
             lbl_Total.Text = total.ToString();
             lbl_Address.Text = address;
             lbl_Date.Text = date.ToShortDateString();
@@ -57,6 +57,27 @@ namespace OnlineShop
                     pic_Order.Image = Image.FromFile("Images/default.jpg");
                     break;
             }
+
+            var con = DAL.GetDBConnection();
+            con.Open();
+
+            var sql = "SELECT `A`.`Amount`, `B`.`Name`" +
+                  "FROM OrderDetail `A`" +
+                  "INNER JOIN Item `B` ON `A`.`ItemID` = `B`.`ID`" +
+                  " WHERE `A`.`BillID` = " + ID.ToString();
+            var cmd = new MySqlCommand(sql, con);
+            var rdr = cmd.ExecuteReader();
+
+            string f = "";
+            while (rdr.Read())
+            {
+                f += rdr.GetString(1) + " x" + rdr.GetInt32(0).ToString() + " ";
+            }
+
+            lbl_ID.Text = f;
+
+            con.Close();
+            Refresh();
         }
 
         public void UpdateView(Color theme, string language)

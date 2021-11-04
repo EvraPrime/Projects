@@ -39,7 +39,7 @@ namespace OnlineShop
             // pic_Item
             // 
             this.pic_Item.Location = new System.Drawing.Point(4, 4);
-            this.pic_Item.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_Item.Margin = new System.Windows.Forms.Padding(4);
             this.pic_Item.Name = "pic_Item";
             this.pic_Item.Size = new System.Drawing.Size(177, 105);
             this.pic_Item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -53,6 +53,7 @@ namespace OnlineShop
             this.lbl_Name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.Location = new System.Drawing.Point(4, 120);
             this.lbl_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Name.MaximumSize = new System.Drawing.Size(150, 0);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(53, 19);
             this.lbl_Name.TabIndex = 1;
@@ -94,7 +95,7 @@ namespace OnlineShop
             this.Controls.Add(this.lbl_Price);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.pic_Item);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Item";
             this.Size = new System.Drawing.Size(185, 181);
             this.Load += new System.EventHandler(this.Item_Load);

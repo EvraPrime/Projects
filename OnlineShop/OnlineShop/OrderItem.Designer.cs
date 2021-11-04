@@ -42,6 +42,7 @@ namespace OnlineShop
             this.lbl_ID.AutoSize = true;
             this.lbl_ID.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ID.Location = new System.Drawing.Point(135, 26);
+            this.lbl_ID.MaximumSize = new System.Drawing.Size(770, 50);
             this.lbl_ID.Name = "lbl_ID";
             this.lbl_ID.Size = new System.Drawing.Size(78, 22);
             this.lbl_ID.TabIndex = 0;

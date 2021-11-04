@@ -30,9 +30,24 @@ namespace OnlineShop
             lbl_Name.Text = name;
             lbl_Price.Text = price.ToString();
             lbl_Date.Text = date.ToShortDateString();
-            Language = language;
             topPanel.BackColor = theme;
             btn_Close.BackColor = theme;
+            Language = language;
+
+            if (language == "eg")
+            {
+                lbl_P.Text = "Price:";
+                lbl_D.Text = "Upload Date;";
+                lbl_A.Text = "Amount:";
+                btn_Save.Text = "Add To Cart";
+            }    
+            else
+            {
+                lbl_P.Text = "Giá";
+                lbl_D.Text = "Ngày đăng:";
+                lbl_A.Text = "Số lượng:";
+                btn_Save.Text = "Thêm vào giỏ hàng";
+            }    
         }
 
         private void btn_Close_Click(object sender, EventArgs e)

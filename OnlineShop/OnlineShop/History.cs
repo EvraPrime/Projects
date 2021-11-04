@@ -133,6 +133,20 @@ namespace OnlineShop
         {
             topPanel.BackColor = theme;
             Language = language;
+
+            if (language == "eg")
+            {
+                btn_Ordering.Text = "Ordering";
+                btn_Delivery.Text = "Shipping";
+                btn_Success.Text = "Success";
+            }
+            else
+            {
+                btn_Ordering.Text = "Đặt hàng";
+                btn_Delivery.Text = "Đang giao hàng";
+                btn_Success.Text = "Đã thành công";
+            }    
+
             foreach(OrderItem item in orderItems.Controls)
             {
                 item.UpdateView(theme, language);

@@ -36,11 +36,11 @@ namespace OnlineShop
             this.pic_Item = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_A = new System.Windows.Forms.Label();
+            this.lbl_D = new System.Windows.Forms.Label();
+            this.lbl_P = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
             this.num_Amount = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Item)).BeginInit();
             this.topPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -124,9 +124,9 @@ namespace OnlineShop
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbl_A);
+            this.panel2.Controls.Add(this.lbl_D);
+            this.panel2.Controls.Add(this.lbl_P);
             this.panel2.Controls.Add(this.btn_Save);
             this.panel2.Controls.Add(this.num_Amount);
             this.panel2.Controls.Add(this.lbl_Date);
@@ -137,6 +137,36 @@ namespace OnlineShop
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 539);
             this.panel2.TabIndex = 9;
+            // 
+            // lbl_A
+            // 
+            this.lbl_A.AutoSize = true;
+            this.lbl_A.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_A.Location = new System.Drawing.Point(70, 355);
+            this.lbl_A.Name = "lbl_A";
+            this.lbl_A.Size = new System.Drawing.Size(76, 19);
+            this.lbl_A.TabIndex = 12;
+            this.lbl_A.Text = "Amount:";
+            // 
+            // lbl_D
+            // 
+            this.lbl_D.AutoSize = true;
+            this.lbl_D.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_D.Location = new System.Drawing.Point(70, 313);
+            this.lbl_D.Name = "lbl_D";
+            this.lbl_D.Size = new System.Drawing.Size(111, 19);
+            this.lbl_D.TabIndex = 11;
+            this.lbl_D.Text = "Upload Date:";
+            // 
+            // lbl_P
+            // 
+            this.lbl_P.AutoSize = true;
+            this.lbl_P.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_P.Location = new System.Drawing.Point(70, 271);
+            this.lbl_P.Name = "lbl_P";
+            this.lbl_P.Size = new System.Drawing.Size(55, 19);
+            this.lbl_P.TabIndex = 10;
+            this.lbl_P.Text = "Price:";
             // 
             // btn_Save
             // 
@@ -172,36 +202,6 @@ namespace OnlineShop
             0,
             0});
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 271);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 19);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Price:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 313);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 19);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Upload Date:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(70, 355);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 19);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Amount:";
-            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -233,8 +233,8 @@ namespace OnlineShop
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.NumericUpDown num_Amount;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_A;
+        private System.Windows.Forms.Label lbl_D;
+        private System.Windows.Forms.Label lbl_P;
     }
 }

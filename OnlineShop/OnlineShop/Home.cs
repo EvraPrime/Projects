@@ -14,6 +14,7 @@ namespace OnlineShop
     public partial class Home : UserControl
     {
         List<Item> items;
+        List<Item> apples;
         List<Discount> discounts;
         string Language;
 
@@ -21,13 +22,35 @@ namespace OnlineShop
         {
             InitializeComponent();
             items = new List<Item>();
+            apples = new List<Item>();
             discounts = new List<Discount>();
         }
 
         private void btn_Item_Click(object sender, EventArgs e)
         {
             newItems.Controls.Clear();
-            newItems.Controls.AddRange(items.ToArray());
+            appleItems.Controls.Clear();
+
+            List<Item> list = items.OrderBy(x => x.Date).ToList();
+            list.Reverse();
+
+            int count = 0;
+            foreach (Item item in list)
+            {
+                newItems.Controls.Add(item);
+                count++;
+                if (count == 5)
+                    break;
+            }
+            count = 0;
+            foreach (Item item in apples)
+            {
+                appleItems.Controls.Add(item);
+                count++;
+                if (count == 5)
+                    break;
+            }
+
             pan_Item.BringToFront();
         }
 
@@ -44,6 +67,7 @@ namespace OnlineShop
 
         private void Home_Load(object sender, EventArgs e)
         {
+            Language = "eg";
             var con = DAL.GetDBConnection();
             con.Open();
 
@@ -57,6 +81,9 @@ namespace OnlineShop
             {
                 temp = new Item(rdr.GetInt32(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetString(3), rdr.GetDateTime(4), topPanel.BackColor, Language);
                 items.Add(temp);
+                if (temp.Type == "Apple")
+                    apples.Add(new Item(rdr.GetInt32(0), rdr.GetString(1), rdr.GetDecimal(2), rdr.GetString(3), rdr.GetDateTime(4), topPanel.BackColor, Language));
+
                 searchBox.Items.Add(rdr.GetString(1));
             }
 
@@ -75,7 +102,25 @@ namespace OnlineShop
 
             rdr.Close();
             con.Close();
-            newItems.Controls.AddRange(items.ToArray());
+
+            List<Item> list = items.OrderBy(x => x.Date).ToList();
+            list.Reverse();
+            int count = 0;
+            foreach (Item item in list)
+            {
+                newItems.Controls.Add(item);
+                count++;
+                if (count == 5)
+                    break;
+            }
+            count = 0;
+            foreach (Item item in apples)
+            {
+                appleItems.Controls.Add(item);
+                count++;
+                if (count == 5)
+                    break;
+            }
         }
 
         private void pic_Search_Click(object sender, EventArgs e)
@@ -84,7 +129,10 @@ namespace OnlineShop
             foreach (Item item in items)
             {
                 if (item.ItemName.Contains(searchBox.Text))
+                {
+                    item.UpdateView(topPanel.BackColor, Language);
                     searchItems.Controls.Add(item);
+                }
             }
             ChangeUI();
         }
@@ -95,7 +143,10 @@ namespace OnlineShop
             foreach (Item item in items)
             {
                 if (item.Type == "Laptop")
+                {
+                    item.UpdateView(topPanel.BackColor, Language);
                     searchItems.Controls.Add(item);
+                }
             }
             ChangeUI();
         }
@@ -106,7 +157,10 @@ namespace OnlineShop
             foreach (Item item in items)
             {
                 if (item.Type == "Android")
+                {
+                    item.UpdateView(topPanel.BackColor, Language);
                     searchItems.Controls.Add(item);
+                }
             }
             ChangeUI();
         }
@@ -117,7 +171,10 @@ namespace OnlineShop
             foreach (Item item in items)
             {
                 if (item.Type == "Apple")
+                {
+                    item.UpdateView(topPanel.BackColor, Language);
                     searchItems.Controls.Add(item);
+                }
             }
             ChangeUI();
         }
@@ -128,13 +185,21 @@ namespace OnlineShop
             foreach (Item item in items)
             {
                 if (item.Type == "TV")
+                {
+                    item.UpdateView(topPanel.BackColor, Language);
                     searchItems.Controls.Add(item);
+                }
             }
             ChangeUI();
         }
 
         private void ChangeUI()
         {
+            foreach (Item item in searchItems.Controls)
+            {
+                item.UpdateView(topPanel.BackColor, Language);
+            }
+
             pic_Back.Visible = true;
             btn_Android.Visible = false;
             btn_Laptop.Visible = false;
@@ -155,7 +220,12 @@ namespace OnlineShop
         private void pic_Cart_Click(object sender, EventArgs e)
         {
             var x = Main.GetMain().GetCart().ToArray();
-            string str = "Cart doesn't have any item!!!";
+            string str;
+
+            if (Language == "eg")
+                str = "Cart doesn't have any item!!!";
+            else
+                str = "Giỏ hàng không có sản phẩm!!!";
 
             if (x.Length == 0)
                 MessageBox.Show(str);
@@ -176,7 +246,28 @@ namespace OnlineShop
 
             Language = language;
 
+            if (language == "eg")
+            {
+                btn_Item.Text = "Items";
+                btn_Discount.Text = "Discounts";
+                btn_Search.Text = "Search";
+                lbl_New.Text = "New";
+            }   
+            else
+            {
+                btn_Item.Text = "Sản phẩm";
+                btn_Discount.Text = "Khuyến mãi";
+                btn_Search.Text = "Tìm kiếm";
+                lbl_New.Text = "Mới";
+
+            }    
+
             foreach (Item item in items)
+            {
+                item.UpdateView(theme, language);
+            }
+
+            foreach (Item item in apples)
             {
                 item.UpdateView(theme, language);
             }

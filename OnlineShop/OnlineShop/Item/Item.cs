@@ -63,6 +63,7 @@ namespace OnlineShop
         public void UpdateView(Color theme, string language)
         {
             BackColor = theme;
+            Language = language;
         }
     }
 }

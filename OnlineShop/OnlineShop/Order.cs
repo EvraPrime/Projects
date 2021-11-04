@@ -16,6 +16,8 @@ namespace OnlineShop
         string Language;
         List<Discount> Discounts;
         int ID;
+        string Status;
+
         private static Order instance;
 
         public Order()
@@ -38,8 +40,37 @@ namespace OnlineShop
             cmb_Discount.Text = discount;
             lbl_Sum.Text = total;
 
-            Discounts = new List<Discount>();
+            if (language == "eg")
+            {
+                lbl_Title.Text = "Order";
+                lbl_A.Text = "Address:";
+                lbl_N.Text = "Name:";
+                lbl_P.Text = "Phone Number:";
+                lbl_F.Text = "Shipping Fee";
+                lbl_T.Text = "Total";
+                btn_Pay.Text = "Order";
+                if (isChanging)
+                    lbl_Change.Text = "Save";
+                else
+                    lbl_Change.Text = "Change";
+            }   
+            else
+            {
+                lbl_Title.Text = "Đơn hàng";
+                lbl_A.Text = "Địa chỉ:";
+                lbl_N.Text = "Tên:";
+                lbl_P.Text = "Số điện thoại:";
+                lbl_F.Text = "Phí vận chuyển";
+                lbl_T.Text = "Thành tiền";
+                btn_Pay.Text = "Đặt hàng";
+                if (isChanging)
+                    lbl_Change.Text = "Lưu";
+                else
+                    lbl_Change.Text = "Thay đổi";
+            }    
 
+            Discounts = new List<Discount>();
+            Status = status;
             instance = this;
         }
 
@@ -55,6 +86,21 @@ namespace OnlineShop
 
         private void Order_Load(object sender, EventArgs e)
         {
+            if (Status == "Shipping")
+            {
+                selectedItems.Enabled = false;
+                cmb_Discount.Enabled = false;
+            }
+
+            if (Status == "Success")
+            {
+                selectedItems.Enabled = false;
+                cmb_Discount.Enabled = false;
+                btn_Pay.Visible = false;
+                btn_Cancel.Visible = false;
+                lbl_Change.Visible = false;
+            }
+
             var con = DAL.GetDBConnection();
             con.Open();
 
@@ -143,6 +189,167 @@ namespace OnlineShop
         private void cmb_Discount_SelectedIndexChanged(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void btn_Pay_Click(object sender, EventArgs e)
+        {
+            if (cmb_Discount.Text != "")
+            {
+                bool inValid = true;
+                foreach (var temp in Discounts)
+                {
+                    if (cmb_Discount.Text == temp.Code)
+                    {
+                        inValid = false;
+                        break;
+                    }
+                }
+                if (inValid)
+                {
+                    MessageBox.Show("Invalid discount code!!!");
+                    return;
+                }
+            }
+
+            if (isChanging)
+            {
+                MessageBox.Show("Please finsih your change!!!");
+                return;
+            }
+
+            var x = Main.GetMain();
+            string str = "Cart doesn't have any item!!!";
+            string s = "Oders success!!!";
+
+            if (selectedItems.Controls.Count == 0)
+            {
+                MessageBox.Show(str);
+            }
+            else
+            {
+                var con = DAL.GetDBConnection();
+                con.Open();
+                string sqlOrder = "DELETE FROM OrderDetail "
+                                + "WHERE `BillID` = " + ID.ToString();
+
+                try
+                {
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = sqlOrder;
+                    cmd.ExecuteNonQuery();
+
+                    if (cmb_Discount.Text == "")
+                    {
+                        sqlOrder = "UPDATE Bill SET Address = '" + lbl_Address.Text + "', Total = " + lbl_Sum.Text +
+                                    " WHERE ID = " + ID.ToString();
+                    }
+                    else
+                    {
+                        sqlOrder = "UPDATE Bill SET Address = '" + lbl_Address.Text + "', Total = " + lbl_Sum.Text + ", Discount = '" + cmb_Discount.Text +
+                                    "' WHERE ID = " + ID.ToString();
+                    }
+
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = sqlOrder;
+                    cmd.ExecuteNonQuery();
+
+                    StringBuilder sql = new StringBuilder();
+                    sql.Append("INSERT INTO OrderDetail (BillID, ItemID, Amount) VALUES");
+
+                    foreach (Selected selected in selectedItems.Controls)
+                    {
+                        sql.AppendFormat("({0}, {1}, {2}) ,", ID, selected.ID, selected.Amount);
+                    }
+                    sql.Remove(sql.Length - 1, 1);
+                    string sqlCommand = sql.ToString();
+                    cmd.CommandText = sqlCommand;
+                    cmd.ExecuteNonQuery();
+
+                    Main.GetMain().Refresh();
+
+                    MessageBox.Show("Change success!!!");
+                    this.Close();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error: " + er + '\n' + er.StackTrace);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Alert!!!", MessageBoxButtons.YesNo);
+            
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            var con = DAL.GetDBConnection();
+            con.Open();
+            string sqlOrder = "DELETE FROM OrderDetail "
+                            + "WHERE `BillID` = " + ID.ToString();
+
+            try
+            {
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sqlOrder;
+
+                cmd.ExecuteNonQuery();
+
+                sqlOrder = "DELETE FROM Bill " +
+                           "WHERE `ID` = " + ID.ToString();
+
+                cmd.CommandText = sqlOrder;
+                cmd.ExecuteNonQuery();
+
+                Main.GetMain().Refresh();
+
+                this.Close();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error: " + er + '\n' + er.StackTrace);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        bool isChanging = false;
+
+        private void lbl_Change_Click(object sender, EventArgs e)
+        {
+            isChanging = !isChanging;
+
+            if (isChanging)
+            {
+                txt_Address.Text = lbl_Address.Text;
+                txt_Address.Visible = true;
+                lbl_Address.Visible = false;
+                if (Language == "eg")
+                    lbl_Change.Text = "Save";
+                else
+                    lbl_Change.Text = "Lưu";
+            }
+            else
+            {
+                txt_Address.Visible = false;
+                lbl_Address.Visible = true;
+
+                Main.GetMain().Address = lbl_Address.Text = txt_Address.Text;
+
+                if (Language == "eg")
+                    lbl_Change.Text = "Change";
+                else
+                    lbl_Change.Text = "Thay đổi";
+            }
         }
     }
 }

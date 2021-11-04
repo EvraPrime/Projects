@@ -16,6 +16,7 @@ namespace OnlineShop
         public string Code;
         public string DiscountName;
         public float Percent;
+        DateTime date;
 
         public Discount()
         {
@@ -29,16 +30,18 @@ namespace OnlineShop
             Percent = percent;
             Code = lbl_Code.Text = code;
             DiscountName = lbl_Name.Text = name;
-            lbl_ExDate.Text = "Expiration Date:  " + exDate.ToShortDateString();
+            lbl_ExDate.Text = "Expiration Date: " + exDate.ToShortDateString();
             lbl_ReDate.Text = reDate.ToShortDateString();
             BackColor = theme;
             Language = language;
+            date = exDate;
         }
 
         public void UpdateView(Color theme, string language)
         {
             BackColor = theme;
             Language = language;
+            lbl_ExDate.Text = "Ngày hết hạn: " + date.ToShortDateString();
         }
     }
 }

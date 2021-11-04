@@ -30,23 +30,25 @@ namespace OnlineShop
         private void InitializeComponent()
         {
             this.selectedItems = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_P = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_N = new System.Windows.Forms.Label();
             this.lbl_Phone = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_A = new System.Windows.Forms.Label();
+            this.lbl_Title = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
             this.lbl_Ship = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_F = new System.Windows.Forms.Label();
             this.lbl_Sum = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_T = new System.Windows.Forms.Label();
             this.btn_Pay = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Change = new System.Windows.Forms.Label();
             this.lbl_Discount = new System.Windows.Forms.Label();
             this.cmb_Discount = new System.Windows.Forms.ComboBox();
+            this.txt_Address = new System.Windows.Forms.TextBox();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,21 +61,21 @@ namespace OnlineShop
             this.selectedItems.Size = new System.Drawing.Size(700, 226);
             this.selectedItems.TabIndex = 0;
             // 
-            // label1
+            // lbl_P
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Phone Number:";
+            this.lbl_P.AutoSize = true;
+            this.lbl_P.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_P.Location = new System.Drawing.Point(152, 45);
+            this.lbl_P.Name = "lbl_P";
+            this.lbl_P.Size = new System.Drawing.Size(155, 22);
+            this.lbl_P.TabIndex = 2;
+            this.lbl_P.Text = "Phone Number:";
             // 
             // lbl_Address
             // 
             this.lbl_Address.AutoSize = true;
             this.lbl_Address.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Address.Location = new System.Drawing.Point(388, 75);
+            this.lbl_Address.Location = new System.Drawing.Point(327, 74);
             this.lbl_Address.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbl_Address.Name = "lbl_Address";
             this.lbl_Address.Size = new System.Drawing.Size(65, 22);
@@ -99,57 +101,57 @@ namespace OnlineShop
             // 
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Name.Location = new System.Drawing.Point(388, 15);
+            this.lbl_Name.Location = new System.Drawing.Point(327, 14);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(65, 22);
             this.lbl_Name.TabIndex = 5;
             this.lbl_Name.Text = "label2";
             // 
-            // label3
+            // lbl_N
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(152, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 22);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Name:";
+            this.lbl_N.AutoSize = true;
+            this.lbl_N.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_N.Location = new System.Drawing.Point(152, 16);
+            this.lbl_N.Name = "lbl_N";
+            this.lbl_N.Size = new System.Drawing.Size(69, 22);
+            this.lbl_N.TabIndex = 4;
+            this.lbl_N.Text = "Name:";
             // 
             // lbl_Phone
             // 
             this.lbl_Phone.AutoSize = true;
             this.lbl_Phone.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Phone.Location = new System.Drawing.Point(388, 45);
+            this.lbl_Phone.Location = new System.Drawing.Point(327, 44);
             this.lbl_Phone.Name = "lbl_Phone";
             this.lbl_Phone.Size = new System.Drawing.Size(65, 22);
             this.lbl_Phone.TabIndex = 7;
             this.lbl_Phone.Text = "label2";
             // 
-            // label5
+            // lbl_A
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(152, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 22);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Address:";
+            this.lbl_A.AutoSize = true;
+            this.lbl_A.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_A.Location = new System.Drawing.Point(152, 74);
+            this.lbl_A.Name = "lbl_A";
+            this.lbl_A.Size = new System.Drawing.Size(95, 22);
+            this.lbl_A.TabIndex = 6;
+            this.lbl_A.Text = "Address:";
             // 
-            // label2
+            // lbl_Title
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 24);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Cart";
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Title.Location = new System.Drawing.Point(29, 8);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(50, 24);
+            this.lbl_Title.TabIndex = 8;
+            this.lbl_Title.Text = "Cart";
             // 
             // topPanel
             // 
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.topPanel.Controls.Add(this.btn_Close);
-            this.topPanel.Controls.Add(this.label2);
+            this.topPanel.Controls.Add(this.lbl_Title);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
@@ -160,41 +162,41 @@ namespace OnlineShop
             // 
             this.lbl_Ship.AutoSize = true;
             this.lbl_Ship.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Ship.Location = new System.Drawing.Point(388, 360);
+            this.lbl_Ship.Location = new System.Drawing.Point(327, 356);
             this.lbl_Ship.Name = "lbl_Ship";
             this.lbl_Ship.Size = new System.Drawing.Size(65, 22);
             this.lbl_Ship.TabIndex = 11;
             this.lbl_Ship.Text = "10000";
             // 
-            // label6
+            // lbl_F
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(150, 361);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 22);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Shipping Fee:";
+            this.lbl_F.AutoSize = true;
+            this.lbl_F.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_F.Location = new System.Drawing.Point(150, 361);
+            this.lbl_F.Name = "lbl_F";
+            this.lbl_F.Size = new System.Drawing.Size(139, 22);
+            this.lbl_F.TabIndex = 10;
+            this.lbl_F.Text = "Shipping Fee:";
             // 
             // lbl_Sum
             // 
             this.lbl_Sum.AutoSize = true;
             this.lbl_Sum.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sum.Location = new System.Drawing.Point(388, 403);
+            this.lbl_Sum.Location = new System.Drawing.Point(327, 399);
             this.lbl_Sum.Name = "lbl_Sum";
             this.lbl_Sum.Size = new System.Drawing.Size(65, 22);
             this.lbl_Sum.TabIndex = 13;
             this.lbl_Sum.Text = "label2";
             // 
-            // label8
+            // lbl_T
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(150, 405);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 22);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Total:";
+            this.lbl_T.AutoSize = true;
+            this.lbl_T.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_T.Location = new System.Drawing.Point(150, 405);
+            this.lbl_T.Name = "lbl_T";
+            this.lbl_T.Size = new System.Drawing.Size(63, 22);
+            this.lbl_T.TabIndex = 12;
+            this.lbl_T.Text = "Total:";
             // 
             // btn_Pay
             // 
@@ -213,26 +215,39 @@ namespace OnlineShop
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbl_Change);
             this.panel1.Controls.Add(this.lbl_Discount);
             this.panel1.Controls.Add(this.cmb_Discount);
             this.panel1.Controls.Add(this.btn_Pay);
             this.panel1.Controls.Add(this.lbl_Sum);
             this.panel1.Controls.Add(this.selectedItems);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lbl_T);
             this.panel1.Controls.Add(this.lbl_Ship);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lbl_F);
             this.panel1.Controls.Add(this.lbl_Phone);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lbl_A);
             this.panel1.Controls.Add(this.lbl_Name);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lbl_N);
             this.panel1.Controls.Add(this.lbl_Address);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbl_P);
+            this.panel1.Controls.Add(this.txt_Address);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 587);
             this.panel1.TabIndex = 15;
+            // 
+            // lbl_Change
+            // 
+            this.lbl_Change.AutoSize = true;
+            this.lbl_Change.ForeColor = System.Drawing.Color.Green;
+            this.lbl_Change.Location = new System.Drawing.Point(580, 74);
+            this.lbl_Change.Name = "lbl_Change";
+            this.lbl_Change.Size = new System.Drawing.Size(82, 22);
+            this.lbl_Change.TabIndex = 17;
+            this.lbl_Change.Text = "Change";
+            this.lbl_Change.Click += new System.EventHandler(this.lbl_Change_Click);
             // 
             // lbl_Discount
             // 
@@ -250,11 +265,19 @@ namespace OnlineShop
             this.cmb_Discount.FormattingEnabled = true;
             this.cmb_Discount.Items.AddRange(new object[] {
             ""});
-            this.cmb_Discount.Location = new System.Drawing.Point(392, 446);
+            this.cmb_Discount.Location = new System.Drawing.Point(331, 442);
             this.cmb_Discount.Name = "cmb_Discount";
-            this.cmb_Discount.Size = new System.Drawing.Size(121, 29);
+            this.cmb_Discount.Size = new System.Drawing.Size(142, 29);
             this.cmb_Discount.TabIndex = 15;
             this.cmb_Discount.SelectedIndexChanged += new System.EventHandler(this.cmb_Discount_SelectedIndexChanged);
+            // 
+            // txt_Address
+            // 
+            this.txt_Address.Location = new System.Drawing.Point(331, 71);
+            this.txt_Address.Name = "txt_Address";
+            this.txt_Address.Size = new System.Drawing.Size(243, 29);
+            this.txt_Address.TabIndex = 18;
+            this.txt_Address.Visible = false;
             // 
             // Cart
             // 
@@ -282,21 +305,23 @@ namespace OnlineShop
 
         private System.Windows.Forms.FlowLayoutPanel selectedItems;
         private System.Windows.Forms.Button btn_Close;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_P;
         private System.Windows.Forms.Label lbl_Address;
         private System.Windows.Forms.Label lbl_Name;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_N;
         private System.Windows.Forms.Label lbl_Phone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_A;
+        private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label lbl_Ship;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_F;
         private System.Windows.Forms.Label lbl_Sum;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_T;
         private System.Windows.Forms.Button btn_Pay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmb_Discount;
         private System.Windows.Forms.Label lbl_Discount;
+        private System.Windows.Forms.Label lbl_Change;
+        private System.Windows.Forms.TextBox txt_Address;
     }
 }

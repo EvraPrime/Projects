@@ -29,6 +29,36 @@ namespace OnlineShop
             topPanel.BackColor = theme;
             btn_Close.BackColor = theme;
             selectedItems.Controls.AddRange(selecteds);
+            Language = language;
+
+            if (language == "eg")
+            {
+                lbl_Title.Text = "Cart";
+                lbl_A.Text = "Address:";
+                lbl_N.Text = "Name:";
+                lbl_P.Text = "Phone Number:";
+                lbl_F.Text = "Shipping Fee";
+                lbl_T.Text = "Total";
+                btn_Pay.Text = "Order";
+                if (isChanging)
+                    lbl_Change.Text = "Save";
+                else
+                    lbl_Change.Text = "Change";
+            }    
+            else
+            {
+                lbl_Title.Text = "Giỏ hàng";
+                lbl_A.Text = "Địa chỉ:";
+                lbl_N.Text = "Tên:";
+                lbl_P.Text = "Số điện thoại:";
+                lbl_F.Text = "Phí vận chuyển";
+                lbl_T.Text = "Thành tiền";
+                btn_Pay.Text = "Đặt hàng";
+                if (isChanging)
+                    lbl_Change.Text = "Lưu";
+                else
+                    lbl_Change.Text = "Thay đổi";
+            }    
 
             foreach (Discount discount in discounts)
             {
@@ -87,14 +117,37 @@ namespace OnlineShop
                 }
                 if (inValid)
                 {
-                    MessageBox.Show("Invalid discount code!!!");
+                    if (Language == "eg")
+                        MessageBox.Show("Invalid discount code!!!");
+                    else
+                        MessageBox.Show("Mã khuyến mãi không hợp lệ!!!");
                     return;
                 }
+            }
+
+            if (isChanging)
+            {
+                if (Language == "eg")
+                    MessageBox.Show("Please finsih your change!!!");
+                else
+                    MessageBox.Show("Xin lưu lại những gì đã thay đổi!!!");
+                return;
             }
 
             var x = Main.GetMain();
             string str = "Cart doesn't have any item!!!";
             string s = "Oders success!!!";
+
+            if (Language == "eg")
+            {
+                str = "Cart doesn't have any item!!!";
+                s = "Oders success!!!";
+            }   
+            else
+            {
+                str = "Giỏ hàng không có vật phẩm!!!";
+                s = "Đặt hàng thành công!!!";
+            }    
 
             if (x.GetCart().Count == 0)
             {
@@ -186,6 +239,36 @@ namespace OnlineShop
             }
 
             lbl_Discount.Text = "N/a";
+        }
+
+        bool isChanging = false;
+
+        private void lbl_Change_Click(object sender, EventArgs e)
+        {
+            isChanging = !isChanging;
+
+            if (isChanging)
+            {
+                txt_Address.Text = lbl_Address.Text;
+                txt_Address.Visible = true;
+                lbl_Address.Visible = false;
+                if (Language == "eg")
+                    lbl_Change.Text = "Save";
+                else
+                    lbl_Change.Text = "Lưu";
+            }
+            else
+            {
+                txt_Address.Visible = false;
+                lbl_Address.Visible = true;
+
+                Main.GetMain().Address = lbl_Address.Text = txt_Address.Text;
+
+                if (Language == "eg")
+                    lbl_Change.Text = "Change";
+                else
+                    lbl_Change.Text = "Thay đổi";
+            }
         }
     }
 }
