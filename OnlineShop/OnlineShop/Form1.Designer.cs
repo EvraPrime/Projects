@@ -144,7 +144,7 @@ namespace OnlineShop
             this.pic_Settings.BackColor = System.Drawing.Color.White;
             this.pic_Settings.Image = global::OnlineShop.Properties.Resources.gear;
             this.pic_Settings.Location = new System.Drawing.Point(16, 551);
-            this.pic_Settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_Settings.Margin = new System.Windows.Forms.Padding(4);
             this.pic_Settings.Name = "pic_Settings";
             this.pic_Settings.Size = new System.Drawing.Size(53, 49);
             this.pic_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +207,7 @@ namespace OnlineShop
             // 
             this.pictureBox1.Image = global::OnlineShop.Properties.Resources.fast_delivery;
             this.pictureBox1.Location = new System.Drawing.Point(40, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(147, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -218,7 +218,7 @@ namespace OnlineShop
             // 
             this.home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home.Location = new System.Drawing.Point(237, 37);
-            this.home.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.home.Margin = new System.Windows.Forms.Padding(5);
             this.home.Name = "home";
             this.home.Size = new System.Drawing.Size(1096, 578);
             this.home.TabIndex = 6;
@@ -227,7 +227,7 @@ namespace OnlineShop
             // 
             this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settings.Location = new System.Drawing.Point(0, 0);
-            this.settings.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.settings.Margin = new System.Windows.Forms.Padding(5);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(1333, 615);
             this.settings.TabIndex = 5;
@@ -241,6 +241,7 @@ namespace OnlineShop
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.settings);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";

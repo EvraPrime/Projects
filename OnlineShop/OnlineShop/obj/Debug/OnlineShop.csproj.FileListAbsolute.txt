@@ -27,3 +27,4 @@ C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.exe
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.pdb
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Selected.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.AssemblyReference.cache

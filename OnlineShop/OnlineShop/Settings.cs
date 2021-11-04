@@ -30,12 +30,21 @@ namespace OnlineShop
         private void Settings_Load(object sender, EventArgs e)
         {
             this.BackColor = theme;
+            lbl_Name.Text = Main.GetMain().UserName;
+            lbl_SDT.Text = Main.GetMain().Phone;
+            lbl_Address.Text = Main.GetMain().Address;
         }
 
         private void pic_Click(object sender, EventArgs e)
         {
             theme = ((PictureBox)sender).BackColor;
             Main.GetMain().UpdateView(theme, language);
+        }
+
+        private void pic_ProfilePic_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+            pic_ProfilePic.Image = Image.FromFile(openFileDialog.FileName);
         }
     }
 }

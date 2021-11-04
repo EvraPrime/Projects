@@ -37,7 +37,7 @@ namespace OnlineShop
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            Main.GetMain().AddToCart(new Selected(pic_Item.Image, lbl_Name.Text, lbl_Price.Text, (int)num_Amount.Value));
+            Main.GetMain().AddToCart(new Selected(pic_Item.Image, ID, lbl_Name.Text, lbl_Price.Text, (int)num_Amount.Value));
             this.Close();
         }
     }

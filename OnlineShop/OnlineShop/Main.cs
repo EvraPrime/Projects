@@ -14,11 +14,19 @@ namespace OnlineShop
     {
         private static Main instance;
         List<Selected> cart;
+
+        public string UserName { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+
         public Main()
         {
             InitializeComponent();
             cart = new List<Selected>();
             instance = this;
+            UserName = "Nguyen Van A";
+            Phone = "02405353";
+            Address = "132 grgrkarg";
         }
 
         public static Main GetMain()
@@ -62,7 +70,45 @@ namespace OnlineShop
 
         public void AddToCart(Selected item)
         {
+            foreach (Selected selected in cart)
+            {
+                if (selected.ItemName == item.ItemName)
+                {
+                    selected.AddAmount(item.Amount);
+                    return;
+                }
+            }
+
             cart.Add(item);
+        }
+
+        public void ChangeAmount(Selected item, int amount)
+        {
+            foreach (Selected selected in cart)
+            {
+                if (selected.ItemName == item.ItemName)
+                {
+                    selected.UpdateAmount(amount);
+                    return;
+                }
+            }
+        }
+
+        public void RemoveFromCart(Selected item)
+        {
+            cart.Remove(item);
+        }
+
+        public decimal GetTotal()
+        {
+            decimal result = 0;
+
+            foreach (Selected selected in cart)
+            {
+                result += decimal.Parse(selected.Price) * (decimal)selected.Amount;
+            }
+
+            return result;
         }
 
         public List<Selected> GetCart()

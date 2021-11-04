@@ -23,6 +23,8 @@ namespace OnlineShop
 
         private void btn_Item_Click(object sender, EventArgs e)
         {
+            newItems.Controls.Clear();
+            newItems.Controls.AddRange(items.ToArray());
             pan_Item.BringToFront();
         }
 
@@ -33,6 +35,7 @@ namespace OnlineShop
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
+            pic_Back_Click(sender, e);
             pan_Search.BringToFront();
         }
 
@@ -53,7 +56,8 @@ namespace OnlineShop
                 items.Add(temp);
                 searchBox.Items.Add(rdr.GetString(1));
             }
-            
+
+            con.Close();
             newItems.Controls.AddRange(items.ToArray());
         }
 
@@ -133,8 +137,16 @@ namespace OnlineShop
 
         private void pic_Cart_Click(object sender, EventArgs e)
         {
-            Cart form = new Cart(Main.GetMain().GetCart().ToArray());
-            form.ShowDialog();
+            var x = Main.GetMain().GetCart().ToArray();
+            string str = "Cart doesn't have any item!!!";
+
+            if (x.Length == 0)
+                MessageBox.Show(str);
+            else
+            {
+                Cart form = new Cart(x);
+                form.ShowDialog();
+            }
         }
     }
 }

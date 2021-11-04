@@ -32,8 +32,8 @@ namespace OnlineShop
             this.num_Amount = new System.Windows.Forms.NumericUpDown();
             this.lbl_Price = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.pic_Item = new System.Windows.Forms.PictureBox();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.pic_Item = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.num_Amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Item)).BeginInit();
             this.SuspendLayout();
@@ -42,11 +42,6 @@ namespace OnlineShop
             // 
             this.num_Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.num_Amount.Location = new System.Drawing.Point(614, 66);
-            this.num_Amount.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.num_Amount.Minimum = new decimal(new int[] {
             1,
             0,
@@ -60,6 +55,7 @@ namespace OnlineShop
             0,
             0,
             0});
+            this.num_Amount.ValueChanged += new System.EventHandler(this.num_Amount_ValueChanged);
             // 
             // lbl_Price
             // 
@@ -81,16 +77,6 @@ namespace OnlineShop
             this.lbl_Name.TabIndex = 10;
             this.lbl_Name.Text = "Name";
             // 
-            // pic_Item
-            // 
-            this.pic_Item.Location = new System.Drawing.Point(12, 14);
-            this.pic_Item.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_Item.Name = "pic_Item";
-            this.pic_Item.Size = new System.Drawing.Size(183, 135);
-            this.pic_Item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Item.TabIndex = 9;
-            this.pic_Item.TabStop = false;
-            // 
             // btn_Delete
             // 
             this.btn_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -103,6 +89,16 @@ namespace OnlineShop
             this.btn_Delete.Text = "button1";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // pic_Item
+            // 
+            this.pic_Item.Location = new System.Drawing.Point(12, 14);
+            this.pic_Item.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_Item.Name = "pic_Item";
+            this.pic_Item.Size = new System.Drawing.Size(183, 135);
+            this.pic_Item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Item.TabIndex = 9;
+            this.pic_Item.TabStop = false;
             // 
             // Selected
             // 

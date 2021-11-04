@@ -38,13 +38,20 @@ namespace OnlineShop
 
         private void Item_Click(object sender, EventArgs e)
         {
-            ItemForm form = new ItemForm(pic_Item.Image, ID, Name, Price, Type, Date);
+            ItemForm form = new ItemForm(pic_Item.Image, ID, ItemName, Price, Type, Date);
             form.ShowDialog();
         }
 
         private void Item_Load(object sender, EventArgs e)
         {
-            pic_Item.Image = Image.FromFile("Images/" + ID.ToString() + ".jpg");
+            try
+            {
+                pic_Item.Image = Image.FromFile("Images/" + ID.ToString() + ".jpg");
+            }
+            catch
+            {
+                pic_Item.Image = Image.FromFile("Images/default.jpg");
+            }
         }
     }
 }

@@ -36,8 +36,8 @@ namespace OnlineShop
             this.pic_Item = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.num_Amount = new System.Windows.Forms.NumericUpDown();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.num_Amount = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Item)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,14 +123,21 @@ namespace OnlineShop
             this.panel2.Size = new System.Drawing.Size(757, 518);
             this.panel2.TabIndex = 9;
             // 
+            // btn_Save
+            // 
+            this.btn_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Location = new System.Drawing.Point(235, 447);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(312, 59);
+            this.btn_Save.TabIndex = 9;
+            this.btn_Save.Text = "Add to Cart";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
             // num_Amount
             // 
             this.num_Amount.Location = new System.Drawing.Point(317, 409);
-            this.num_Amount.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.num_Amount.Minimum = new decimal(new int[] {
             1,
             0,
@@ -144,18 +151,6 @@ namespace OnlineShop
             0,
             0,
             0});
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.FlatAppearance.BorderSize = 0;
-            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Location = new System.Drawing.Point(235, 447);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(312, 59);
-            this.btn_Save.TabIndex = 9;
-            this.btn_Save.Text = "Add to Cart";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // ItemForm
             // 
