@@ -38,7 +38,7 @@ namespace OnlineShop
 
         private void Item_Click(object sender, EventArgs e)
         {
-            ItemForm form = new ItemForm();
+            ItemForm form = new ItemForm(pic_Item.Image, ID, Name, Price, Type, Date);
             form.ShowDialog();
         }
 

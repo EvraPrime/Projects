@@ -12,9 +12,33 @@ namespace OnlineShop
 {
     public partial class ItemForm : Form
     {
+        int ID;
+        string Type;
         public ItemForm()
         {
             InitializeComponent();
+        }
+
+        public ItemForm(Image image, int id, string name, decimal price, string type, DateTime date)
+        {
+            InitializeComponent();
+            ID = id;
+            Type = type;
+            pic_Item.Image = image;
+            lbl_Name.Text = name;
+            lbl_Price.Text = price.ToString();
+            lbl_Date.Text = date.ToShortDateString();
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            Main.GetMain().AddToCart(new Selected(pic_Item.Image, lbl_Name.Text, lbl_Price.Text, (int)num_Amount.Value));
+            this.Close();
         }
     }
 }

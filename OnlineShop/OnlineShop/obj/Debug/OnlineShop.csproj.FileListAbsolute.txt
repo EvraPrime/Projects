@@ -1,3 +1,12 @@
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Cart.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Home.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Item.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.ItemForm.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Main.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Properties.Resources.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Settings.resources
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\OnlineShop.exe.config
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\OnlineShop.exe
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\OnlineShop.pdb
@@ -14,13 +23,7 @@ C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\K4os.Compression.
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\bin\Debug\MySql.Data.xml
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Home.resources
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Item.resources
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Main.resources
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Properties.Resources.resources
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Settings.resources
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.GenerateResource.cache
-C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.CopyComplete
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.exe
 C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.pdb
+C:\Users\Asus\Desktop\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Selected.resources

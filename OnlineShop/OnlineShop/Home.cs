@@ -130,5 +130,11 @@ namespace OnlineShop
             btn_TV.Visible = true;
             searchItems.Controls.Clear();
         }
+
+        private void pic_Cart_Click(object sender, EventArgs e)
+        {
+            Cart form = new Cart(Main.GetMain().GetCart().ToArray());
+            form.ShowDialog();
+        }
     }
 }

@@ -13,10 +13,11 @@ namespace OnlineShop
     public partial class Main : Form
     {
         private static Main instance;
-        
+        List<Selected> cart;
         public Main()
         {
             InitializeComponent();
+            cart = new List<Selected>();
             instance = this;
         }
 
@@ -57,6 +58,16 @@ namespace OnlineShop
         private void btn_Home_Click(object sender, EventArgs e)
         {
             home.BringToFront();
+        }
+
+        public void AddToCart(Selected item)
+        {
+            cart.Add(item);
+        }
+
+        public List<Selected> GetCart()
+        {
+            return cart;
         }
     }
 }
