@@ -49,25 +49,73 @@ namespace OnlineShop
             var cmd = new MySqlCommand(sql, con);
 
             MySqlDataReader rdr = cmd.ExecuteReader();
-            rdr.Read();
-            lbl_Year.Text = rdr.GetInt32(0).ToString();
+            if (rdr.Read())
+                lbl_Year.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Year.Text = 0.ToString();
 
             rdr.Close();
 
             sql = "SELECT COUNT(ID)" + " FROM Bill" + " WHERE MONTH(`Date`) = MONTH(CURDATE())" + " GROUP BY MONTH(Date)";
             cmd = new MySqlCommand(sql, con);
             rdr = cmd.ExecuteReader();
-            rdr.Read();
-            lbl_Month.Text = rdr.GetInt32(0).ToString();
+            if (rdr.Read())
+                lbl_Month.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Month.Text = 0.ToString();
             rdr.Close();
 
             sql = "SELECT COUNT(ID)" + " FROM Bill" + " WHERE DAY(`Date`) = DAY(CURDATE())" + " GROUP BY DAY(Date)";
             cmd = new MySqlCommand(sql, con);
             rdr = cmd.ExecuteReader();
-            rdr.Read();
-            lbl_Day.Text = rdr.GetInt32(0).ToString();
+            if (rdr.Read())
+                lbl_Day.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Day.Text = 0.ToString();
 
             rdr.Close();
+
+            con.Close();
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+
+            var con = DAL.GetDBConnection();
+            con.Open();
+
+            string sql = "SELECT COUNT(ID)" + " FROM Bill" + " WHERE YEAR(`Date`) = YEAR(CURDATE())" + " GROUP BY YEAR(Date)";
+
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+                lbl_Year.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Year.Text = 0.ToString();
+
+            rdr.Close();
+
+            sql = "SELECT COUNT(ID)" + " FROM Bill" + " WHERE MONTH(`Date`) = MONTH(CURDATE())" + " GROUP BY MONTH(Date)";
+            cmd = new MySqlCommand(sql, con);
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+                lbl_Month.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Month.Text = 0.ToString();
+            rdr.Close();
+
+            sql = "SELECT COUNT(ID)" + " FROM Bill" + " WHERE DAY(`Date`) = DAY(CURDATE())" + " GROUP BY DAY(Date)";
+            cmd = new MySqlCommand(sql, con);
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+                lbl_Day.Text = rdr.GetInt32(0).ToString();
+            else
+                lbl_Day.Text = 0.ToString();
+
+            rdr.Close();
+
             con.Close();
         }
     }

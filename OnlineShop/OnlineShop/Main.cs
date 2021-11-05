@@ -105,6 +105,7 @@ namespace OnlineShop
         private void btn_Statis_Click(object sender, EventArgs e)
         {
             statis.BringToFront();
+            statis.Refresh();
         }
 
         public void AddToCart(Selected item)
