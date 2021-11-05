@@ -87,5 +87,11 @@ namespace OnlineShop
         {
             BackColor = theme;
         }
+
+        public void TurnReadOnly()
+        {
+            num_Amount.Enabled = false;
+            btn_Delete.Visible = false;
+        }
     }
 }

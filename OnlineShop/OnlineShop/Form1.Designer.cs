@@ -31,8 +31,6 @@ namespace OnlineShop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Min = new System.Windows.Forms.Button();
-            this.btn_Max = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Statis = new System.Windows.Forms.Button();
@@ -55,8 +53,6 @@ namespace OnlineShop
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Controls.Add(this.btn_Min);
-            this.panel1.Controls.Add(this.btn_Max);
             this.panel1.Controls.Add(this.btn_Close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(237, 0);
@@ -65,36 +61,6 @@ namespace OnlineShop
             this.panel1.Size = new System.Drawing.Size(1096, 37);
             this.panel1.TabIndex = 3;
             // 
-            // btn_Min
-            // 
-            this.btn_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Min.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Min.FlatAppearance.BorderSize = 0;
-            this.btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Min.Image = global::OnlineShop.Properties.Resources.Min;
-            this.btn_Min.Location = new System.Drawing.Point(937, 0);
-            this.btn_Min.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Min.Name = "btn_Min";
-            this.btn_Min.Size = new System.Drawing.Size(53, 37);
-            this.btn_Min.TabIndex = 1;
-            this.btn_Min.UseVisualStyleBackColor = false;
-            this.btn_Min.Click += new System.EventHandler(this.btn_Min_Click);
-            // 
-            // btn_Max
-            // 
-            this.btn_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Max.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Max.FlatAppearance.BorderSize = 0;
-            this.btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Max.Image = global::OnlineShop.Properties.Resources.Max;
-            this.btn_Max.Location = new System.Drawing.Point(990, 0);
-            this.btn_Max.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Max.Name = "btn_Max";
-            this.btn_Max.Size = new System.Drawing.Size(53, 37);
-            this.btn_Max.TabIndex = 2;
-            this.btn_Max.UseVisualStyleBackColor = false;
-            this.btn_Max.Click += new System.EventHandler(this.btn_Max_Click);
-            // 
             // btn_Close
             // 
             this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -102,10 +68,10 @@ namespace OnlineShop
             this.btn_Close.FlatAppearance.BorderSize = 0;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Image = global::OnlineShop.Properties.Resources.Exit;
-            this.btn_Close.Location = new System.Drawing.Point(1043, 0);
+            this.btn_Close.Location = new System.Drawing.Point(1042, 0);
             this.btn_Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(53, 37);
+            this.btn_Close.Size = new System.Drawing.Size(54, 37);
             this.btn_Close.TabIndex = 0;
             this.btn_Close.UseVisualStyleBackColor = false;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
@@ -296,8 +262,6 @@ namespace OnlineShop
         #endregion
 
         private System.Windows.Forms.Button btn_Close;
-        private System.Windows.Forms.Button btn_Min;
-        private System.Windows.Forms.Button btn_Max;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;

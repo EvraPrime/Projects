@@ -53,7 +53,7 @@ namespace OnlineShop
             this.lbl_Name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.Location = new System.Drawing.Point(4, 120);
             this.lbl_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Name.MaximumSize = new System.Drawing.Size(150, 0);
+            this.lbl_Name.MaximumSize = new System.Drawing.Size(180, 0);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(53, 19);
             this.lbl_Name.TabIndex = 1;
@@ -62,10 +62,10 @@ namespace OnlineShop
             // 
             // lbl_Price
             // 
-            this.lbl_Price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Price.AutoSize = true;
             this.lbl_Price.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Price.Location = new System.Drawing.Point(114, 146);
+            this.lbl_Price.Location = new System.Drawing.Point(90, 162);
             this.lbl_Price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Price.Name = "lbl_Price";
             this.lbl_Price.Size = new System.Drawing.Size(49, 19);
@@ -75,11 +75,11 @@ namespace OnlineShop
             // 
             // lbl_Date
             // 
-            this.lbl_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Date.AutoSize = true;
             this.lbl_Date.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Date.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Date.Location = new System.Drawing.Point(100, 165);
+            this.lbl_Date.Location = new System.Drawing.Point(104, 181);
             this.lbl_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(41, 15);
@@ -97,7 +97,7 @@ namespace OnlineShop
             this.Controls.Add(this.pic_Item);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Item";
-            this.Size = new System.Drawing.Size(185, 181);
+            this.Size = new System.Drawing.Size(185, 200);
             this.Load += new System.EventHandler(this.Item_Load);
             this.Click += new System.EventHandler(this.Item_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Item)).EndInit();

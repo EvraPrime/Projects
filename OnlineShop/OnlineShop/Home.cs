@@ -43,7 +43,10 @@ namespace OnlineShop
                     break;
             }
             count = 0;
-            foreach (Item item in apples)
+            list = new List<Item>();
+            list = apples.OrderBy(x => x.Date).ToList();
+            list.Reverse();
+            foreach (Item item in list)
             {
                 appleItems.Controls.Add(item);
                 count++;
@@ -114,7 +117,10 @@ namespace OnlineShop
                     break;
             }
             count = 0;
-            foreach (Item item in apples)
+            list = new List<Item>();
+            list = apples.OrderBy(x => x.Date).ToList();
+            list.Reverse();
+            foreach (Item item in list)
             {
                 appleItems.Controls.Add(item);
                 count++;

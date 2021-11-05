@@ -62,8 +62,6 @@ namespace OnlineShop
             panel1.BackColor = theme;
             panel2.BackColor = theme;
             btn_Close.BackColor = theme;
-            btn_Max.BackColor = theme;
-            btn_Min.BackColor = theme;
 
             if (language == "eg")
             {

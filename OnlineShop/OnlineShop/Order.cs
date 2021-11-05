@@ -48,7 +48,7 @@ namespace OnlineShop
                 lbl_P.Text = "Phone Number:";
                 lbl_F.Text = "Shipping Fee";
                 lbl_T.Text = "Total";
-                btn_Pay.Text = "Order";
+                btn_Pay.Text = "Save";
                 if (isChanging)
                     lbl_Change.Text = "Save";
                 else
@@ -62,7 +62,7 @@ namespace OnlineShop
                 lbl_P.Text = "Số điện thoại:";
                 lbl_F.Text = "Phí vận chuyển";
                 lbl_T.Text = "Thành tiền";
-                btn_Pay.Text = "Đặt hàng";
+                btn_Pay.Text = "Lưu";
                 if (isChanging)
                     lbl_Change.Text = "Lưu";
                 else
@@ -86,21 +86,6 @@ namespace OnlineShop
 
         private void Order_Load(object sender, EventArgs e)
         {
-            if (Status == "Shipping")
-            {
-                selectedItems.Enabled = false;
-                cmb_Discount.Enabled = false;
-            }
-
-            if (Status == "Success")
-            {
-                selectedItems.Enabled = false;
-                cmb_Discount.Enabled = false;
-                btn_Pay.Visible = false;
-                btn_Cancel.Visible = false;
-                lbl_Change.Visible = false;
-            }
-
             var con = DAL.GetDBConnection();
             con.Open();
 
@@ -131,6 +116,28 @@ namespace OnlineShop
             }
 
             con.Close();
+
+            if (Status == "Shipping")
+            {
+                foreach (Selected item in selectedItems.Controls)
+                {
+                    item.TurnReadOnly();
+                }
+                cmb_Discount.Enabled = false;
+            }
+
+            if (Status == "Success")
+            {
+                foreach (Selected item in selectedItems.Controls)
+                {
+                    item.TurnReadOnly();
+                }
+                cmb_Discount.Enabled = false;
+                btn_Pay.Visible = false;
+                btn_Cancel.Visible = false;
+                lbl_Change.Visible = false;
+            }
+
             Refresh();
         }
 
@@ -219,7 +226,7 @@ namespace OnlineShop
 
             var x = Main.GetMain();
             string str = "Cart doesn't have any item!!!";
-            string s = "Oders success!!!";
+            string s = "Change success!!!";
 
             if (selectedItems.Controls.Count == 0)
             {

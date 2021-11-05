@@ -37,6 +37,9 @@ namespace OnlineShop
             this.lbl_Year = new System.Windows.Forms.Label();
             this.lbl_Day = new System.Windows.Forms.Label();
             this.lbl_Month = new System.Windows.Forms.Label();
+            this.lbl_MonYear = new System.Windows.Forms.Label();
+            this.lbl_MonDay = new System.Windows.Forms.Label();
+            this.lbl_MonMonth = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,10 +122,43 @@ namespace OnlineShop
             this.lbl_Month.TabIndex = 22;
             this.lbl_Month.Text = "Statis";
             // 
+            // lbl_MonYear
+            // 
+            this.lbl_MonYear.AutoSize = true;
+            this.lbl_MonYear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_MonYear.Location = new System.Drawing.Point(478, 285);
+            this.lbl_MonYear.Name = "lbl_MonYear";
+            this.lbl_MonYear.Size = new System.Drawing.Size(64, 24);
+            this.lbl_MonYear.TabIndex = 27;
+            this.lbl_MonYear.Text = "Statis";
+            // 
+            // lbl_MonDay
+            // 
+            this.lbl_MonDay.AutoSize = true;
+            this.lbl_MonDay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_MonDay.Location = new System.Drawing.Point(478, 175);
+            this.lbl_MonDay.Name = "lbl_MonDay";
+            this.lbl_MonDay.Size = new System.Drawing.Size(64, 24);
+            this.lbl_MonDay.TabIndex = 26;
+            this.lbl_MonDay.Text = "Statis";
+            // 
+            // lbl_MonMonth
+            // 
+            this.lbl_MonMonth.AutoSize = true;
+            this.lbl_MonMonth.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_MonMonth.Location = new System.Drawing.Point(478, 230);
+            this.lbl_MonMonth.Name = "lbl_MonMonth";
+            this.lbl_MonMonth.Size = new System.Drawing.Size(64, 24);
+            this.lbl_MonMonth.TabIndex = 25;
+            this.lbl_MonMonth.Text = "Statis";
+            // 
             // Statis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_MonYear);
+            this.Controls.Add(this.lbl_MonDay);
+            this.Controls.Add(this.lbl_MonMonth);
             this.Controls.Add(this.lbl_Year);
             this.Controls.Add(this.lbl_Day);
             this.Controls.Add(this.lbl_Month);
@@ -150,5 +186,8 @@ namespace OnlineShop
         private System.Windows.Forms.Label lbl_Year;
         private System.Windows.Forms.Label lbl_Day;
         private System.Windows.Forms.Label lbl_Month;
+        private System.Windows.Forms.Label lbl_MonYear;
+        private System.Windows.Forms.Label lbl_MonDay;
+        private System.Windows.Forms.Label lbl_MonMonth;
     }
 }

@@ -19,8 +19,8 @@ INSERT INTO Item(ID,Name,Price,Type,Date) VALUES
 (1, 'Lenovo 14" ThinkPad E14 Gen 2 Multi-Touch Laptop', 26000000, 'Laptop', '2021/01/03'),
 (2, 'Sony Google TV X80AJ', 10000000, 'TV', '2020-03-06'),
 (3, 'Điện thoại iPhone 13 Pro Max', 30000000, 'Apple', '2021-11-02'),
-(4, 'Samsung Galaxy S21 Ultra 5G', 22000000, 'Android', '2021-11-01'),
-(5, 'LG G7 ThinQ 64GB', 25000000, 'Android', '2021-11-01'),
+(4, 'Samsung Galaxy S21 Ultra 5G', 22000000, 'Android', '2021-11-03'),
+(5, 'LG G7 ThinQ 64GB', 25000000, 'Android', '2021-11-04'),
 (6, 'Laptop Lenovo Ideapad Slim 5', 27000000, 'Laptop', '2021/02/13'),
 (7, 'ASUS 15.6" Republic of Gamers Strix G15', 30000000, 'Laptop', '2021/01/03'),
 (8, 'Laptop Microsoft Surface Go', 29000000, 'Laptop', '2021/01/03'),
@@ -32,20 +32,20 @@ INSERT INTO Item(ID,Name,Price,Type,Date) VALUES
 (14, 'Android Tivi Casper 4K 50', 7000000, 'TV', '2020-03-06'),
 (15, 'Smart Tivi LG 4K 49 inch', 11000000, 'TV', '2020-03-06'),
 (16, 'Smart Tivi LG 4K 55 inch', 8000000, 'TV', '2020-03-06'),
-(17, 'iPhone 11 64GB', 16000000, 'Apple', '2021-11-02'),
-(18, 'MacBook Pro 14 inch 2021', 55000000, 'Apple', '2021-11-02'),
-(19, 'MacBook Air 2021', 22000000, 'Apple', '2021-11-02'),
-(20, 'iWatch Series 6', 400000, 'Apple', '2021-11-02'),
-(21, 'Apple Watch Milan', 500000, 'Apple', '2021-11-02'),
-(22, 'Google’s Pixel 5a 5G', 30000000, 'Android', '2021-11-01'),
-(23, 'Samsung Galaxy S21 5G', 35000000, 'Android', '2021-11-01'),
-(24, 'LG G6 Plus', 40000000, 'Android', '2021-11-01'),
-(25, 'Motorola G6 Play', 50000000, 'Android', '2021-11-01'),
-(26, 'Sony Xperia 1', 29000000, 'Android', '2021-11-01'),
-(27, 'Samsung Galaxy Note 20 Ultra', 22000000, 'Android', '2021-11-01'),
-(28, ' Xiaomi Mi 11', 10000000, 'Android', '2021-11-01'),
-(29, 'Laptop MSI GL75 9SD-035VN', 25000000, 'Laptop', '2021/01/03'),
-(30, 'ASUS 14" L410 Laptop', 26000000, 'Laptop', '2021-01-03');
+(17, 'iPhone 11 64GB', 16000000, 'Apple', '2021-10-02'),
+(18, 'MacBook Pro 14 inch 2021', 55000000, 'Apple', '2021-10-02'),
+(19, 'MacBook Air 2021', 22000000, 'Apple', '2021-10-05'),
+(20, 'iWatch Series 6', 400000, 'Apple', '2021-10-09'),
+(21, 'Apple Watch Milan', 500000, 'Apple', '2021-10-02'),
+(22, 'Google’s Pixel 5a 5G', 30000000, 'Android', '2021-10-01'),
+(23, 'Samsung Galaxy S21 5G', 35000000, 'Android', '2021-09-01'),
+(24, 'LG G6 Plus', 40000000, 'Android', '2021-09-01'),
+(25, 'Motorola G6 Play', 50000000, 'Android', '2021-08-01'),
+(26, 'Sony Xperia 1', 29000000, 'Android', '2021-07-01'),
+(27, 'Samsung Galaxy Note 20 Ultra', 22000000, 'Android', '2021-06-01'),
+(28, ' Xiaomi Mi 11', 10000000, 'Android', '2021-06-01'),
+(29, 'Laptop MSI GL75 9SD-035VN', 25000000, 'Laptop', '2021/07/03'),
+(30, 'ASUS 14" L410 Laptop', 26000000, 'Laptop', '2021-08-03');
 
 
 
@@ -83,6 +83,11 @@ CREATE TABLE IF NOT EXISTS `OnlineShop`.`Bill` (
     FOREIGN KEY (`Discount`)
     REFERENCES `Onlineshop`.`Discount` (`Code`));
   
+SELECT COUNT(ID)
+FROM Bill
+WHERE DAY(Date) = YEAR(curdate())
+GROUP BY YEAR(Date);
+  
 DROP TABLE IF EXISTS `Onlineshop`.`OrderDetail`;
 CREATE TABLE IF NOT EXISTS `OnlineShop`.`OrderDetail` (
   `BillID` INT NOT NULL,
@@ -102,5 +107,8 @@ DELETE FROM Bill;
 SELECT * FROM Bill;
 SELECT * FROM OrderDetail;
 
+SELECT COUNT(ID) FROM Bill WHERE DAY(`Date`) = DAY(CURDATE()) GROUP BY DAY(Date);
+INSERT INTO Bill(ID, Total, Address, Date, Status) VALUES
+(156, 1000000, '123 Nguyễn Trãi', '2021-01-01', 'Success');
 UPDATE Bill SET Status = 'Shipping' WHERE ID = 1;
 UPDATE Bill SET Status = 'Success' WHERE ID = 2;
