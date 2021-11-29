@@ -32,14 +32,14 @@ namespace Dictionary
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Game = new System.Windows.Forms.Button();
+            this.btnGame = new System.Windows.Forms.Button();
             this.btnTranslate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContent = new System.Windows.Forms.Panel();
+            this.game = new Dictionary.Game();
             this.search = new Dictionary.Search();
             this.translate = new Dictionary.Translate();
-            this.game1 = new Dictionary.Game();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +66,7 @@ namespace Dictionary
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Game);
+            this.panel2.Controls.Add(this.btnGame);
             this.panel2.Controls.Add(this.btnTranslate);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -76,14 +76,15 @@ namespace Dictionary
             this.panel2.Size = new System.Drawing.Size(200, 604);
             this.panel2.TabIndex = 1;
             // 
-            // Game
+            // btnGame
             // 
-            this.Game.Location = new System.Drawing.Point(43, 416);
-            this.Game.Name = "Game";
-            this.Game.Size = new System.Drawing.Size(125, 51);
-            this.Game.TabIndex = 3;
-            this.Game.Text = "Game";
-            this.Game.UseVisualStyleBackColor = true;
+            this.btnGame.Location = new System.Drawing.Point(43, 416);
+            this.btnGame.Name = "btnGame";
+            this.btnGame.Size = new System.Drawing.Size(125, 51);
+            this.btnGame.TabIndex = 3;
+            this.btnGame.Text = "Game";
+            this.btnGame.UseVisualStyleBackColor = true;
+            this.btnGame.Click += new System.EventHandler(this.btnGame_Click);
             // 
             // btnTranslate
             // 
@@ -118,7 +119,7 @@ namespace Dictionary
             // panContent
             // 
             this.panContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panContent.Controls.Add(this.game1);
+            this.panContent.Controls.Add(this.game);
             this.panContent.Controls.Add(this.search);
             this.panContent.Controls.Add(this.translate);
             this.panContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -126,6 +127,14 @@ namespace Dictionary
             this.panContent.Name = "panContent";
             this.panContent.Size = new System.Drawing.Size(1059, 604);
             this.panContent.TabIndex = 2;
+            // 
+            // game
+            // 
+            this.game.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.game.Location = new System.Drawing.Point(0, 0);
+            this.game.Name = "game";
+            this.game.Size = new System.Drawing.Size(1057, 602);
+            this.game.TabIndex = 2;
             // 
             // search
             // 
@@ -142,14 +151,6 @@ namespace Dictionary
             this.translate.Name = "translate";
             this.translate.Size = new System.Drawing.Size(1057, 602);
             this.translate.TabIndex = 1;
-            // 
-            // game1
-            // 
-            this.game1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.game1.Location = new System.Drawing.Point(0, 0);
-            this.game1.Name = "game1";
-            this.game1.Size = new System.Drawing.Size(1057, 602);
-            this.game1.TabIndex = 2;
             // 
             // Main
             // 
@@ -178,11 +179,11 @@ namespace Dictionary
         private Search search;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button Game;
+        private System.Windows.Forms.Button btnGame;
         private System.Windows.Forms.Button btnTranslate;
         private System.Windows.Forms.Button btnSearch;
         private Translate translate;
-        private Game game1;
+        private Game game;
     }
 }
 

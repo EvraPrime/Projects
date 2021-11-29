@@ -33,5 +33,10 @@ namespace Dictionary
         {
             translate.BringToFront();
         }
+
+        private void btnGame_Click(object sender, EventArgs e)
+        {
+            game.BringToFront();
+        }
     }
 }
