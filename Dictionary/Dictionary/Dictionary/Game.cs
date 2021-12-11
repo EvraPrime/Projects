@@ -17,22 +17,23 @@ namespace Dictionary
         MySqlConnection con;
         List<string> datas;
         List<string> rp;
-        bool isRandom = true;
+        int countDown = 10;
+
+
         public Game()
         {
             InitializeComponent();
             con = DBUtils.GetDBConnection();
             datas = new List<string>();
             rp = new List<string>();
-            GetData();
-            NextWord();
+            Collapse();
         }
 
         void GetData()
         {
             datas.Clear();
             rp.Clear();
-            string query = "select * from tbl_edict";
+            string query = "select * from dictionary";
             MySqlCommand cmd = new MySqlCommand(query, con);
             MySqlDataReader myReader;
             try
@@ -42,6 +43,10 @@ namespace Dictionary
                 while (myReader.Read())
                 {
                     string sword = myReader.GetString("word");
+
+                    if (sword.Length <= 1 || sword.IndexOfAny(new char[] { '.', '-', '_', ',', '\'', '\"', ' ' }) >= 0)
+                        continue;
+
                     datas.Add(sword);
                 }
             }
@@ -65,10 +70,12 @@ namespace Dictionary
                 }
                 else if (rp.Exists(str => str == textBox1.Text))
                 {
+                    Collapse();
                     MessageBox.Show("Word already listed!!!");
                 }    
                 else
                 {
+                    Collapse();
                     MessageBox.Show("Word doesn't exits!!!");
                 }
 
@@ -79,20 +86,70 @@ namespace Dictionary
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
-            }    
+            }
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.Handled = true;
+            }
         }
 
         void NextWord()
         {
-            if (isRandom)
+            Random random = new Random();
+
+            if (textBox1.Text.Length == 0)
             {
-                isRandom = false;
-                Random random = new Random();
-                textBox1.Text = datas[random.Next(0, datas.Count)];
-            }    
-            label1.Text = datas.Find(str => str.StartsWith(textBox1.Text.Last().ToString()));
+                label1.Text = datas[random.Next(datas.Count)];
+            }
+            else
+            {
+                var temp = datas.FindAll(str => str.StartsWith(textBox1.Text.Last().ToString()));
+                label1.Text = temp[random.Next(temp.Count)];
+            }
+
             datas.Remove(label1.Text);
             textBox1.Text = label1.Text.Last().ToString();
+            textBox1.SelectionStart = 1;
+            countDown = 11;
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            Review();
+        }
+
+        void Collapse()
+        {
+            btn_Start.Visible = true;
+            textBox1.Text = "";
+            textBox1.Visible = false;
+            label1.Visible = false;
+            lbl_CountDown.Visible = false;
+            timer.Stop();
+            countDown = 10;
+        }
+
+        void Review()
+        {
+            GetData();
+            btn_Start.Visible = false;
+            textBox1.Visible = true;
+            label1.Visible = true;
+            lbl_CountDown.Visible = true;
+            timer.Start();
+            NextWord();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            countDown--;
+            if (countDown < 0)
+            {
+                Collapse();
+                MessageBox.Show("Out of time!!!");
+            }    
+
+            lbl_CountDown.Text = countDown.ToString();
         }
     }
 }
