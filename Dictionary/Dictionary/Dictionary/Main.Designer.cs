@@ -31,15 +31,13 @@ namespace Dictionary
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pan_Navigation = new System.Windows.Forms.Panel();
+            this.pic_Settings = new System.Windows.Forms.PictureBox();
             this.lbl_Settings = new System.Windows.Forms.Label();
             this.btn_Game = new System.Windows.Forms.Button();
             this.btn_Translate = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
+            this.pic_Image = new System.Windows.Forms.PictureBox();
             this.pan_Content = new System.Windows.Forms.Panel();
-            this.settings = new Dictionary.Settings();
-            this.game = new Dictionary.Game();
-            this.translate = new Dictionary.Translate();
-            this.search = new Dictionary.Search();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.pan_Title = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
@@ -47,14 +45,16 @@ namespace Dictionary
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pic_Icon = new System.Windows.Forms.PictureBox();
-            this.pic_Settings = new System.Windows.Forms.PictureBox();
-            this.pic_Image = new System.Windows.Forms.PictureBox();
+            this.settings = new Dictionary.Settings();
+            this.game = new Dictionary.Game();
+            this.translate = new Dictionary.Translate();
+            this.search = new Dictionary.Search();
             this.pan_Navigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.pan_Content.SuspendLayout();
             this.pan_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // pan_Navigation
@@ -73,6 +73,17 @@ namespace Dictionary
             this.pan_Navigation.Size = new System.Drawing.Size(156, 505);
             this.pan_Navigation.TabIndex = 1;
             // 
+            // pic_Settings
+            // 
+            this.pic_Settings.Image = global::Dictionary.Properties.Resources.setting;
+            this.pic_Settings.Location = new System.Drawing.Point(19, 450);
+            this.pic_Settings.Name = "pic_Settings";
+            this.pic_Settings.Size = new System.Drawing.Size(40, 40);
+            this.pic_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Settings.TabIndex = 5;
+            this.pic_Settings.TabStop = false;
+            this.pic_Settings.Click += new System.EventHandler(this.pic_Settings_Click);
+            // 
             // lbl_Settings
             // 
             this.lbl_Settings.AutoSize = true;
@@ -86,36 +97,57 @@ namespace Dictionary
             // 
             // btn_Game
             // 
-            this.btn_Game.Location = new System.Drawing.Point(32, 338);
+            this.btn_Game.FlatAppearance.BorderSize = 0;
+            this.btn_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Game.Location = new System.Drawing.Point(0, 304);
             this.btn_Game.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Game.Name = "btn_Game";
-            this.btn_Game.Size = new System.Drawing.Size(94, 41);
+            this.btn_Game.Size = new System.Drawing.Size(156, 41);
             this.btn_Game.TabIndex = 3;
             this.btn_Game.Text = "Game";
             this.btn_Game.UseVisualStyleBackColor = true;
             this.btn_Game.Click += new System.EventHandler(this.btn_Game_Click);
+            this.btn_Game.Paint += new System.Windows.Forms.PaintEventHandler(this.btn_Game_Paint);
             // 
             // btn_Translate
             // 
-            this.btn_Translate.Location = new System.Drawing.Point(32, 272);
+            this.btn_Translate.FlatAppearance.BorderSize = 0;
+            this.btn_Translate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Translate.Location = new System.Drawing.Point(0, 232);
             this.btn_Translate.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Translate.Name = "btn_Translate";
-            this.btn_Translate.Size = new System.Drawing.Size(94, 41);
+            this.btn_Translate.Size = new System.Drawing.Size(156, 41);
             this.btn_Translate.TabIndex = 2;
             this.btn_Translate.Text = "Translate";
             this.btn_Translate.UseVisualStyleBackColor = true;
             this.btn_Translate.Click += new System.EventHandler(this.btn_Translate_Click);
+            this.btn_Translate.Paint += new System.Windows.Forms.PaintEventHandler(this.btn_Translate_Paint);
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(8, 180);
+            this.btn_Search.FlatAppearance.BorderSize = 0;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Location = new System.Drawing.Point(0, 161);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(94, 41);
+            this.btn_Search.Size = new System.Drawing.Size(156, 41);
             this.btn_Search.TabIndex = 1;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            this.btn_Search.Paint += new System.Windows.Forms.PaintEventHandler(this.btn_Search_Paint);
+            // 
+            // pic_Image
+            // 
+            this.pic_Image.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
+            this.pic_Image.Location = new System.Drawing.Point(32, 21);
+            this.pic_Image.Margin = new System.Windows.Forms.Padding(2);
+            this.pic_Image.Name = "pic_Image";
+            this.pic_Image.Size = new System.Drawing.Size(82, 76);
+            this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Image.TabIndex = 0;
+            this.pic_Image.TabStop = false;
             // 
             // pan_Content
             // 
@@ -133,42 +165,6 @@ namespace Dictionary
             this.pan_Content.Name = "pan_Content";
             this.pan_Content.Size = new System.Drawing.Size(730, 468);
             this.pan_Content.TabIndex = 2;
-            // 
-            // settings
-            // 
-            this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settings.Location = new System.Drawing.Point(0, 0);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(730, 468);
-            this.settings.TabIndex = 4;
-            // 
-            // game
-            // 
-            this.game.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.game.Location = new System.Drawing.Point(0, 0);
-            this.game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.game.Name = "game";
-            this.game.Size = new System.Drawing.Size(730, 468);
-            this.game.TabIndex = 2;
-            // 
-            // translate
-            // 
-            this.translate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.translate.Location = new System.Drawing.Point(0, 0);
-            this.translate.Margin = new System.Windows.Forms.Padding(2);
-            this.translate.MinimumSize = new System.Drawing.Size(600, 406);
-            this.translate.Name = "translate";
-            this.translate.Size = new System.Drawing.Size(730, 468);
-            this.translate.TabIndex = 3;
-            // 
-            // search
-            // 
-            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search.Location = new System.Drawing.Point(0, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(2);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(730, 468);
-            this.search.TabIndex = 0;
             // 
             // btn_Exit
             // 
@@ -202,9 +198,9 @@ namespace Dictionary
             this.lbl_Title.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.Location = new System.Drawing.Point(6, 9);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(54, 19);
+            this.lbl_Title.Size = new System.Drawing.Size(91, 19);
             this.lbl_Title.TabIndex = 0;
-            this.lbl_Title.Text = "label2";
+            this.lbl_Title.Text = "Tra từ điển";
             // 
             // lbl_Name
             // 
@@ -258,28 +254,41 @@ namespace Dictionary
             this.pic_Icon.TabIndex = 4;
             this.pic_Icon.TabStop = false;
             // 
-            // pic_Settings
+            // settings
             // 
-            this.pic_Settings.Image = global::Dictionary.Properties.Resources.setting;
-            this.pic_Settings.Location = new System.Drawing.Point(19, 450);
-            this.pic_Settings.Name = "pic_Settings";
-            this.pic_Settings.Size = new System.Drawing.Size(40, 40);
-            this.pic_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Settings.TabIndex = 5;
-            this.pic_Settings.TabStop = false;
-            this.pic_Settings.Click += new System.EventHandler(this.pic_Settings_Click);
+            this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settings.Location = new System.Drawing.Point(0, 0);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(730, 468);
+            this.settings.TabIndex = 4;
             // 
-            // pic_Image
+            // game
             // 
-            this.pic_Image.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
-            this.pic_Image.Location = new System.Drawing.Point(32, 21);
-            this.pic_Image.Margin = new System.Windows.Forms.Padding(2);
-            this.pic_Image.Name = "pic_Image";
-            this.pic_Image.Size = new System.Drawing.Size(82, 76);
-            this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Image.TabIndex = 0;
-            this.pic_Image.TabStop = false;
+            this.game.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.game.Location = new System.Drawing.Point(0, 0);
+            this.game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.game.Name = "game";
+            this.game.Size = new System.Drawing.Size(730, 468);
+            this.game.TabIndex = 2;
+            // 
+            // translate
+            // 
+            this.translate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.translate.Location = new System.Drawing.Point(0, 0);
+            this.translate.Margin = new System.Windows.Forms.Padding(2);
+            this.translate.MinimumSize = new System.Drawing.Size(600, 406);
+            this.translate.Name = "translate";
+            this.translate.Size = new System.Drawing.Size(730, 468);
+            this.translate.TabIndex = 3;
+            // 
+            // search
+            // 
+            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(2);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(730, 468);
+            this.search.TabIndex = 0;
             // 
             // Main
             // 
@@ -303,12 +312,12 @@ namespace Dictionary
             this.Load += new System.EventHandler(this.Main_Load);
             this.pan_Navigation.ResumeLayout(false);
             this.pan_Navigation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.pan_Content.ResumeLayout(false);
             this.pan_Title.ResumeLayout(false);
             this.pan_Title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

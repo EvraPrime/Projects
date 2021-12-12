@@ -82,14 +82,24 @@ namespace Dictionary
             btn_Exit.BackColor = ThemeColor;
             pan_Title.BackColor = ThemeColor;
             pan_Navigation.BackColor = ThemeColor;
-            search.BackColor = BrightenColor(ThemeColor);
-            translate.BackColor = BrightenColor(ThemeColor);
+            search.BackColor = FadingColor(ThemeColor);
+            translate.BackColor = FadingColor(ThemeColor);
             this.Invalidate();
         }
 
-        public Color BrightenColor(Color rgb)
+        public Color FadingColor(Color rgb)
         {
             return Color.FromArgb(80, rgb.R, rgb.G, rgb.B);
+        }
+
+        public Color ChangeColorBrightness(Color rbg, float ratio)
+        {
+            int R = (float)rbg.R * ratio > 255 ? 255 : (int)((float)rbg.R * ratio);
+            int B = (float)rbg.B * ratio > 255 ? 255 : (int)((float)rbg.B * ratio);
+            int G = (float)rbg.G * ratio > 255 ? 255 : (int)((float)rbg.G * ratio);
+
+            return Color.FromArgb(100, R, G, B);
+
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -101,18 +111,21 @@ namespace Dictionary
         {
             search.BringToFront();
             lbl_Title.Text = "Tra từ điển";
+            SelectTab();
         }
 
         private void btn_Translate_Click(object sender, EventArgs e)
         {
             translate.BringToFront();
             lbl_Title.Text = "Dịch từ";
+            SelectTab();
         }
 
         private void btn_Game_Click(object sender, EventArgs e)
         {
             game.BringToFront();
             lbl_Title.Text = "Game";
+            SelectTab();
         }
 
         private void lbl_Settings_Click(object sender, EventArgs e)
@@ -120,6 +133,7 @@ namespace Dictionary
             settings.BringToFront();
             search.Clear();
             lbl_Title.Text = "Cài đặt";
+            SelectTab();
         }
 
         private void pic_Settings_Click(object sender, EventArgs e)
@@ -127,6 +141,59 @@ namespace Dictionary
             settings.BringToFront();
             search.Clear();
             lbl_Title.Text = "Cài đặt";
+            SelectTab();
+        }
+
+        private void SelectTab()
+        {
+            btn_Search.Invalidate();
+            btn_Translate.Invalidate();
+            btn_Game.Invalidate();
+        }
+
+        private void btn_Search_Paint(object sender, PaintEventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (lbl_Title.Text == "Tra từ điển")
+            {
+                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.1f)), 0, 0, 5, button.Height);
+                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            }
+            else
+            {
+                button.BackColor = ThemeColor;
+            }    
+        }
+
+        private void btn_Translate_Paint(object sender, PaintEventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (lbl_Title.Text == "Dịch từ")
+            {
+                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.4f)), 0, 0, 5, button.Height);
+                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            }
+            else
+            {
+                button.BackColor = ThemeColor;
+            }
+        }
+
+        private void btn_Game_Paint(object sender, PaintEventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (lbl_Title.Text == "Game")
+            {
+                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.4f)), 0, 0, 5, button.Height);
+                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            }
+            else
+            {
+                button.BackColor = ThemeColor;
+            }
         }
     }
 }
