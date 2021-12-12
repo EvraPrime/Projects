@@ -29,83 +29,105 @@ namespace Dictionary
         /// </summary>
         private void InitializeComponent()
         {
-            this.Search_txt = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txt_Search = new System.Windows.Forms.TextBox();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.pan_Content = new System.Windows.Forms.FlowLayoutPanel();
+            this.pan_View = new System.Windows.Forms.Panel();
+            this.pic_Speak = new System.Windows.Forms.PictureBox();
+            this.pic_Favourite = new System.Windows.Forms.PictureBox();
+            this.pan_View.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
             this.SuspendLayout();
             // 
-            // Search_txt
+            // txt_Search
             // 
-            this.Search_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_txt.Location = new System.Drawing.Point(178, 45);
-            this.Search_txt.Name = "Search_txt";
-            this.Search_txt.Size = new System.Drawing.Size(241, 26);
-            this.Search_txt.TabIndex = 0;
-            this.Search_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_txt_KeyDown);
+            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Search.Location = new System.Drawing.Point(74, 24);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.Size = new System.Drawing.Size(222, 23);
+            this.txt_Search.TabIndex = 0;
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_txt_KeyDown);
             // 
-            // button1
+            // btn_Search
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(510, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Search.Location = new System.Drawing.Point(310, 20);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(81, 30);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
-            // panel1
+            // pan_Content
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pan_Content.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 438);
-            this.panel1.TabIndex = 2;
+            this.pan_Content.AutoSize = true;
+            this.pan_Content.BackColor = System.Drawing.Color.Transparent;
+            this.pan_Content.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pan_Content.Location = new System.Drawing.Point(10, 33);
+            this.pan_Content.Margin = new System.Windows.Forms.Padding(2);
+            this.pan_Content.Name = "pan_Content";
+            this.pan_Content.Size = new System.Drawing.Size(683, 361);
+            this.pan_Content.TabIndex = 2;
             // 
-            // panel2
+            // pan_View
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 111);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 50);
-            this.panel2.Size = new System.Drawing.Size(937, 527);
-            this.panel2.TabIndex = 3;
+            this.pan_View.AutoScroll = true;
+            this.pan_View.BackColor = System.Drawing.Color.DarkGray;
+            this.pan_View.Controls.Add(this.pic_Favourite);
+            this.pan_View.Controls.Add(this.pan_Content);
+            this.pan_View.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pan_View.Location = new System.Drawing.Point(0, 113);
+            this.pan_View.Margin = new System.Windows.Forms.Padding(2);
+            this.pan_View.Name = "pan_View";
+            this.pan_View.Padding = new System.Windows.Forms.Padding(8, 8, 8, 41);
+            this.pan_View.Size = new System.Drawing.Size(703, 441);
+            this.pan_View.TabIndex = 3;
             // 
-            // pictureBox1
+            // pic_Speak
             // 
-            this.pictureBox1.Image = global::Dictionary.Properties.Resources.volume_up_interface_symbol;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pic_Speak.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Speak.Image = global::Dictionary.Properties.Resources.volume_up_interface_symbol;
+            this.pic_Speak.Location = new System.Drawing.Point(10, 15);
+            this.pic_Speak.Margin = new System.Windows.Forms.Padding(2);
+            this.pic_Speak.Name = "pic_Speak";
+            this.pic_Speak.Size = new System.Drawing.Size(60, 41);
+            this.pic_Speak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Speak.TabIndex = 4;
+            this.pic_Speak.TabStop = false;
+            this.pic_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
+            // 
+            // pic_Favourite
+            // 
+            this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Favourite.Location = new System.Drawing.Point(668, 5);
+            this.pic_Favourite.Name = "pic_Favourite";
+            this.pic_Favourite.Size = new System.Drawing.Size(25, 25);
+            this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Favourite.TabIndex = 3;
+            this.pic_Favourite.TabStop = false;
+            this.pic_Favourite.Click += new System.EventHandler(this.pic_Favourite_Click);
             // 
             // Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Search_txt);
+            this.Controls.Add(this.pic_Speak);
+            this.Controls.Add(this.pan_View);
+            this.Controls.Add(this.btn_Search);
+            this.Controls.Add(this.txt_Search);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Search";
-            this.Size = new System.Drawing.Size(937, 638);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(703, 554);
+            this.pan_View.ResumeLayout(false);
+            this.pan_View.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,10 +135,11 @@ namespace Dictionary
 
         #endregion
 
-        private System.Windows.Forms.TextBox Search_txt;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_Search;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.FlowLayoutPanel pan_Content;
+        private System.Windows.Forms.Panel pan_View;
+        private System.Windows.Forms.PictureBox pic_Speak;
+        private System.Windows.Forms.PictureBox pic_Favourite;
     }
 }

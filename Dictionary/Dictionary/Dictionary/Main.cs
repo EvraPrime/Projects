@@ -25,7 +25,7 @@ namespace Dictionary
         private const int cGrip = 16;      // Grip size
         private const int cCaption = 32;   // Caption bar height;
         private const int borderSize = 1;
-        private static Color _themeColor = Color.Red;
+        private static Color _themeColor = Color.Purple;
         public static Color ThemeColor { get => _themeColor; set => _themeColor = value; }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -62,9 +62,20 @@ namespace Dictionary
 
         private void Main_Load(object sender, EventArgs e)
         {
+            ChangeColor();
+        }
+
+        private void ChangeColor()
+        {
             btn_Exit.BackColor = ThemeColor;
             pan_Title.BackColor = ThemeColor;
             pan_Navigation.BackColor = ThemeColor;
+            search.BackColor = BrightenColor(ThemeColor);
+        }
+
+        public Color BrightenColor(Color rgb)
+        {
+            return Color.FromArgb(80, rgb.R, rgb.G, rgb.B);
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

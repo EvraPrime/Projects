@@ -59,18 +59,18 @@ namespace Dictionary
             this.pan_Navigation.Controls.Add(this.btn_Translate);
             this.pan_Navigation.Controls.Add(this.btn_Search);
             this.pan_Navigation.Controls.Add(this.pic_Image);
-            this.pan_Navigation.Location = new System.Drawing.Point(1, 39);
-            this.pan_Navigation.Margin = new System.Windows.Forms.Padding(1, 30, 3, 1);
+            this.pan_Navigation.Location = new System.Drawing.Point(1, 32);
+            this.pan_Navigation.Margin = new System.Windows.Forms.Padding(1, 24, 2, 1);
             this.pan_Navigation.Name = "pan_Navigation";
-            this.pan_Navigation.Size = new System.Drawing.Size(208, 622);
+            this.pan_Navigation.Size = new System.Drawing.Size(156, 505);
             this.pan_Navigation.TabIndex = 1;
             // 
             // btn_Game
             // 
-            this.btn_Game.Location = new System.Drawing.Point(43, 416);
-            this.btn_Game.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Game.Location = new System.Drawing.Point(32, 338);
+            this.btn_Game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Game.Name = "btn_Game";
-            this.btn_Game.Size = new System.Drawing.Size(125, 50);
+            this.btn_Game.Size = new System.Drawing.Size(94, 41);
             this.btn_Game.TabIndex = 3;
             this.btn_Game.Text = "Game";
             this.btn_Game.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@ namespace Dictionary
             // 
             // btn_Translate
             // 
-            this.btn_Translate.Location = new System.Drawing.Point(43, 335);
-            this.btn_Translate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Translate.Location = new System.Drawing.Point(32, 272);
+            this.btn_Translate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Translate.Name = "btn_Translate";
-            this.btn_Translate.Size = new System.Drawing.Size(125, 50);
+            this.btn_Translate.Size = new System.Drawing.Size(94, 41);
             this.btn_Translate.TabIndex = 2;
             this.btn_Translate.Text = "Translate";
             this.btn_Translate.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@ namespace Dictionary
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(11, 221);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Search.Location = new System.Drawing.Point(8, 180);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(125, 50);
+            this.btn_Search.Size = new System.Drawing.Size(94, 41);
             this.btn_Search.TabIndex = 1;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
@@ -102,10 +102,10 @@ namespace Dictionary
             // 
             this.pic_Image.BackColor = System.Drawing.Color.Transparent;
             this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
-            this.pic_Image.Location = new System.Drawing.Point(43, 26);
-            this.pic_Image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_Image.Location = new System.Drawing.Point(32, 21);
+            this.pic_Image.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_Image.Name = "pic_Image";
-            this.pic_Image.Size = new System.Drawing.Size(109, 94);
+            this.pic_Image.Size = new System.Drawing.Size(82, 76);
             this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_Image.TabIndex = 0;
             this.pic_Image.TabStop = false;
@@ -120,38 +120,38 @@ namespace Dictionary
             this.pan_Content.Controls.Add(this.translate);
             this.pan_Content.Controls.Add(this.search);
             this.pan_Content.Controls.Add(this.game);
-            this.pan_Content.Location = new System.Drawing.Point(212, 88);
-            this.pan_Content.Margin = new System.Windows.Forms.Padding(0, 30, 1, 1);
+            this.pan_Content.Location = new System.Drawing.Point(157, 68);
+            this.pan_Content.Margin = new System.Windows.Forms.Padding(0, 24, 1, 1);
             this.pan_Content.Name = "pan_Content";
-            this.pan_Content.Size = new System.Drawing.Size(966, 563);
+            this.pan_Content.Size = new System.Drawing.Size(730, 468);
             this.pan_Content.TabIndex = 2;
             // 
             // translate
             // 
             this.translate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.translate.Location = new System.Drawing.Point(0, 0);
-            this.translate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.translate.MinimumSize = new System.Drawing.Size(800, 500);
+            this.translate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.translate.MinimumSize = new System.Drawing.Size(600, 406);
             this.translate.Name = "translate";
-            this.translate.Size = new System.Drawing.Size(966, 563);
+            this.translate.Size = new System.Drawing.Size(730, 468);
             this.translate.TabIndex = 3;
             // 
             // search
             // 
             this.search.Dock = System.Windows.Forms.DockStyle.Fill;
             this.search.Location = new System.Drawing.Point(0, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(966, 563);
+            this.search.Size = new System.Drawing.Size(730, 468);
             this.search.TabIndex = 0;
             // 
             // game
             // 
             this.game.Dock = System.Windows.Forms.DockStyle.Fill;
             this.game.Location = new System.Drawing.Point(0, 0);
-            this.game.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.game.Name = "game";
-            this.game.Size = new System.Drawing.Size(966, 563);
+            this.game.Size = new System.Drawing.Size(730, 468);
             this.game.TabIndex = 2;
             // 
             // btn_Exit
@@ -160,10 +160,10 @@ namespace Dictionary
             this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.FlatAppearance.BorderSize = 0;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(1114, -1);
+            this.btn_Exit.Location = new System.Drawing.Point(836, -1);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(70, 42);
+            this.btn_Exit.Size = new System.Drawing.Size(52, 34);
             this.btn_Exit.TabIndex = 3;
             this.btn_Exit.Text = "button1";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -173,19 +173,20 @@ namespace Dictionary
             // 
             this.pan_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pan_Title.Location = new System.Drawing.Point(211, 39);
+            this.pan_Title.Location = new System.Drawing.Point(157, 32);
+            this.pan_Title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pan_Title.Name = "pan_Title";
-            this.pan_Title.Size = new System.Drawing.Size(973, 44);
+            this.pan_Title.Size = new System.Drawing.Size(730, 36);
             this.pan_Title.TabIndex = 4;
             // 
             // pic_Icon
             // 
             this.pic_Icon.BackColor = System.Drawing.Color.Transparent;
             this.pic_Icon.Image = global::Dictionary.Properties.Resources.dictionary;
-            this.pic_Icon.Location = new System.Drawing.Point(7, 4);
-            this.pic_Icon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_Icon.Location = new System.Drawing.Point(5, 3);
+            this.pic_Icon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_Icon.Name = "pic_Icon";
-            this.pic_Icon.Size = new System.Drawing.Size(32, 32);
+            this.pic_Icon.Size = new System.Drawing.Size(24, 26);
             this.pic_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_Icon.TabIndex = 4;
             this.pic_Icon.TabStop = false;
@@ -195,9 +196,10 @@ namespace Dictionary
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_Name.Location = new System.Drawing.Point(46, 10);
+            this.lbl_Name.Location = new System.Drawing.Point(34, 8);
+            this.lbl_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(140, 19);
+            this.lbl_Name.Size = new System.Drawing.Size(123, 16);
             this.lbl_Name.TabIndex = 5;
             this.lbl_Name.Text = "Từ điển Anh-Việt";
             // 
@@ -207,10 +209,10 @@ namespace Dictionary
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1044, -1);
+            this.button1.Location = new System.Drawing.Point(783, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 42);
+            this.button1.Size = new System.Drawing.Size(52, 34);
             this.button1.TabIndex = 6;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
@@ -221,19 +223,19 @@ namespace Dictionary
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(974, -1);
+            this.button2.Location = new System.Drawing.Point(730, -1);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 42);
+            this.button2.Size = new System.Drawing.Size(52, 34);
             this.button2.TabIndex = 7;
             this.button2.Text = "button1";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(888, 537);
             this.Controls.Add(this.pan_Title);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -243,8 +245,8 @@ namespace Dictionary
             this.Controls.Add(this.pan_Content);
             this.Controls.Add(this.pan_Navigation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1200, 700);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(904, 576);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

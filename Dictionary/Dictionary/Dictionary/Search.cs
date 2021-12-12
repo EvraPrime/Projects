@@ -17,17 +17,20 @@ namespace Dictionary
     public partial class Search : UserControl
     {
         MySqlConnection con;
+        bool isFail = false;
+
         public Search()
         {
             InitializeComponent();
             con = DBUtils.GetDBConnection();
             AutoCompleteText();
+            //pic_Favourite.Visible = false;
         }
 
         void AutoCompleteText()
         {
-            Search_txt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Search_txt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txt_Search.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txt_Search.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
 
             string query = "select * from dictionary";
@@ -49,27 +52,27 @@ namespace Dictionary
             }
 
             con.Close();
-            Search_txt.AutoCompleteCustomSource = col;
+            txt_Search.AutoCompleteCustomSource = col;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Search_Click(object sender, EventArgs e)
         {
             try
             {
                 con.Open();
-                string s = "select * from dictionary where word='" + this.Search_txt.Text + "' ";
+                string s = "select * from dictionary where word='" + txt_Search.Text + "' ";
                 MySqlCommand cmd = new MySqlCommand(s, con);
                 MySqlDataReader myReader = cmd.ExecuteReader();
                 if (myReader.Read())
                 {
-                    panel1.Controls.Clear();
+                    pan_Content.Controls.Clear();
 
                     Label lb = new Label();
                     lb.Font = new Font("Arial", 10, FontStyle.Italic);
                     lb.AutoSize = true;
-                    lb.MaximumSize = new Size(panel1.Width, 0);
+                    lb.MaximumSize = new Size(pan_Content.Width, 0);
                     lb.Text = myReader.GetString("pronounc");
-                    panel1.Controls.Add(lb);
+                    pan_Content.Controls.Add(lb);
 
                     var x = myReader.GetString("description");
                     var list = Regex.Split(myReader.GetString("description"), @"(?=\~+[-=*!])"); //.Split(new string[] { "-", "*", "=" }, StringSplitOptions.RemoveEmptyEntries);
@@ -78,7 +81,7 @@ namespace Dictionary
                     {
                         Label label = new Label();
                         label.AutoSize = true;
-                        label.MaximumSize = new Size(panel1.Width, 0);
+                        label.MaximumSize = new Size(pan_Content.Width, 0);
 
                         if (list[i].Contains("~*"))
                         {
@@ -103,12 +106,32 @@ namespace Dictionary
                             label.Text = Regex.Replace(str, @"\+", ":");
                         }
 
-                        panel1.Controls.Add(label);
-                    }    
+                        pan_Content.Controls.Add(label);
+                    }
+
+                    isFail = false;
+                    pic_Favourite.Visible = true;
                 }
                 else
                 {
-                    panel1.Controls.Clear();
+                    pan_Content.Controls.Clear();
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.MaximumSize = new Size(pan_Content.Width, 0);
+                    label.Font = new Font("Arial", 10);
+
+                    if (txt_Search.Text == "")
+                    {
+                        label.Text = "Ô tìm kiếm trống!";
+                    }
+                    else
+                    {
+                        label.Text = "Không tìm thấy từ \"" + txt_Search.Text + "\" trong từ điển!";
+                    }
+
+                    isFail = true;
+                    pic_Favourite.Visible = false;
+                    pan_Content.Controls.Add(label);
                 }
             }
             catch (Exception ex)
@@ -125,16 +148,55 @@ namespace Dictionary
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1.PerformClick();
+                btn_Search.PerformClick();
             }    
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pic_Speak_Click(object sender, EventArgs e)
         {
+            if (txt_Search.Text == "")
+                return;
+
             SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
             speechSynthesizer.Volume = 100;
             speechSynthesizer.Rate = 0;
-            speechSynthesizer.SpeakAsync(Search_txt.Text);
+            speechSynthesizer.SpeakAsync(txt_Search.Text);
+        }
+
+        private void pic_Favourite_Click(object sender, EventArgs e)
+        {
+            if (isFail)
+                return;
+
+            try
+            {
+                con.Open();
+                string s = "select * from favourite where word='" + txt_Search.Text + "' ";
+                MySqlCommand cmd = new MySqlCommand(s, con);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+                if (myReader.Read())
+                {
+                    s = "Delete from favourite where word='" + myReader.GetString(0) + "' ";
+                    myReader.Close();
+                    cmd = new MySqlCommand(s, con);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    s = "Insert into favourite (word) values('" + txt_Search.Text + "') ";
+                    myReader.Close();
+                    cmd = new MySqlCommand(s, con);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

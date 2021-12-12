@@ -155,5 +155,8 @@
   <ItemGroup>
     <None Include="Resources\volume-up-interface-symbol.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fav.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
