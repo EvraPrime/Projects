@@ -36,15 +36,17 @@ namespace Dictionary
             this.btn_Search = new System.Windows.Forms.Button();
             this.pic_Image = new System.Windows.Forms.PictureBox();
             this.pan_Content = new System.Windows.Forms.Panel();
-            this.translate = new Dictionary.Translate();
-            this.search = new Dictionary.Search();
-            this.game = new Dictionary.Game();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.pan_Title = new System.Windows.Forms.Panel();
             this.pic_Icon = new System.Windows.Forms.PictureBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.settings = new Dictionary.Settings();
+            this.game = new Dictionary.Game();
+            this.translate = new Dictionary.Translate();
+            this.search = new Dictionary.Search();
+            this.label1 = new System.Windows.Forms.Label();
             this.pan_Navigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.pan_Content.SuspendLayout();
@@ -55,6 +57,7 @@ namespace Dictionary
             // 
             this.pan_Navigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pan_Navigation.Controls.Add(this.label1);
             this.pan_Navigation.Controls.Add(this.btn_Game);
             this.pan_Navigation.Controls.Add(this.btn_Translate);
             this.pan_Navigation.Controls.Add(this.btn_Search);
@@ -68,7 +71,7 @@ namespace Dictionary
             // btn_Game
             // 
             this.btn_Game.Location = new System.Drawing.Point(32, 338);
-            this.btn_Game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Game.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Game.Name = "btn_Game";
             this.btn_Game.Size = new System.Drawing.Size(94, 41);
             this.btn_Game.TabIndex = 3;
@@ -79,7 +82,7 @@ namespace Dictionary
             // btn_Translate
             // 
             this.btn_Translate.Location = new System.Drawing.Point(32, 272);
-            this.btn_Translate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Translate.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Translate.Name = "btn_Translate";
             this.btn_Translate.Size = new System.Drawing.Size(94, 41);
             this.btn_Translate.TabIndex = 2;
@@ -90,7 +93,7 @@ namespace Dictionary
             // btn_Search
             // 
             this.btn_Search.Location = new System.Drawing.Point(8, 180);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(94, 41);
             this.btn_Search.TabIndex = 1;
@@ -103,7 +106,7 @@ namespace Dictionary
             this.pic_Image.BackColor = System.Drawing.Color.Transparent;
             this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
             this.pic_Image.Location = new System.Drawing.Point(32, 21);
-            this.pic_Image.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic_Image.Margin = new System.Windows.Forms.Padding(2);
             this.pic_Image.Name = "pic_Image";
             this.pic_Image.Size = new System.Drawing.Size(82, 76);
             this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,42 +120,15 @@ namespace Dictionary
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pan_Content.AutoScroll = true;
             this.pan_Content.AutoSize = true;
+            this.pan_Content.Controls.Add(this.settings);
+            this.pan_Content.Controls.Add(this.game);
             this.pan_Content.Controls.Add(this.translate);
             this.pan_Content.Controls.Add(this.search);
-            this.pan_Content.Controls.Add(this.game);
             this.pan_Content.Location = new System.Drawing.Point(157, 68);
             this.pan_Content.Margin = new System.Windows.Forms.Padding(0, 24, 1, 1);
             this.pan_Content.Name = "pan_Content";
             this.pan_Content.Size = new System.Drawing.Size(730, 468);
             this.pan_Content.TabIndex = 2;
-            // 
-            // translate
-            // 
-            this.translate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.translate.Location = new System.Drawing.Point(0, 0);
-            this.translate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.translate.MinimumSize = new System.Drawing.Size(600, 406);
-            this.translate.Name = "translate";
-            this.translate.Size = new System.Drawing.Size(730, 468);
-            this.translate.TabIndex = 3;
-            // 
-            // search
-            // 
-            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search.Location = new System.Drawing.Point(0, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(730, 468);
-            this.search.TabIndex = 0;
-            // 
-            // game
-            // 
-            this.game.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.game.Location = new System.Drawing.Point(0, 0);
-            this.game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.game.Name = "game";
-            this.game.Size = new System.Drawing.Size(730, 468);
-            this.game.TabIndex = 2;
             // 
             // btn_Exit
             // 
@@ -174,7 +150,7 @@ namespace Dictionary
             this.pan_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pan_Title.Location = new System.Drawing.Point(157, 32);
-            this.pan_Title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_Title.Margin = new System.Windows.Forms.Padding(2);
             this.pan_Title.Name = "pan_Title";
             this.pan_Title.Size = new System.Drawing.Size(730, 36);
             this.pan_Title.TabIndex = 4;
@@ -184,7 +160,7 @@ namespace Dictionary
             this.pic_Icon.BackColor = System.Drawing.Color.Transparent;
             this.pic_Icon.Image = global::Dictionary.Properties.Resources.dictionary;
             this.pic_Icon.Location = new System.Drawing.Point(5, 3);
-            this.pic_Icon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic_Icon.Margin = new System.Windows.Forms.Padding(2);
             this.pic_Icon.Name = "pic_Icon";
             this.pic_Icon.Size = new System.Drawing.Size(24, 26);
             this.pic_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,6 +207,52 @@ namespace Dictionary
             this.button2.Text = "button1";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // settings
+            // 
+            this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settings.Location = new System.Drawing.Point(0, 0);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(730, 468);
+            this.settings.TabIndex = 4;
+            // 
+            // game
+            // 
+            this.game.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.game.Location = new System.Drawing.Point(0, 0);
+            this.game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.game.Name = "game";
+            this.game.Size = new System.Drawing.Size(730, 468);
+            this.game.TabIndex = 2;
+            // 
+            // translate
+            // 
+            this.translate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.translate.Location = new System.Drawing.Point(0, 0);
+            this.translate.Margin = new System.Windows.Forms.Padding(2);
+            this.translate.MinimumSize = new System.Drawing.Size(600, 406);
+            this.translate.Name = "translate";
+            this.translate.Size = new System.Drawing.Size(730, 468);
+            this.translate.TabIndex = 3;
+            // 
+            // search
+            // 
+            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(2);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(730, 468);
+            this.search.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 426);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,13 +267,14 @@ namespace Dictionary
             this.Controls.Add(this.pan_Content);
             this.Controls.Add(this.pan_Navigation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(904, 576);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
             this.pan_Navigation.ResumeLayout(false);
+            this.pan_Navigation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.pan_Content.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Icon)).EndInit();
@@ -276,6 +299,8 @@ namespace Dictionary
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private Settings settings;
+        private System.Windows.Forms.Label label1;
     }
 }
 

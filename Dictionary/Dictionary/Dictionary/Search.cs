@@ -209,5 +209,11 @@ namespace Dictionary
                 con.Close();
             }
         }
+
+        public void Clear()
+        {
+            txt_Search.Text = "";
+            btn_Search.PerformClick();
+        }
     }
 }

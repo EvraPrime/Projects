@@ -33,18 +33,18 @@ namespace Dictionary
             this.btn_Search = new System.Windows.Forms.Button();
             this.pan_Content = new System.Windows.Forms.FlowLayoutPanel();
             this.pan_View = new System.Windows.Forms.Panel();
-            this.pic_Speak = new System.Windows.Forms.PictureBox();
             this.pic_Favourite = new System.Windows.Forms.PictureBox();
+            this.pic_Speak = new System.Windows.Forms.PictureBox();
             this.pan_View.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Search
             // 
             this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Search.Location = new System.Drawing.Point(74, 24);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(222, 23);
             this.txt_Search.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace Dictionary
             // btn_Search
             // 
             this.btn_Search.Location = new System.Drawing.Point(310, 20);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(81, 30);
             this.btn_Search.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace Dictionary
             this.pan_Content.BackColor = System.Drawing.Color.Transparent;
             this.pan_Content.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pan_Content.Location = new System.Drawing.Point(10, 33);
-            this.pan_Content.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_Content.Margin = new System.Windows.Forms.Padding(2);
             this.pan_Content.Name = "pan_Content";
             this.pan_Content.Size = new System.Drawing.Size(683, 361);
             this.pan_Content.TabIndex = 2;
@@ -82,11 +82,25 @@ namespace Dictionary
             this.pan_View.Controls.Add(this.pan_Content);
             this.pan_View.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pan_View.Location = new System.Drawing.Point(0, 113);
-            this.pan_View.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pan_View.Margin = new System.Windows.Forms.Padding(2);
             this.pan_View.Name = "pan_View";
             this.pan_View.Padding = new System.Windows.Forms.Padding(8, 8, 8, 41);
             this.pan_View.Size = new System.Drawing.Size(703, 441);
             this.pan_View.TabIndex = 3;
+            // 
+            // pic_Favourite
+            // 
+            this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Favourite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_Favourite.Image = global::Dictionary.Properties.Resources.star;
+            this.pic_Favourite.Location = new System.Drawing.Point(673, 8);
+            this.pic_Favourite.Name = "pic_Favourite";
+            this.pic_Favourite.Size = new System.Drawing.Size(20, 20);
+            this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Favourite.TabIndex = 3;
+            this.pic_Favourite.TabStop = false;
+            this.pic_Favourite.Click += new System.EventHandler(this.pic_Favourite_Click);
             // 
             // pic_Speak
             // 
@@ -101,20 +115,6 @@ namespace Dictionary
             this.pic_Speak.TabStop = false;
             this.pic_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
             // 
-            // pic_Favourite
-            // 
-            this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Favourite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Favourite.Image = global::Dictionary.Properties.Resources.star;
-            this.pic_Favourite.Location = new System.Drawing.Point(674, 8);
-            this.pic_Favourite.Name = "pic_Favourite";
-            this.pic_Favourite.Size = new System.Drawing.Size(19, 20);
-            this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Favourite.TabIndex = 3;
-            this.pic_Favourite.TabStop = false;
-            this.pic_Favourite.Click += new System.EventHandler(this.pic_Favourite_Click);
-            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,13 +123,13 @@ namespace Dictionary
             this.Controls.Add(this.pan_View);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txt_Search);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Search";
             this.Size = new System.Drawing.Size(703, 554);
             this.pan_View.ResumeLayout(false);
             this.pan_View.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

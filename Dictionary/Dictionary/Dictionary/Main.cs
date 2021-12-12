@@ -14,19 +14,31 @@ namespace Dictionary
 {
     public partial class Main : Form
     {
+        private static Main _instance;
+        public static Main Instance { get => _instance; set => _instance = value; }
+
         public Main()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            Instance = this;
         }
 
         private const int cGrip = 16;      // Grip size
         private const int cCaption = 32;   // Caption bar height;
         private const int borderSize = 1;
         private static Color _themeColor = Color.Purple;
-        public static Color ThemeColor { get => _themeColor; set => _themeColor = value; }
+        public static Color ThemeColor 
+        { 
+            get => _themeColor; 
+            set
+            {
+                _themeColor = value;
+                Instance.ChangeColor();
+            }
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -71,6 +83,8 @@ namespace Dictionary
             pan_Title.BackColor = ThemeColor;
             pan_Navigation.BackColor = ThemeColor;
             search.BackColor = BrightenColor(ThemeColor);
+            translate.BackColor = BrightenColor(ThemeColor);
+            this.Invalidate();
         }
 
         public Color BrightenColor(Color rgb)
@@ -96,6 +110,12 @@ namespace Dictionary
         private void btn_Game_Click(object sender, EventArgs e)
         {
             game.BringToFront();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            settings.BringToFront();
+            search.Clear();
         }
     }
 }

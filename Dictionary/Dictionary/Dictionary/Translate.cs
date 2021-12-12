@@ -63,5 +63,13 @@ namespace Dictionary
             speechSynthesizer.Rate = 0;
             speechSynthesizer.SpeakAsync(rtbTo.Text);
         }
+
+        private void rtbFrom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTranslate.PerformClick();
+            }
+        }
     }
 }
