@@ -43,17 +43,17 @@ namespace Dictionary
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x84)
-            {  // Trap WM_NCHITTEST
+            {
                 Point pos = new Point(m.LParam.ToInt32());
                 pos = this.PointToClient(pos);
                 if (pos.Y < cCaption)
                 {
-                    m.Result = (IntPtr)2;  // HTCAPTION
+                    m.Result = (IntPtr)2;
                     return;
                 }
                 if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
                 {
-                    m.Result = (IntPtr)17; // HTBOTTOMRIGHT
+                    m.Result = (IntPtr)17;
                     return;
                 }
             }

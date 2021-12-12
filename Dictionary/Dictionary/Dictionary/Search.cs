@@ -24,7 +24,7 @@ namespace Dictionary
             InitializeComponent();
             con = DBUtils.GetDBConnection();
             AutoCompleteText();
-            //pic_Favourite.Visible = false;
+            pic_Favourite.Visible = false;
         }
 
         void AutoCompleteText()
@@ -109,8 +109,17 @@ namespace Dictionary
                         pan_Content.Controls.Add(label);
                     }
 
+                    myReader.Close();
+
                     isFail = false;
                     pic_Favourite.Visible = true;
+                    s = "select * from favourite where word='" + txt_Search.Text + "' ";
+                    cmd = new MySqlCommand(s, con);
+                    myReader = cmd.ExecuteReader();
+                    if (myReader.Read())
+                        pic_Favourite.BackColor = Main.ThemeColor;
+                    else
+                        pic_Favourite.BackColor = Color.Transparent;
                 }
                 else
                 {
@@ -180,6 +189,7 @@ namespace Dictionary
                     myReader.Close();
                     cmd = new MySqlCommand(s, con);
                     cmd.ExecuteNonQuery();
+                    pic_Favourite.BackColor = Color.Transparent;
                 }
                 else
                 {
@@ -187,6 +197,7 @@ namespace Dictionary
                     myReader.Close();
                     cmd = new MySqlCommand(s, con);
                     cmd.ExecuteNonQuery();
+                    pic_Favourite.BackColor = Main.ThemeColor;
                 }
             }
             catch (Exception ex)
