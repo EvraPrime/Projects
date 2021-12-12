@@ -63,13 +63,5 @@ namespace Dictionary
             speechSynthesizer.Rate = 0;
             speechSynthesizer.SpeakAsync(rtbTo.Text);
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
-            speechSynthesizer.Volume = 100;
-            speechSynthesizer.Rate = 0;
-            speechSynthesizer.SpeakAsync(rtbFrom.Text);
-        }
     }
 }

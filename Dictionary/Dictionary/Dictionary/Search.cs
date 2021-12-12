@@ -65,21 +65,44 @@ namespace Dictionary
                     panel1.Controls.Clear();
 
                     Label lb = new Label();
-                    lb.Font = new Font("Arial", 10);
+                    lb.Font = new Font("Arial", 10, FontStyle.Italic);
                     lb.AutoSize = true;
                     lb.MaximumSize = new Size(panel1.Width, 0);
                     lb.Text = myReader.GetString("pronounc");
                     panel1.Controls.Add(lb);
 
-                    var list = Regex.Split(myReader.GetString("description"), @"(?=[-+=])"); //.Split(new string[] { "-", "+", "=" }, StringSplitOptions.RemoveEmptyEntries);
+                    var x = myReader.GetString("description");
+                    var list = Regex.Split(myReader.GetString("description"), @"(?=\~+[-=*!])"); //.Split(new string[] { "-", "*", "=" }, StringSplitOptions.RemoveEmptyEntries);
                     
                     for (int i = 0; i < list.Length; i++)
                     {
                         Label label = new Label();
-                        label.Font = new Font("Arial", 10);
                         label.AutoSize = true;
                         label.MaximumSize = new Size(panel1.Width, 0);
-                        label.Text = list[i].Trim();
+
+                        if (list[i].Contains("~*"))
+                        {
+                            label.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                            label.Text = Regex.Replace(list[i].Trim(), @"\A\~+\*", "\u2022");
+                        }
+                        else if (list[i].Contains("~!"))
+                        {
+                            label.Font = new Font("Arial", 10, FontStyle.Bold);
+                            label.Text = Regex.Replace(list[i].Trim(), @"\A\~+\!", "        \u25E6");
+                        }
+                        else if (list[i].Contains("~-"))
+                        {
+                            label.Font = new Font("Arial", 10);
+                            label.Text = Regex.Replace(list[i].Trim(), @"\A\~+\-", "              \u25A0 ");
+                            label.ForeColor = Main.ThemeColor;
+                        }
+                        else
+                        {
+                            label.Font = new Font("Arial", 10);
+                            string str = Regex.Replace(list[i].Trim(), @"\A\~+\=", "                      \u25A1 ");
+                            label.Text = Regex.Replace(str, @"\+", ":");
+                        }
+
                         panel1.Controls.Add(label);
                     }    
                 }

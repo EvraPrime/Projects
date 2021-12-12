@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace Dictionary
         List<string> datas;
         List<string> rp;
         int countDown = 10;
-
+        SoundPlayer tickingSound, alarmSound;
 
         public Game()
         {
@@ -26,6 +27,8 @@ namespace Dictionary
             con = DBUtils.GetDBConnection();
             datas = new List<string>();
             rp = new List<string>();
+            tickingSound = new SoundPlayer("ticking.wav");
+            alarmSound = new SoundPlayer("alarm.wav");
             Collapse();
         }
 
@@ -126,6 +129,7 @@ namespace Dictionary
             label1.Visible = false;
             lbl_CountDown.Visible = false;
             timer.Stop();
+            tickingSound.Stop();
             countDown = 10;
         }
 
@@ -136,7 +140,9 @@ namespace Dictionary
             textBox1.Visible = true;
             label1.Visible = true;
             lbl_CountDown.Visible = true;
+            textBox1.Focus();
             timer.Start();
+            tickingSound.PlayLooping();
             NextWord();
         }
 
@@ -146,8 +152,13 @@ namespace Dictionary
             if (countDown < 0)
             {
                 Collapse();
-                MessageBox.Show("Out of time!!!");
-            }    
+                alarmSound.Play();
+                var result = MessageBox.Show("Out of time!!!");
+                if (result == DialogResult.OK)
+                {
+                    alarmSound.Stop();
+                }
+            }
 
             lbl_CountDown.Text = countDown.ToString();
         }

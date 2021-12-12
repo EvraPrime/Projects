@@ -41,7 +41,7 @@ namespace Dictionary
             // Search_txt
             // 
             this.Search_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_txt.Location = new System.Drawing.Point(170, 20);
+            this.Search_txt.Location = new System.Drawing.Point(178, 45);
             this.Search_txt.Name = "Search_txt";
             this.Search_txt.Size = new System.Drawing.Size(241, 26);
             this.Search_txt.TabIndex = 0;
@@ -49,7 +49,8 @@ namespace Dictionary
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(591, 9);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(510, 34);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 37);
             this.button1.TabIndex = 1;
