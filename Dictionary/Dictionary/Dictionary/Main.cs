@@ -100,22 +100,33 @@ namespace Dictionary
         private void btn_Search_Click(object sender, EventArgs e)
         {
             search.BringToFront();
+            lbl_Title.Text = "Tra từ điển";
         }
 
         private void btn_Translate_Click(object sender, EventArgs e)
         {
             translate.BringToFront();
+            lbl_Title.Text = "Dịch từ";
         }
 
         private void btn_Game_Click(object sender, EventArgs e)
         {
             game.BringToFront();
+            lbl_Title.Text = "Game";
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lbl_Settings_Click(object sender, EventArgs e)
         {
             settings.BringToFront();
             search.Clear();
+            lbl_Title.Text = "Cài đặt";
+        }
+
+        private void pic_Settings_Click(object sender, EventArgs e)
+        {
+            settings.BringToFront();
+            search.Clear();
+            lbl_Title.Text = "Cài đặt";
         }
     }
 }
