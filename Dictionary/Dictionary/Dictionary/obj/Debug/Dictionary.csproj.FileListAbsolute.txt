@@ -25,3 +25,4 @@ C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictio
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.csproj.CopyComplete
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.exe
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.pdb
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.csproj.AssemblyReference.cache

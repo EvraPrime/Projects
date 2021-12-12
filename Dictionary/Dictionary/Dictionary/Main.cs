@@ -65,16 +65,18 @@ namespace Dictionary
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //ChangeColor();
+            ChangeColor(Color.Red);
         }
 
-        public void ChangeColor()
+        public void ChangeColor(Color theme)
         {
+            ThemeColor = theme;
             btn_Exit.BackColor = ThemeColor;
             pan_Title.BackColor = ThemeColor;
             pan_Navigation.BackColor = ThemeColor;
             search.BackColor = FadingColor(ThemeColor);
             translate.BackColor = FadingColor(ThemeColor);
+            SelectTab();
             this.Invalidate();
         }
 
@@ -103,6 +105,7 @@ namespace Dictionary
             search.BringToFront();
             lbl_Title.Text = "Tra từ điển";
             SelectTab();
+            btn_Search.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
         }
 
         private void btn_Translate_Click(object sender, EventArgs e)
@@ -110,6 +113,7 @@ namespace Dictionary
             translate.BringToFront();
             lbl_Title.Text = "Dịch từ";
             SelectTab();
+            btn_Translate.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
         }
 
         private void btn_Game_Click(object sender, EventArgs e)
@@ -117,6 +121,7 @@ namespace Dictionary
             game.BringToFront();
             lbl_Title.Text = "Game";
             SelectTab();
+            btn_Game.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
         }
 
         private void lbl_Settings_Click(object sender, EventArgs e)
@@ -137,54 +142,9 @@ namespace Dictionary
 
         private void SelectTab()
         {
-            btn_Search.Invalidate();
-            btn_Translate.Invalidate();
-            btn_Game.Invalidate();
-        }
-
-        private void btn_Search_Paint(object sender, PaintEventArgs e)
-        {
-            Button button = (Button)sender;
-
-            if (lbl_Title.Text == "Tra từ điển")
-            {
-                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.1f)), 0, 0, 5, button.Height);
-                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
-            }
-            else
-            {
-                button.BackColor = ThemeColor;
-            }
-        }
-
-        private void btn_Translate_Paint(object sender, PaintEventArgs e)
-        {
-            Button button = (Button)sender;
-
-            if (lbl_Title.Text == "Dịch từ")
-            {
-                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.4f)), 0, 0, 5, button.Height);
-                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
-            }
-            else
-            {
-                button.BackColor = ThemeColor;
-            }
-        }
-
-        private void btn_Game_Paint(object sender, PaintEventArgs e)
-        {
-            Button button = (Button)sender;
-
-            if (lbl_Title.Text == "Game")
-            {
-                e.Graphics.FillRectangle(new SolidBrush(ChangeColorBrightness(ThemeColor, 0.4f)), 0, 0, 5, button.Height);
-                button.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
-            }
-            else
-            {
-                button.BackColor = ThemeColor;
-            }
+            btn_Search.BackColor = ThemeColor;
+            btn_Translate.BackColor = ThemeColor;
+            btn_Game.BackColor = ThemeColor;
         }
     }
 }

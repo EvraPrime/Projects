@@ -173,5 +173,8 @@
   <ItemGroup>
     <None Include="Resources\setting.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,8 +19,7 @@ namespace Dictionary
 
         private void pic_Click(object sender, EventArgs e)
         {
-            Main.Instance.ThemeColor = ((PictureBox)sender).BackColor;
-            Main.Instance.ChangeColor();
+            Main.Instance.ChangeColor(((PictureBox)sender).BackColor);
         }
     }
 }
