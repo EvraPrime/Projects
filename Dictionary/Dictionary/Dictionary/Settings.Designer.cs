@@ -44,9 +44,10 @@ namespace Dictionary
             // pic_Red
             // 
             this.pic_Red.BackColor = System.Drawing.Color.Red;
-            this.pic_Red.Location = new System.Drawing.Point(63, 63);
+            this.pic_Red.Location = new System.Drawing.Point(84, 78);
+            this.pic_Red.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_Red.Name = "pic_Red";
-            this.pic_Red.Size = new System.Drawing.Size(50, 50);
+            this.pic_Red.Size = new System.Drawing.Size(67, 62);
             this.pic_Red.TabIndex = 0;
             this.pic_Red.TabStop = false;
             this.pic_Red.Click += new System.EventHandler(this.pic_Click);
@@ -54,9 +55,10 @@ namespace Dictionary
             // pic_Yellow
             // 
             this.pic_Yellow.BackColor = System.Drawing.Color.Yellow;
-            this.pic_Yellow.Location = new System.Drawing.Point(283, 63);
+            this.pic_Yellow.Location = new System.Drawing.Point(377, 78);
+            this.pic_Yellow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_Yellow.Name = "pic_Yellow";
-            this.pic_Yellow.Size = new System.Drawing.Size(50, 50);
+            this.pic_Yellow.Size = new System.Drawing.Size(67, 62);
             this.pic_Yellow.TabIndex = 1;
             this.pic_Yellow.TabStop = false;
             this.pic_Yellow.Click += new System.EventHandler(this.pic_Click);
@@ -64,9 +66,10 @@ namespace Dictionary
             // pic_Cyan
             // 
             this.pic_Cyan.BackColor = System.Drawing.Color.Cyan;
-            this.pic_Cyan.Location = new System.Drawing.Point(173, 63);
+            this.pic_Cyan.Location = new System.Drawing.Point(231, 78);
+            this.pic_Cyan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_Cyan.Name = "pic_Cyan";
-            this.pic_Cyan.Size = new System.Drawing.Size(50, 50);
+            this.pic_Cyan.Size = new System.Drawing.Size(67, 62);
             this.pic_Cyan.TabIndex = 2;
             this.pic_Cyan.TabStop = false;
             this.pic_Cyan.Click += new System.EventHandler(this.pic_Click);
@@ -74,9 +77,10 @@ namespace Dictionary
             // pic_Green
             // 
             this.pic_Green.BackColor = System.Drawing.Color.Lime;
-            this.pic_Green.Location = new System.Drawing.Point(393, 63);
+            this.pic_Green.Location = new System.Drawing.Point(524, 78);
+            this.pic_Green.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_Green.Name = "pic_Green";
-            this.pic_Green.Size = new System.Drawing.Size(50, 50);
+            this.pic_Green.Size = new System.Drawing.Size(67, 62);
             this.pic_Green.TabIndex = 3;
             this.pic_Green.TabStop = false;
             this.pic_Green.Click += new System.EventHandler(this.pic_Click);
@@ -84,24 +88,27 @@ namespace Dictionary
             // pic_Purple
             // 
             this.pic_Purple.BackColor = System.Drawing.Color.Purple;
-            this.pic_Purple.Location = new System.Drawing.Point(503, 63);
+            this.pic_Purple.Location = new System.Drawing.Point(671, 78);
+            this.pic_Purple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_Purple.Name = "pic_Purple";
-            this.pic_Purple.Size = new System.Drawing.Size(50, 50);
+            this.pic_Purple.Size = new System.Drawing.Size(67, 62);
             this.pic_Purple.TabIndex = 4;
             this.pic_Purple.TabStop = false;
             this.pic_Purple.Click += new System.EventHandler(this.pic_Click);
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pic_Purple);
             this.Controls.Add(this.pic_Green);
             this.Controls.Add(this.pic_Cyan);
             this.Controls.Add(this.pic_Yellow);
             this.Controls.Add(this.pic_Red);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Settings";
-            this.Size = new System.Drawing.Size(670, 357);
+            this.Size = new System.Drawing.Size(893, 439);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Yellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cyan)).EndInit();

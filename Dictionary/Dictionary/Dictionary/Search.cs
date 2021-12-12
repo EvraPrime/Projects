@@ -97,7 +97,7 @@ namespace Dictionary
                         {
                             label.Font = new Font("Arial", 10);
                             label.Text = Regex.Replace(list[i].Trim(), @"\A\~+\-", "              \u25A0 ");
-                            label.ForeColor = Main.ThemeColor;
+                            label.ForeColor = Main.Instance.ThemeColor;
                         }
                         else
                         {
@@ -117,7 +117,7 @@ namespace Dictionary
                     cmd = new MySqlCommand(s, con);
                     myReader = cmd.ExecuteReader();
                     if (myReader.Read())
-                        pic_Favourite.BackColor = Main.ThemeColor;
+                        pic_Favourite.BackColor = Main.Instance.ThemeColor;
                     else
                         pic_Favourite.BackColor = Color.Transparent;
                 }
@@ -197,7 +197,7 @@ namespace Dictionary
                     myReader.Close();
                     cmd = new MySqlCommand(s, con);
                     cmd.ExecuteNonQuery();
-                    pic_Favourite.BackColor = Main.ThemeColor;
+                    pic_Favourite.BackColor = Main.Instance.ThemeColor;
                 }
             }
             catch (Exception ex)
