@@ -35,6 +35,7 @@ namespace Dictionary
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -45,7 +46,7 @@ namespace Dictionary
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Purple;
-            this.pictureBox1.Location = new System.Drawing.Point(706, 188);
+            this.pictureBox1.Location = new System.Drawing.Point(707, 125);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 62);
@@ -56,7 +57,7 @@ namespace Dictionary
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Lime;
-            this.pictureBox2.Location = new System.Drawing.Point(559, 188);
+            this.pictureBox2.Location = new System.Drawing.Point(560, 125);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 62);
@@ -67,7 +68,7 @@ namespace Dictionary
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Cyan;
-            this.pictureBox3.Location = new System.Drawing.Point(266, 188);
+            this.pictureBox3.Location = new System.Drawing.Point(267, 125);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(67, 62);
@@ -78,7 +79,7 @@ namespace Dictionary
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox4.Location = new System.Drawing.Point(412, 188);
+            this.pictureBox4.Location = new System.Drawing.Point(413, 125);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(67, 62);
@@ -89,7 +90,7 @@ namespace Dictionary
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Red;
-            this.pictureBox5.Location = new System.Drawing.Point(119, 188);
+            this.pictureBox5.Location = new System.Drawing.Point(120, 125);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(67, 62);
@@ -102,16 +103,31 @@ namespace Dictionary
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 113);
+            this.label1.Location = new System.Drawing.Point(64, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 10;
             this.label1.Text = "Màu nền";
             // 
+            // btn_Delete
+            // 
+            this.btn_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Location = new System.Drawing.Point(356, 307);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(154, 56);
+            this.btn_Delete.TabIndex = 11;
+            this.btn_Delete.Text = "Xóa lịch sử";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -140,5 +156,6 @@ namespace Dictionary
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Delete;
     }
 }

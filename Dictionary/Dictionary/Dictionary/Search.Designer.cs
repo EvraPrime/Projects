@@ -32,13 +32,13 @@ namespace Dictionary
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.pan_Content = new System.Windows.Forms.FlowLayoutPanel();
             this.pan_View = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_Favourite = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_Speak = new System.Windows.Forms.PictureBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.pan_View.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,17 +79,6 @@ namespace Dictionary
             this.pan_View.Size = new System.Drawing.Size(937, 605);
             this.pan_View.TabIndex = 3;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pic_Speak);
-            this.panel1.Controls.Add(this.txt_Search);
-            this.panel1.Controls.Add(this.btn_Search);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 77);
-            this.panel1.TabIndex = 5;
-            // 
             // pic_Favourite
             // 
             this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -104,6 +93,17 @@ namespace Dictionary
             this.pic_Favourite.TabIndex = 3;
             this.pic_Favourite.TabStop = false;
             this.pic_Favourite.Click += new System.EventHandler(this.pic_Favourite_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pic_Speak);
+            this.panel1.Controls.Add(this.txt_Search);
+            this.panel1.Controls.Add(this.btn_Search);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(937, 77);
+            this.panel1.TabIndex = 5;
             // 
             // pic_Speak
             // 
@@ -121,6 +121,8 @@ namespace Dictionary
             // btn_Search
             // 
             this.btn_Search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Search.FlatAppearance.BorderSize = 0;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Image = global::Dictionary.Properties.Resources.search;
             this.btn_Search.Location = new System.Drawing.Point(408, 13);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,9 +144,9 @@ namespace Dictionary
             this.Size = new System.Drawing.Size(937, 682);
             this.pan_View.ResumeLayout(false);
             this.pan_View.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             this.ResumeLayout(false);
 

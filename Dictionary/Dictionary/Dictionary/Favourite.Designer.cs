@@ -107,6 +107,7 @@ namespace Dictionary
             // 
             // pan_Translate
             // 
+            this.pan_Translate.AutoSize = true;
             this.pan_Translate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_Translate.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pan_Translate.Location = new System.Drawing.Point(5, 5);
@@ -118,6 +119,7 @@ namespace Dictionary
             // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.pan_Search);
             this.panel2.Controls.Add(this.pan_Translate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -139,6 +141,7 @@ namespace Dictionary
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

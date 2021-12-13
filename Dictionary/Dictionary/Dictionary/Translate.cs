@@ -102,7 +102,7 @@ namespace Dictionary
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnTranslate.PerformClick();
+                btn_Translate.PerformClick();
             }
         }
 
@@ -139,6 +139,11 @@ namespace Dictionary
             {
                 con.Close();
             }
+        }
+
+        public void UpdateButton()
+        {
+            btn_Translate.BackColor = this.BackColor;
         }
     }
 }

@@ -31,7 +31,8 @@ namespace Dictionary
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTranslate = new System.Windows.Forms.Button();
+            this.pci_Speak = new System.Windows.Forms.PictureBox();
+            this.btn_Translate = new System.Windows.Forms.Button();
             this.rtbTo = new System.Windows.Forms.RichTextBox();
             this.rtbFrom = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,14 +40,13 @@ namespace Dictionary
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pci_Speak = new System.Windows.Forms.PictureBox();
             this.pic_Favourite = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pci_Speak)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pci_Speak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@ namespace Dictionary
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pci_Speak);
-            this.panel1.Controls.Add(this.btnTranslate);
+            this.panel1.Controls.Add(this.btn_Translate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1009, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -86,17 +86,33 @@ namespace Dictionary
             this.panel1.Size = new System.Drawing.Size(63, 243);
             this.panel1.TabIndex = 7;
             // 
-            // btnTranslate
+            // pci_Speak
             // 
-            this.btnTranslate.BackColor = System.Drawing.Color.Transparent;
-            this.btnTranslate.Image = global::Dictionary.Properties.Resources.translation;
-            this.btnTranslate.Location = new System.Drawing.Point(3, 6);
-            this.btnTranslate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTranslate.Name = "btnTranslate";
-            this.btnTranslate.Size = new System.Drawing.Size(56, 44);
-            this.btnTranslate.TabIndex = 2;
-            this.btnTranslate.UseVisualStyleBackColor = false;
-            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
+            this.pci_Speak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pci_Speak.BackColor = System.Drawing.Color.Transparent;
+            this.pci_Speak.Image = global::Dictionary.Properties.Resources.volume_up_interface_symbol;
+            this.pci_Speak.Location = new System.Drawing.Point(6, 55);
+            this.pci_Speak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pci_Speak.Name = "pci_Speak";
+            this.pci_Speak.Size = new System.Drawing.Size(40, 39);
+            this.pci_Speak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pci_Speak.TabIndex = 5;
+            this.pci_Speak.TabStop = false;
+            this.pci_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
+            // 
+            // btn_Translate
+            // 
+            this.btn_Translate.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Translate.FlatAppearance.BorderSize = 0;
+            this.btn_Translate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Translate.Image = global::Dictionary.Properties.Resources.translation;
+            this.btn_Translate.Location = new System.Drawing.Point(3, 6);
+            this.btn_Translate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Translate.Name = "btn_Translate";
+            this.btn_Translate.Size = new System.Drawing.Size(56, 44);
+            this.btn_Translate.TabIndex = 2;
+            this.btn_Translate.UseVisualStyleBackColor = false;
+            this.btn_Translate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
             // rtbTo
             // 
@@ -178,20 +194,6 @@ namespace Dictionary
             this.panel4.Size = new System.Drawing.Size(61, 35);
             this.panel4.TabIndex = 10;
             // 
-            // pci_Speak
-            // 
-            this.pci_Speak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pci_Speak.BackColor = System.Drawing.Color.Transparent;
-            this.pci_Speak.Image = global::Dictionary.Properties.Resources.volume_up_interface_symbol;
-            this.pci_Speak.Location = new System.Drawing.Point(6, 55);
-            this.pci_Speak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pci_Speak.Name = "pci_Speak";
-            this.pci_Speak.Size = new System.Drawing.Size(40, 39);
-            this.pci_Speak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pci_Speak.TabIndex = 5;
-            this.pci_Speak.TabStop = false;
-            this.pci_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
-            // 
             // pic_Favourite
             // 
             this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
@@ -211,18 +213,19 @@ namespace Dictionary
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Translate";
             this.Size = new System.Drawing.Size(1075, 500);
             this.tableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pci_Speak)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pci_Speak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
             this.ResumeLayout(false);
 
@@ -232,7 +235,7 @@ namespace Dictionary
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pci_Speak;
-        private System.Windows.Forms.Button btnTranslate;
+        private System.Windows.Forms.Button btn_Translate;
         private System.Windows.Forms.RichTextBox rtbTo;
         private System.Windows.Forms.RichTextBox rtbFrom;
         private System.Windows.Forms.Panel panel2;

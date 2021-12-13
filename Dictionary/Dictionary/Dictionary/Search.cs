@@ -221,5 +221,10 @@ namespace Dictionary
             txt_Search.Text = "";
             btn_Search.PerformClick();
         }
+
+        public void UpdateButton()
+        {
+            btn_Search.BackColor = this.BackColor;
+        }
     }
 }

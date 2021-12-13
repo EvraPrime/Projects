@@ -111,6 +111,7 @@ namespace Dictionary
             lbl_Title.Text = "Tra từ điển";
             SelectTab();
             btn_Search.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            search.UpdateButton();
         }
 
         private void btn_Translate_Click(object sender, EventArgs e)
@@ -119,6 +120,7 @@ namespace Dictionary
             lbl_Title.Text = "Dịch từ";
             SelectTab();
             btn_Translate.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            translate.UpdateButton();
         }
 
         private void btn_Game_Click(object sender, EventArgs e)
@@ -127,6 +129,7 @@ namespace Dictionary
             lbl_Title.Text = "Game";
             SelectTab();
             btn_Game.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            game.UpdateButton();
         }
 
         private void btn_Favourite_Click(object sender, EventArgs e)
@@ -170,6 +173,26 @@ namespace Dictionary
             btn_Game.BackColor = ThemeColor;
             btn_Favourite.BackColor = ThemeColor;
             btn_History.BackColor = ThemeColor;
+        }
+
+        public void DisableForGame()
+        {
+            btn_Search.Enabled = false;
+            btn_Translate.Enabled = false;
+            btn_History.Enabled = false;
+            btn_Favourite.Enabled = false;
+            lbl_Settings.Enabled = false;
+            pic_Settings.Enabled = false;
+        }
+
+        public void EnableForGame()
+        {
+            btn_Search.Enabled = true;
+            btn_Translate.Enabled = true;
+            btn_History.Enabled = true;
+            btn_Favourite.Enabled = true;
+            lbl_Settings.Enabled = true;
+            pic_Settings.Enabled = true;
         }
     }
 }
