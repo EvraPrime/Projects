@@ -25,5 +25,12 @@ namespace Dictionary.Control
             strTo = to;
             this.BackColor = color;
         }
+
+        private void TranslateResult_Click(object sender, EventArgs e)
+        {
+            TranslateView frm = new TranslateView(label1.Text, strTo, this.BackColor);
+            frm.ShowDialog();
+            Favourite.Instance.UpdateResult();
+        }
     }
 }

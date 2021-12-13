@@ -30,16 +30,16 @@ namespace Dictionary
         private void InitializeComponent()
         {
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.btn_Search = new System.Windows.Forms.Button();
             this.pan_Content = new System.Windows.Forms.FlowLayoutPanel();
             this.pan_View = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_Favourite = new System.Windows.Forms.PictureBox();
             this.pic_Speak = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.pan_View.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Search
@@ -51,17 +51,6 @@ namespace Dictionary
             this.txt_Search.Size = new System.Drawing.Size(295, 26);
             this.txt_Search.TabIndex = 0;
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_txt_KeyDown);
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Location = new System.Drawing.Point(403, 20);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(108, 37);
-            this.btn_Search.TabIndex = 1;
-            this.btn_Search.Text = "Search";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // pan_Content
             // 
@@ -90,6 +79,17 @@ namespace Dictionary
             this.pan_View.Size = new System.Drawing.Size(937, 605);
             this.pan_View.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pic_Speak);
+            this.panel1.Controls.Add(this.txt_Search);
+            this.panel1.Controls.Add(this.btn_Search);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(937, 77);
+            this.panel1.TabIndex = 5;
+            // 
             // pic_Favourite
             // 
             this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,7 +97,7 @@ namespace Dictionary
             this.pic_Favourite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pic_Favourite.Image = global::Dictionary.Properties.Resources.star;
             this.pic_Favourite.Location = new System.Drawing.Point(897, 10);
-            this.pic_Favourite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_Favourite.Margin = new System.Windows.Forms.Padding(4);
             this.pic_Favourite.Name = "pic_Favourite";
             this.pic_Favourite.Size = new System.Drawing.Size(26, 24);
             this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,16 +118,17 @@ namespace Dictionary
             this.pic_Speak.TabStop = false;
             this.pic_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
             // 
-            // panel1
+            // btn_Search
             // 
-            this.panel1.Controls.Add(this.pic_Speak);
-            this.panel1.Controls.Add(this.txt_Search);
-            this.panel1.Controls.Add(this.btn_Search);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 77);
-            this.panel1.TabIndex = 5;
+            this.btn_Search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Search.Image = global::Dictionary.Properties.Resources.search;
+            this.btn_Search.Location = new System.Drawing.Point(408, 13);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(59, 50);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // Search
             // 
@@ -141,10 +142,10 @@ namespace Dictionary
             this.Size = new System.Drawing.Size(937, 682);
             this.pan_View.ResumeLayout(false);
             this.pan_View.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             this.ResumeLayout(false);
 
         }

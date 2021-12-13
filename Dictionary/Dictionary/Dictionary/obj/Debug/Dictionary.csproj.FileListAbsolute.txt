@@ -32,3 +32,4 @@ C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictio
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.HistoryItem.resources
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.History.resources
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.SearchView.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.TranslateView.resources

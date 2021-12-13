@@ -28,6 +28,7 @@ namespace Dictionary.Control
         {
             SearchView frm = new SearchView(label1.Text, this.BackColor);
             frm.ShowDialog();
+            Favourite.Instance.UpdateResult();
         }
     }
 }

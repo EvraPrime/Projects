@@ -23,18 +23,32 @@ namespace Dictionary.Control
             InitializeComponent();
             if (act == "Search")
             {
-                label1.Text = "Tra từ";
-                label2.Text = word;
+                lbl_Act.Text = "Tra từ";
+                lbl_Word.Text = word;
             }
             else
             {
-                label1.Text = "Dịch từ";
-                label2.Text = from;
+                lbl_Act.Text = "Dịch từ";
+                lbl_Word.Text = from;
                 strTo = to;
             }   
             
-            label3.Text = date;
+            lbl_Date.Text = date;
             this.BackColor = color;
+        }
+
+        private void HistoryItem_Click(object sender, EventArgs e)
+        {
+            if (lbl_Act.Text == "Tra từ")
+            {
+                SearchView frm = new SearchView(lbl_Word.Text, this.BackColor);
+                frm.ShowDialog();
+            }    
+            else
+            {
+                TranslateView frm = new TranslateView(lbl_Word.Text, strTo, this.BackColor);
+                frm.ShowDialog();
+            }
         }
     }
 }

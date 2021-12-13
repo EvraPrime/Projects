@@ -29,34 +29,22 @@ namespace Dictionary.Control
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pan_View = new System.Windows.Forms.Panel();
-            this.pic_Favourite = new System.Windows.Forms.PictureBox();
             this.pan_Content = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_Word = new System.Windows.Forms.Label();
+            this.pic_Favourite = new System.Windows.Forms.PictureBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.pic_Speak = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pan_View.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Image = global::Dictionary.Properties.Resources.close__1_;
-            this.btn_Exit.Location = new System.Drawing.Point(1011, 0);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(69, 42);
-            this.btn_Exit.TabIndex = 4;
-            this.btn_Exit.UseVisualStyleBackColor = false;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pic_Speak);
             this.panel1.Controls.Add(this.lbl_Word);
             this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -79,20 +67,6 @@ namespace Dictionary.Control
             this.pan_View.Size = new System.Drawing.Size(1080, 577);
             this.pan_View.TabIndex = 6;
             // 
-            // pic_Favourite
-            // 
-            this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Favourite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Favourite.Image = global::Dictionary.Properties.Resources.star;
-            this.pic_Favourite.Location = new System.Drawing.Point(1040, 10);
-            this.pic_Favourite.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_Favourite.Name = "pic_Favourite";
-            this.pic_Favourite.Size = new System.Drawing.Size(26, 24);
-            this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Favourite.TabIndex = 3;
-            this.pic_Favourite.TabStop = false;
-            // 
             // pan_Content
             // 
             this.pan_Content.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -109,12 +83,56 @@ namespace Dictionary.Control
             // lbl_Word
             // 
             this.lbl_Word.AutoSize = true;
+            this.lbl_Word.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Word.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Word.Location = new System.Drawing.Point(13, 13);
             this.lbl_Word.Name = "lbl_Word";
             this.lbl_Word.Size = new System.Drawing.Size(54, 19);
             this.lbl_Word.TabIndex = 5;
             this.lbl_Word.Text = "label1";
+            // 
+            // pic_Favourite
+            // 
+            this.pic_Favourite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Favourite.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Favourite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_Favourite.Image = global::Dictionary.Properties.Resources.star;
+            this.pic_Favourite.Location = new System.Drawing.Point(1040, 10);
+            this.pic_Favourite.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_Favourite.Name = "pic_Favourite";
+            this.pic_Favourite.Size = new System.Drawing.Size(26, 24);
+            this.pic_Favourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Favourite.TabIndex = 3;
+            this.pic_Favourite.TabStop = false;
+            this.pic_Favourite.Click += new System.EventHandler(this.pic_Favourite_Click);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Image = global::Dictionary.Properties.Resources.close__1_;
+            this.btn_Exit.Location = new System.Drawing.Point(1011, 0);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(69, 42);
+            this.btn_Exit.TabIndex = 4;
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // pic_Speak
+            // 
+            this.pic_Speak.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Speak.Image = global::Dictionary.Properties.Resources.volume_up_interface_symbol;
+            this.pic_Speak.Location = new System.Drawing.Point(167, 9);
+            this.pic_Speak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_Speak.Name = "pic_Speak";
+            this.pic_Speak.Size = new System.Drawing.Size(38, 29);
+            this.pic_Speak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Speak.TabIndex = 7;
+            this.pic_Speak.TabStop = false;
+            this.pic_Speak.Click += new System.EventHandler(this.pic_Speak_Click);
             // 
             // SearchView
             // 
@@ -127,11 +145,13 @@ namespace Dictionary.Control
             this.Name = "SearchView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchView";
+            this.Load += new System.EventHandler(this.SearchView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pan_View.ResumeLayout(false);
             this.pan_View.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Favourite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Speak)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +164,6 @@ namespace Dictionary.Control
         private System.Windows.Forms.PictureBox pic_Favourite;
         private System.Windows.Forms.FlowLayoutPanel pan_Content;
         private System.Windows.Forms.Label lbl_Word;
+        private System.Windows.Forms.PictureBox pic_Speak;
     }
 }

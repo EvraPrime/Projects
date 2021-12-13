@@ -38,6 +38,10 @@ namespace Dictionary
                 string result = httpClient.GetStringAsync(url).Result;
                 var jsonData = new JavaScriptSerializer().Deserialize<List<dynamic>>(result);
                 var translationItems = jsonData[0];
+
+                if (translationItems == null)
+                    return "";
+
                 foreach (object item in translationItems)
                 {
                     IEnumerable translationLineObject = item as IEnumerable;
@@ -86,7 +90,7 @@ namespace Dictionary
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pic_Speak_Click(object sender, EventArgs e)
         {
             SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
             speechSynthesizer.Volume = 100;

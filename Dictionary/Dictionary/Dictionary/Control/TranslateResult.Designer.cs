@@ -51,6 +51,7 @@ namespace Dictionary.Control
             this.Controls.Add(this.label1);
             this.Name = "TranslateResult";
             this.Size = new System.Drawing.Size(908, 59);
+            this.Click += new System.EventHandler(this.TranslateResult_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

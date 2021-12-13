@@ -15,10 +15,13 @@ namespace Dictionary
     public partial class Favourite : UserControl
     {
         MySqlConnection con;
+        private static Favourite _instance;
+        public static Favourite Instance { get => _instance; set => _instance = value; }
         public Favourite()
         {
             InitializeComponent();
             con = DAL.DBUtils.GetDBConnection();
+            Instance = this;
         }
         
         public void UpdateResult()
