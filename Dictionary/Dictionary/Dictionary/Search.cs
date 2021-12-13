@@ -116,10 +116,16 @@ namespace Dictionary
                     s = "select * from favourite where word='" + txt_Search.Text + "' ";
                     cmd = new MySqlCommand(s, con);
                     myReader = cmd.ExecuteReader();
+
                     if (myReader.Read())
                         pic_Favourite.BackColor = Main.Instance.ThemeColor;
                     else
                         pic_Favourite.BackColor = Color.Transparent;
+
+                    s = "Insert into history (action,word,date) values('Search','" + txt_Search.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "') ";
+                    myReader.Close();
+                    cmd = new MySqlCommand(s, con);
+                    cmd.ExecuteNonQuery();
                 }
                 else
                 {

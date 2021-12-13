@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dictionary.DAL;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +18,12 @@ namespace Dictionary
 {
     public partial class Translate : UserControl
     {
+        MySqlConnection con;
+
         public Translate()
         {
             InitializeComponent();
+            con = DBUtils.GetDBConnection();
         }
 
         public string TranslateText(string input)
@@ -54,6 +59,31 @@ namespace Dictionary
         private void btnTranslate_Click(object sender, EventArgs e)
         {
             rtbTo.Text = TranslateText(rtbFrom.Text);
+            try
+            {
+                con.Open();
+                string s = "select * from translate where fromvi='" + rtbFrom.Text.Trim() + "' ";
+                MySqlCommand cmd = new MySqlCommand(s, con);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+
+                if (myReader.Read())
+                    pic_Favourite.BackColor = Main.Instance.ThemeColor;
+                else
+                    pic_Favourite.BackColor = Color.Transparent;
+
+                s = "Insert into history (action,fromvi,toen,date) values('Translate','" + rtbFrom.Text.Trim() + "','" + rtbTo.Text.Trim() + "','" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "') ";
+                myReader.Close();
+                cmd = new MySqlCommand(s, con);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -69,6 +99,41 @@ namespace Dictionary
             if (e.KeyCode == Keys.Enter)
             {
                 btnTranslate.PerformClick();
+            }
+        }
+
+        private void pic_Favourite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string s = "select * from translate where fromvi='" + rtbFrom.Text.Trim() + "' ";
+                MySqlCommand cmd = new MySqlCommand(s, con);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+                if (myReader.Read())
+                {
+                    s = "Delete from translate where fromvi='" + myReader.GetString(0) + "' ";
+                    myReader.Close();
+                    cmd = new MySqlCommand(s, con);
+                    cmd.ExecuteNonQuery();
+                    pic_Favourite.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    s = "Insert into translate (fromvi,toen) values('" + rtbFrom.Text.Trim() + "','" + rtbTo.Text.Trim() + "') ";
+                    myReader.Close();
+                    cmd = new MySqlCommand(s, con);
+                    cmd.ExecuteNonQuery();
+                    pic_Favourite.BackColor = Main.Instance.ThemeColor;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

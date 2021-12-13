@@ -56,13 +56,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Control\HistoryItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\HistoryItem.Designer.cs">
+      <DependentUpon>HistoryItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SearchResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SearchResult.Designer.cs">
+      <DependentUpon>SearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\SearchView.Designer.cs">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TranslateResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TranslateResult.Designer.cs">
+      <DependentUpon>TranslateResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DBMySQLUtils.cs" />
     <Compile Include="DAL\DBUtils.cs" />
+    <Compile Include="Favourite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Favourite.Designer.cs">
+      <DependentUpon>Favourite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -90,8 +126,26 @@
     <Compile Include="Translate.Designer.cs">
       <DependentUpon>Translate.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Control\HistoryItem.resx">
+      <DependentUpon>HistoryItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SearchResult.resx">
+      <DependentUpon>SearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SearchView.resx">
+      <DependentUpon>SearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TranslateResult.resx">
+      <DependentUpon>TranslateResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favourite.resx">
+      <DependentUpon>Favourite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -174,7 +228,10 @@
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Control\" />
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

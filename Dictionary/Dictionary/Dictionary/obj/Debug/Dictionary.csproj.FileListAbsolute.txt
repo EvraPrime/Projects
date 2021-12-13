@@ -26,3 +26,9 @@ C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictio
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.exe
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.pdb
 C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Favourite.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.SearchResult.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.TranslateResult.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.HistoryItem.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.History.resources
+C:\Users\Asus\Desktop\Projects\Dictionary\Dictionary\Dictionary\obj\Debug\Dictionary.Control.SearchView.resources

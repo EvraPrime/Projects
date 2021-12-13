@@ -66,6 +66,7 @@ namespace Dictionary
         private void Main_Load(object sender, EventArgs e)
         {
             ChangeColor(Color.Red);
+            btn_Search.PerformClick();
         }
 
         public void ChangeColor(Color theme)
@@ -76,13 +77,17 @@ namespace Dictionary
             pan_Navigation.BackColor = ThemeColor;
             search.BackColor = FadingColor(ThemeColor);
             translate.BackColor = FadingColor(ThemeColor);
+            game.BackColor = FadingColor(ThemeColor);
+            favourite.BackColor = FadingColor(ThemeColor);
+            settings.BackColor = FadingColor(ThemeColor);
+            history.BackColor = FadingColor(ThemeColor);
             SelectTab();
             this.Invalidate();
         }
 
         public Color FadingColor(Color rgb)
         {
-            return Color.FromArgb(80, rgb.R, rgb.G, rgb.B);
+            return Color.FromArgb(50, rgb.R, rgb.G, rgb.B);
         }
 
         public Color ChangeColorBrightness(Color rbg, float ratio)
@@ -124,6 +129,24 @@ namespace Dictionary
             btn_Game.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
         }
 
+        private void btn_Favourite_Click(object sender, EventArgs e)
+        {
+            favourite.BringToFront();
+            lbl_Title.Text = "Yêu thích";
+            SelectTab();
+            btn_Favourite.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            favourite.UpdateResult();
+        }
+
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            history.BringToFront();
+            lbl_Title.Text = "Lịch sử";
+            SelectTab();
+            btn_History.BackColor = ChangeColorBrightness(ThemeColor, 0.5f);
+            history.UpdateResult();
+        }
+
         private void lbl_Settings_Click(object sender, EventArgs e)
         {
             settings.BringToFront();
@@ -145,6 +168,8 @@ namespace Dictionary
             btn_Search.BackColor = ThemeColor;
             btn_Translate.BackColor = ThemeColor;
             btn_Game.BackColor = ThemeColor;
+            btn_Favourite.BackColor = ThemeColor;
+            btn_History.BackColor = ThemeColor;
         }
     }
 }

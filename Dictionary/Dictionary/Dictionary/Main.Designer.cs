@@ -31,32 +31,32 @@ namespace Dictionary
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pan_Navigation = new System.Windows.Forms.Panel();
+            this.btn_Favourite = new System.Windows.Forms.Button();
             this.btn_History = new System.Windows.Forms.Button();
             this.btn_Game = new System.Windows.Forms.Button();
             this.btn_Translate = new System.Windows.Forms.Button();
-            this.pic_Settings = new System.Windows.Forms.PictureBox();
             this.lbl_Settings = new System.Windows.Forms.Label();
-            this.pic_Image = new System.Windows.Forms.PictureBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.pan_Content = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.pan_Title = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pic_Icon = new System.Windows.Forms.PictureBox();
+            this.search = new Dictionary.Search();
             this.settings = new Dictionary.Settings();
             this.game = new Dictionary.Game();
             this.translate = new Dictionary.Translate();
-            this.search = new Dictionary.Search();
-            this.btn_Favourite = new System.Windows.Forms.Button();
+            this.favourite = new Dictionary.Favourite();
+            this.history = new Dictionary.History();
+            this.pic_Icon = new System.Windows.Forms.PictureBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.pic_Settings = new System.Windows.Forms.PictureBox();
+            this.pic_Image = new System.Windows.Forms.PictureBox();
             this.pan_Navigation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.pan_Content.SuspendLayout();
             this.pan_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // pan_Navigation
@@ -77,6 +77,19 @@ namespace Dictionary
             this.pan_Navigation.Size = new System.Drawing.Size(208, 622);
             this.pan_Navigation.TabIndex = 1;
             // 
+            // btn_Favourite
+            // 
+            this.btn_Favourite.FlatAppearance.BorderSize = 0;
+            this.btn_Favourite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Favourite.Location = new System.Drawing.Point(0, 425);
+            this.btn_Favourite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Favourite.Name = "btn_Favourite";
+            this.btn_Favourite.Size = new System.Drawing.Size(208, 44);
+            this.btn_Favourite.TabIndex = 16;
+            this.btn_Favourite.Text = "Yêu thích";
+            this.btn_Favourite.UseVisualStyleBackColor = true;
+            this.btn_Favourite.Click += new System.EventHandler(this.btn_Favourite_Click);
+            // 
             // btn_History
             // 
             this.btn_History.FlatAppearance.BorderSize = 0;
@@ -88,6 +101,7 @@ namespace Dictionary
             this.btn_History.TabIndex = 15;
             this.btn_History.Text = "Lịch sử";
             this.btn_History.UseVisualStyleBackColor = true;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
             // 
             // btn_Game
             // 
@@ -115,18 +129,6 @@ namespace Dictionary
             this.btn_Translate.UseVisualStyleBackColor = true;
             this.btn_Translate.Click += new System.EventHandler(this.btn_Translate_Click);
             // 
-            // pic_Settings
-            // 
-            this.pic_Settings.Image = global::Dictionary.Properties.Resources.setting;
-            this.pic_Settings.Location = new System.Drawing.Point(24, 549);
-            this.pic_Settings.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_Settings.Name = "pic_Settings";
-            this.pic_Settings.Size = new System.Drawing.Size(53, 49);
-            this.pic_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Settings.TabIndex = 12;
-            this.pic_Settings.TabStop = false;
-            this.pic_Settings.Click += new System.EventHandler(this.pic_Settings_Click);
-            // 
             // lbl_Settings
             // 
             this.lbl_Settings.AutoSize = true;
@@ -138,17 +140,6 @@ namespace Dictionary
             this.lbl_Settings.TabIndex = 11;
             this.lbl_Settings.Text = "Cài đặt";
             this.lbl_Settings.Click += new System.EventHandler(this.lbl_Settings_Click);
-            // 
-            // pic_Image
-            // 
-            this.pic_Image.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
-            this.pic_Image.Location = new System.Drawing.Point(48, 36);
-            this.pic_Image.Name = "pic_Image";
-            this.pic_Image.Size = new System.Drawing.Size(107, 92);
-            this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Image.TabIndex = 10;
-            this.pic_Image.TabStop = false;
             // 
             // btn_Search
             // 
@@ -170,30 +161,17 @@ namespace Dictionary
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pan_Content.AutoScroll = true;
             this.pan_Content.AutoSize = true;
+            this.pan_Content.Controls.Add(this.search);
             this.pan_Content.Controls.Add(this.settings);
             this.pan_Content.Controls.Add(this.game);
             this.pan_Content.Controls.Add(this.translate);
-            this.pan_Content.Controls.Add(this.search);
+            this.pan_Content.Controls.Add(this.favourite);
+            this.pan_Content.Controls.Add(this.history);
             this.pan_Content.Location = new System.Drawing.Point(209, 84);
             this.pan_Content.Margin = new System.Windows.Forms.Padding(0, 30, 1, 1);
             this.pan_Content.Name = "pan_Content";
             this.pan_Content.Size = new System.Drawing.Size(973, 576);
             this.pan_Content.TabIndex = 2;
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(1115, -1);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(69, 42);
-            this.btn_Exit.TabIndex = 3;
-            this.btn_Exit.Text = "button1";
-            this.btn_Exit.UseVisualStyleBackColor = false;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // pan_Title
             // 
@@ -228,45 +206,14 @@ namespace Dictionary
             this.lbl_Name.TabIndex = 5;
             this.lbl_Name.Text = "Từ điển Anh-Việt";
             // 
-            // button1
+            // search
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1044, -1);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 42);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(973, -1);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 42);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // pic_Icon
-            // 
-            this.pic_Icon.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Icon.Image = global::Dictionary.Properties.Resources.dictionary;
-            this.pic_Icon.Location = new System.Drawing.Point(7, 4);
-            this.pic_Icon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_Icon.Name = "pic_Icon";
-            this.pic_Icon.Size = new System.Drawing.Size(32, 32);
-            this.pic_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Icon.TabIndex = 4;
-            this.pic_Icon.TabStop = false;
+            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(973, 576);
+            this.search.TabIndex = 0;
             // 
             // settings
             // 
@@ -296,26 +243,71 @@ namespace Dictionary
             this.translate.Size = new System.Drawing.Size(973, 576);
             this.translate.TabIndex = 3;
             // 
-            // search
+            // favourite
             // 
-            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search.Location = new System.Drawing.Point(0, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(973, 576);
-            this.search.TabIndex = 0;
+            this.favourite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.favourite.Location = new System.Drawing.Point(0, 0);
+            this.favourite.Name = "favourite";
+            this.favourite.Size = new System.Drawing.Size(973, 576);
+            this.favourite.TabIndex = 5;
             // 
-            // btn_Favourite
+            // history
             // 
-            this.btn_Favourite.FlatAppearance.BorderSize = 0;
-            this.btn_Favourite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Favourite.Location = new System.Drawing.Point(0, 425);
-            this.btn_Favourite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Favourite.Name = "btn_Favourite";
-            this.btn_Favourite.Size = new System.Drawing.Size(208, 44);
-            this.btn_Favourite.TabIndex = 16;
-            this.btn_Favourite.Text = "Yêu thích";
-            this.btn_Favourite.UseVisualStyleBackColor = true;
+            this.history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.history.Location = new System.Drawing.Point(0, 0);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(973, 576);
+            this.history.TabIndex = 6;
+            // 
+            // pic_Icon
+            // 
+            this.pic_Icon.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Icon.Image = global::Dictionary.Properties.Resources.dictionary;
+            this.pic_Icon.Location = new System.Drawing.Point(7, 4);
+            this.pic_Icon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_Icon.Name = "pic_Icon";
+            this.pic_Icon.Size = new System.Drawing.Size(32, 32);
+            this.pic_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Icon.TabIndex = 4;
+            this.pic_Icon.TabStop = false;
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Image = global::Dictionary.Properties.Resources.close__1_;
+            this.btn_Exit.Location = new System.Drawing.Point(1115, -1);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(69, 42);
+            this.btn_Exit.TabIndex = 3;
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // pic_Settings
+            // 
+            this.pic_Settings.Image = global::Dictionary.Properties.Resources.setting;
+            this.pic_Settings.Location = new System.Drawing.Point(24, 549);
+            this.pic_Settings.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_Settings.Name = "pic_Settings";
+            this.pic_Settings.Size = new System.Drawing.Size(53, 49);
+            this.pic_Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Settings.TabIndex = 12;
+            this.pic_Settings.TabStop = false;
+            this.pic_Settings.Click += new System.EventHandler(this.pic_Settings_Click);
+            // 
+            // pic_Image
+            // 
+            this.pic_Image.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Image.Image = global::Dictionary.Properties.Resources.dictionary;
+            this.pic_Image.Location = new System.Drawing.Point(48, 36);
+            this.pic_Image.Name = "pic_Image";
+            this.pic_Image.Size = new System.Drawing.Size(107, 92);
+            this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Image.TabIndex = 10;
+            this.pic_Image.TabStop = false;
             // 
             // Main
             // 
@@ -323,8 +315,6 @@ namespace Dictionary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.pan_Title);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.pic_Icon);
             this.Controls.Add(this.btn_Exit);
@@ -340,12 +330,12 @@ namespace Dictionary
             this.Load += new System.EventHandler(this.Main_Load);
             this.pan_Navigation.ResumeLayout(false);
             this.pan_Navigation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.pan_Content.ResumeLayout(false);
             this.pan_Title.ResumeLayout(false);
             this.pan_Title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,8 +351,6 @@ namespace Dictionary
         private System.Windows.Forms.Panel pan_Title;
         private System.Windows.Forms.PictureBox pic_Icon;
         private System.Windows.Forms.Label lbl_Name;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.PictureBox pic_Image;
@@ -373,6 +361,8 @@ namespace Dictionary
         private Settings settings;
         private System.Windows.Forms.Button btn_History;
         private System.Windows.Forms.Button btn_Favourite;
+        private Favourite favourite;
+        private History history;
     }
 }
 
