@@ -37,10 +37,11 @@ namespace Dictionary
                 string s = "select * from highscore order by point desc";
                 MySqlCommand cmd = new MySqlCommand(s, con);
                 MySqlDataReader myReader = cmd.ExecuteReader();
-
+                int i = 1;
                 while (myReader.Read())
                 {
-                    pan_Scores.Controls.Add(new PlayerItem(myReader.GetString(0), myReader.GetInt32(1)));
+                    pan_Scores.Controls.Add(new PlayerItem(i.ToString() + ". " +myReader.GetString(0), myReader.GetInt32(1)));
+                    i++;
                 }
             }
             catch (Exception ex)

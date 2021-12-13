@@ -108,6 +108,9 @@ namespace Dictionary
 
         private void pic_Favourite_Click(object sender, EventArgs e)
         {
+            if (rtbFrom.Text == "" || rtbTo.Text == "")
+                return;
+
             try
             {
                 con.Open();
